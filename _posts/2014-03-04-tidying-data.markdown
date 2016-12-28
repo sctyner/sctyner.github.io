@@ -2,7 +2,7 @@
 layout: post
 title:  "The Importance of Tidying Data"
 date:   2014-03-04 21:57:30 -0600
-categories: jekyll update
+categories: blog, stat585x
 ---
 
 *Written for [Stat 585X](http://dicook.github.io/stat585/) after reading [Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf) by [Hadley Wickham](https://twitter.com/hadleywickham)*

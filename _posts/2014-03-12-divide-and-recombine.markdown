@@ -2,7 +2,7 @@
 layout: post
 title:  "Divide and Recombine or Split-Apply-Combine?"
 date:   2014-03-12 21:57:30 -0600
-categories: jekyll update
+categories: blog, stat585x
 ---
 
 *Written for [STAT 585X](http://dicook.github.io/stat585/) after going through [the datadr tutorial](http://hafen.github.io/datadr/#background) by [Ryan Hafen and others](https://www.datadr.org/people.html)*

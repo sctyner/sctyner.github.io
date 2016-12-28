@@ -2,7 +2,7 @@
 layout: post
 title:  "A Brief History of Statistical Computing (as told through a series of corny historical references)"
 date:   2014-02-25 21:57:30 -0600
-categories: jekyll update
+categories: blog, stat585x
 ---
 
 *Written for Stat 585X after reading [From S to R](http://www.research.att.com/articles/featured_stories/2013_09/201309_SandR.html?fbid=qg6od6BDX3T) from AT&T Labs, Inc.*
