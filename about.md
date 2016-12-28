@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I am a PhD candidate in Statistics at [Iowa State University](http://stat.iastate.edu/) in Ames, Iowa. I graduated from [Augustana College](https://www.augustana.edu/) (IL) in 2012 with a BA in Mathematics, Economics, and French. 
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+This is my personal web page. Enjoy! 
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+
