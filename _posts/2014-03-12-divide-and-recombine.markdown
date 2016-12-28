@@ -5,7 +5,7 @@ date:   2014-03-12 21:57:30 -0600
 categories: jekyll update
 ---
 
-Written for STAT 585X after going through [the datadr tutorial](http://hafen.github.io/datadr/#background) by [Ryan Hafen and others](https://www.datadr.org/people.html)
+*Written for [STAT 585X](http://dicook.github.io/stat585/) after going through [the datadr tutorial](http://hafen.github.io/datadr/#background) by [Ryan Hafen and others](https://www.datadr.org/people.html)*
 
 The concept that datadr was built upon, divide and recombine, is essentially the same as the concept behind plyr, split-apply-combine. In fact, the recombine() function in datadr has apply= and combine= as necessary arguments, so it really is doing the same exact thing as plyr! There are, however, two main differences between datadr and plyr/dplyr.
 
