@@ -5,13 +5,13 @@ date:   2015-01-21 11:57:30 -0600
 categories: blog, stat503
 ---
 
-*Written for Stat 503 after reading
+*Written for Stat 503 after reading*
 
-- [This paper](http://vita.had.co.nz/papers/bay-area-blues.pdf) on the housing crisis in the Bay Area,
-- [This interview](http://statr.me/2013/09/a-conversation-with-hadley-wickham/) with Hadley Wickham, 
-- [Naomi Robbins' blog](http://www.forbes.com/sites/naomirobbins/) at Forbes, 
-- Some entries on the [Beautiful Data blog](http://beautifuldata.net/), and
-- [This column](http://www.processexcellencenetwork.com/lean-six-sigma-business-transformation/columns/varitian-bites-deming-s-sopk-part-iii) on variation.*
+- *[This paper](http://vita.had.co.nz/papers/bay-area-blues.pdf) on the housing crisis in the Bay Area,*
+- *[This interview](http://statr.me/2013/09/a-conversation-with-hadley-wickham/) with Hadley Wickham,* 
+- *[Naomi Robbins' blog](http://www.forbes.com/sites/naomirobbins/) at Forbes,* 
+- *Some entries on the [Beautiful Data blog](http://beautifuldata.net/), and*
+- *[This column](http://www.processexcellencenetwork.com/lean-six-sigma-business-transformation/columns/varitian-bites-deming-s-sopk-part-iii) on variation.*
 
 There was a lot of material to read through this week, and I focused on the [housing crisis paper](http://vita.had.co.nz/papers/bay-area-blues.pdf) (the friend), the post on the importance of [variation](http://www.processexcellencenetwork.com/lean-six-sigma-business-transformation/columns/varitian-bites-deming-s-sopk-part-iii) (the foe), and the [interview with Wickham](http://statr.me/2013/09/a-conversation-with-hadley-wickham/) because they were the ones I found most interesting. 
 

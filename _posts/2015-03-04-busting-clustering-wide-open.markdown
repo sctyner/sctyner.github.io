@@ -5,7 +5,7 @@ date:   2015-03-04 11:57:30 -0600
 categories: blog, stat503
 ---
 
-*Written for [STAT 503](http://dicook.github.io/teaching.html) after reading [two](http://www.stat.wmich.edu/wang/561/classnotes/Grouping/Cluster.pdf) [introductions](http://strata.uga.edu/6370/lecturenotes/clusterAnalysis.html)*
+*Written for [STAT 503](http://dicook.github.io/teaching.html) after reading [two](http://www.stat.wmich.edu/wang/561/classnotes/Grouping/Cluster.pdf) [introductions](http://strata.uga.edu/6370/lecturenotes/clusterAnalysis.html) to cluster analysis.*
 
 Cluster analysis is a type of unsupervised learning.  Up until this point in STAT 503, we have just been studying supervised learning methods, so unsupervised learning is an exciting new challenge.  In unsupervised learning, there is never a response variable, which poses a lot of problems. Most importantly, there is no "truth" to compare our modeling results to like there is in supervised learning.  According to the second link above, there are 3 stages of cluster analysis: partitioning, interpretation, and validation and profiling. The majority of the reading focused on the partitioning aspect of cluster analysis.
 
