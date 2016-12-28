@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Braaaaaiiiins!!!"
+date:   2015-02-06 11:57:30 -0600
+categories: blog, stat503
+---
+
+*Written for [STAT 503](http://dicook.github.io/teaching.html) after watching Andrew Ng's lectures, numbers 43-46 on [neural networks](https://class.coursera.org/ml-005/lecture).*
+                  
+Neural networks are something I've heard of before, but I've never really understood why exactly they were called *neural* networks.  Ng's first lectures on neural networks give an excellent motivation for the name behind the frequently used "black box" prediction methods of neural networks.  They seem much less obscure after watching the historical background given in these videos.    
+
+The whole idea behind neural networks struck me as rather elegant.  They are attempting, as least from what I've understood thus far, to mimic the largely unknown neural processes in the human brain.  Humans are *excellent* at learning and prediction, and if a statistical model could be as good as the human brain, we'd all be out of a job!  I've actually been reading a (very dense) book about teaching computers to learn like humans, and like animals in general, in order to better understand the evolutionary process.  The videos on the history of neural networks has helped me to understand that idea a bit better, and has helped me to understand neural networks through the eye of a natural scientist, instead of a computer scientist.  (The book, by the way, is called *Probably Approximately Correct* by Leslie Valiant.)
+
+Now, down to the nitty-gritty of it.  A neural network is basically a set of predictors, transformed into a new set of predictors, potentially transformed into another new set of predictors, and then fit to a sigmoidal model.  The whole reason for doing all of this, as Ng said, is so that the network can learn its own features to form the best possible predictive model.  This week was a perfect week to watch these videos, because we also just covered neural networks in [STAT 602](http://www.public.iastate.edu/~vardeman/stat602/stat602vard.html) (Modern Multivariate Statistical Learning). The presentation in these videos, however, was much more enlightening, and made neural networks seem much less like a complex "black box" method of prediction. I am excited to start working with this new method of prediction! 

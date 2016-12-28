@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "The Importance of Tidying Data"
+date:   2014-03-04 21:57:30 -0600
+categories: blog, stat585x
+---
+
+*Written for [Stat 585X](http://dicook.github.io/stat585/) after reading [Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf) by [Hadley Wickham](https://twitter.com/hadleywickham)*
+
+Hadley Wickham, having gained a quasi god-like amount of knowledge about data cleaning and analysis throughout his statistical lifetime thus far, wrote the “Tidy Data” paper to enlighten those of us who are mere mortals of the statistics world on one aspect of data cleaning: data tidying. Data tidying is simply “structuring datasets to facilitate analysis.” A dataset that is tidy allows its“physical layout” to be easily linked to its meaning through statistical analysis. In tidy datasets, variables are columns, observations are rows, and there are separate tables for each type of observational unit. Furthermore, the columns should be ordered so that the fixed variables are first and the measured variables follow, with the rows ordered by first column value, then ordered by second column value, then third, etc.
+
+Wickham ties the differences between messy and tidy datasets to one great Tolstoy quote: “Tidy data sets are all alike; every messy data set is messy in its own way.” I know this to be true even through my own limited experience! There are some common messy issues in datasets which he addresses in this paper: column headers as values, multiple variables in one column, variables in both rows and columns, different observational unit types in the same table, and single units stored in multiple tables. He goes through an example of each and shows how to reform the data so that each column is a variable and each row is an observational unit.
+
+Then he discusses the types of tools that exist to analyze tidy data through manipulation, visualization, and modeling, all of which we have seen before in STAT 585X, so I won’t discuss them further. Next is a case study on analyzing a tidy dataset in different ways, and to close, a discussion of his philosophy with regards to tidy data, as well as problems that need to be addressed in the future. Among these is the “chicken-and-egg problem” in order for tidy and tidying tools to be created, they have to be tested on tidy datasets, which are created with tidying tools, so it’s easy to get stuck! Finally, he mentions other data cleaning tasks such as parsing dates an numbers, identifying missing values, correcting typos, and filling in structural missings, and proposes that the reader think of a way to solve them, because even Hadley Wickham can’t solve every data problem!           
