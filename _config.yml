@@ -1,5 +1,5 @@
 # top level stuff you probably don't need to touch
-highlighter: pygments
+highlighter: rouge
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
@@ -11,21 +11,25 @@ safe: true
 
 
 # edit here to achieve your personal greatness
-url: http://username.github.io/
-baseurl: /sustain/
-title: Chris Turner
-author: Chris Turner
-description: Personal blog and resume
+url: http://sctyner.github.io/
+baseurl: /home/
+title: Samantha Tyner
+author: Samantha Tyner
+description: Personal website, blog, and curriculum vitae.
 avatar: profile.png
-email: yourname@email.com
-github: biomadeira/sustain # username
-twitter: username
-linkedin: username
-stackoverflow: username   #e.g: users/2735833/proton1h1
+email: sctyner@iastate.edu  
+github: sctyner # username
+twitter: sctyner
+linkedin: sctyner
+#stackoverflow: username   #e.g: users/2735833/proton1h1
 #Comment out if you don't want disqus 
-disqus: username
-google_analytics: UA-69391421-1
+#disqus: username
+#google_analytics: UA-69391421-1
 
 
 # needed for travis-ci build
-exclude: [vendor]
+exclude: 
+  - [vendor]
+  - Gemfile
+  - Gemfile.lock
+
