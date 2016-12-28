@@ -1,4 +1,4 @@
-highlighter: pygments
+highlighter: rouge
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
@@ -9,27 +9,33 @@ port: 4000
 safe: true
 url: http://biomadeira.github.io/vitae
 author: Fábio Madeira
+# Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
 
 # edit this section with your information
 # biomadeira.github.io - all contents run on /vitae/
 # for a normal use at the base of the server change it to "/"
 baseurl: /vitae/
-title: Chris Turner's Resume
-name: Chris Turner
-email: christurner@me.com
-email_full: mailto:youremail@me.com
-website: github.io/sustain
-website_full: https://biomadeira.github.io/sustain
-github: trending
-twitter: twitter
-tel: +44 0000 000000
-tel_full: tel:+440000000000
-google_maps: 'https://www.google.co.uk/maps/place/44+Perth+St,+Edinburgh,+Edinburgh+City+EH3+5BL'
-address: 44 Perth Street
-postcode: EH3 5BL
-city: Edinburgh
-country: United Kingdom
-google_analytics: UA-69300817-1
+title: Samantha Tyner's CV
+name: Samantha Tyner
+email: sctyner@iastate.edu
+email_full: mailto:sctyner@iastate.edu
+website: sctyner.github.io
+website_full: https://sctyner.github.io
+twitter_username: sctyner
+github_username:  sctyner
+linkedin_username: sctyner
 
-# needed for travis-ci build
-exclude: [vendor]
+# tel: +44 0000 000000
+# tel_full: tel:+440000000000
+#google_maps: 'https://www.google.co.uk/maps/place/44+Perth+St,+Edinburgh,+Edinburgh+City+EH3+5BL'
+#address: 44 Perth Street
+#postcode: EH3 5BL
+city: Ames
+state: Iowa
+country: United States
+#google_analytics: UA-69300817-1
+
+
