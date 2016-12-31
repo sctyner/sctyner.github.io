@@ -1,4 +1,12 @@
-A Custom `ggplot2` Theme for [Facebook](facebook.com)
+---
+layout: post
+title: "A Custom `ggplot2` Theme for [Facebook](facebook.com)"
+date: "2016-12-30 19:56:15"
+categories: blog, fun
+---
+
+
+
 ================
 2016-12-30 19:38:47
 
@@ -11,7 +19,8 @@ I use the [`ggplot2` themes vignette](http://docs.ggplot2.org/dev/vignettes/them
 
 ### The Theme
 
-``` r
+
+```r
 library(ggplot2)
 
 # facebook colors
@@ -67,7 +76,8 @@ theme_fb <- function(base_size = 11, base_family = "Lucida Grande",
 
 ### Using the Facebook Theme
 
-``` r
+
+```r
 data("mtcars")
 
 ggplot(data = mtcars, aes(x = hp, y = mpg)) + 
@@ -78,4 +88,5 @@ ggplot(data = mtcars, aes(x = hp, y = mpg)) +
   theme_fb()
 ```
 
-<img src="2016-12-30-facebook-ggplot2-themes_files/figure-markdown_github/fbex-1.png" style="display: block; margin: auto;" />
+<img src="/figure/source/2016-12-30-facebook-ggplot2-theme/fbex-1.png" title="plot of chunk fbex" alt="plot of chunk fbex" style="display: block; margin: auto;" />
+
