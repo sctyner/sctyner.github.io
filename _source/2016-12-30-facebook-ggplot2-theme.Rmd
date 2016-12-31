@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Custom `ggplot2` Theme for [Facebook](https://www.facebook.com/)"
+title: 'A Custom `ggplot2` Theme for <a href="https://www.facebook.com/">Facebook</a>'
 date: "`r Sys.time()`"
 categories: blog, fun
 ---
