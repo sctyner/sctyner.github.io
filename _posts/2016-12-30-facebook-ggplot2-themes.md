@@ -1,24 +1,17 @@
----
-layout: post
-title: "A Custom `ggplot2` Theme for [Facebook](facebook.com)"
-date:   "`r Sys.time()`"
-output: github_document
-categories: blog, fun
----
+A Custom `ggplot2` Theme for [Facebook](facebook.com)
+================
+2016-12-30 19:38:47
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+Why?
+----
 
-## Why? 
+I thought it would be fun to create a Facebook theme for `ggplot2` after seeing [this (kind of old) article](http://www.theatlantic.com/technology/archive/2014/02/when-you-fall-in-love-this-is-what-facebook-sees/283865/?utm_source=mitfb) where Facebook data analysts have clearly used [`ggplot2`](http://docs.ggplot2.org/current/) to make their graphs. I [tweeted about it]() and because I'm "on winter break" right now and I just revamped my website, I decided to create this blog post about it.
 
-I thought it would be fun to create a Facebook theme for `ggplot2` after seeing [this (kind of old) article](http://www.theatlantic.com/technology/archive/2014/02/when-you-fall-in-love-this-is-what-facebook-sees/283865/?utm_source=mitfb) where Facebook data analysts have clearly used [`ggplot2`](http://docs.ggplot2.org/current/) to make their graphs. I [tweeted about it]() and because I'm "on winter break" right now and I just revamped my website, I decided to create this blog post about it.  
-
-I use the [`ggplot2` themes vignette](http://docs.ggplot2.org/dev/vignettes/themes.html) and the package [`ggthemes`](https://github.com/jrnold/ggthemes) as references when creating this Facebook theme. 
+I use the [`ggplot2` themes vignette](http://docs.ggplot2.org/dev/vignettes/themes.html) and the package [`ggthemes`](https://github.com/jrnold/ggthemes) as references when creating this Facebook theme.
 
 ### The Theme
 
-```{r fbtheme}
+``` r
 library(ggplot2)
 
 # facebook colors
@@ -74,7 +67,7 @@ theme_fb <- function(base_size = 11, base_family = "Lucida Grande",
 
 ### Using the Facebook Theme
 
-```{r fbex, fig.align='center', fig.height=5}
+``` r
 data("mtcars")
 
 ggplot(data = mtcars, aes(x = hp, y = mpg)) + 
@@ -84,3 +77,5 @@ ggplot(data = mtcars, aes(x = hp, y = mpg)) +
   scale_color_fb() + 
   theme_fb()
 ```
+
+<img src="2016-12-30-facebook-ggplot2-themes_files/figure-markdown_github/fbex-1.png" style="display: block; margin: auto;" />
