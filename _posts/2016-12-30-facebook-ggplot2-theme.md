@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "A Custom `ggplot2` Theme for [Facebook](facebook.com)"
-date: "2016-12-30 20:29:01"
+title: 'A Custom `ggplot2` Theme for <a href="https://www.facebook.com/">Facebook</a>'
+date: "2016-12-30 21:20:24"
 categories: blog, fun
 ---
+
+
+
 
 ## Why? 
 
@@ -12,6 +15,7 @@ I thought it would be fun to create a Facebook theme for `ggplot2` after seeing 
 I use the [`ggplot2` themes vignette](http://docs.ggplot2.org/dev/vignettes/themes.html) and the package [`ggthemes`](https://github.com/jrnold/ggthemes) as references when creating this Facebook theme.
 
 ### The Theme
+
 
 ```r
 library(ggplot2)
