@@ -74,7 +74,7 @@ theme_fb <- function(base_size = 11, base_family = "Lucida Grande",
 
 ### Using the Facebook Theme
 
-```{r fbex, fig.align='center', fig.height=8}
+```{r fbex, fig.align='center'}
 data("mtcars")
 
 ggplot(data = mtcars, aes(x = hp, y = mpg)) + 
