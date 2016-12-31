@@ -11,6 +11,7 @@ safe: true
 
 # edit here to achieve your personal greatness
 url: http://sctyner.github.io/
+baseurl: /home/
 title: Samantha Tyner
 author: Samantha Tyner
 description: Personal website, blog, and curriculum vitae.
