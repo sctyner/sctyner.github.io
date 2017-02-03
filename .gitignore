@@ -3,3 +3,6 @@ _site
 .jekyll-metadata
 .Rproj.user
 *.Rproj
+static/resume/Tyner-CV.aux
+static/resume/Tyner-CV.log
+static/resume/Tyner-CV.synctex.gz
