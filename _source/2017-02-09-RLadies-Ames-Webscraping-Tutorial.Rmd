@@ -10,3 +10,4 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 Slides are [here](../static/presentations/RLadies/2017-02-09-WebscrapingTidyverse.html)
+
