@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "R-Ladies Ames Meetup: Webscraping with `tidyverse` Packages"
-date: "`r Sys.time()`"
+date: "2 Feb 2017"
 categories: blog, rladies
 ---
 
