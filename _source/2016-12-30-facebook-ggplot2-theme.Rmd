@@ -9,6 +9,7 @@ categories: blog, fun
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+*Update 04-02-2017*: See the awesome package [`ggtech`](https://github.com/ricardo-bion/ggtech) for a Facebook theme and many others. 
 
 ## Why? 
 

@@ -1,12 +1,13 @@
 ---
 layout: post
 title: 'A Custom `ggplot2` Theme for <a href="https://www.facebook.com/">Facebook</a>'
-date: "2016-12-30 21:30:17"
+date: "2017-04-02 13:28:22"
 categories: blog, fun
 ---
 
 
 
+*Update 04-02-2017*: See the awesome package [`ggtech`](https://github.com/ricardo-bion/ggtech) for a Facebook theme and many others. 
 
 ## Why? 
 
