@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'A Custom `ggplot2` Theme for <a href="https://www.facebook.com/">Facebook</a>'
-date: "12 Dec 2016"
+date: "2016-12-30 13:40:27 CDT"
 categories: blog, fun
 ---
 
@@ -9,9 +9,10 @@ categories: blog, fun
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-*Update 04-02-2017*: See the awesome package [`ggtech`](https://github.com/ricardo-bion/ggtech) for a Facebook theme and many others. 
 
 ## Why? 
+
+*Update 04-02-2017*: See the awesome package [`ggtech`](https://github.com/ricardo-bion/ggtech) for a Facebook theme and many others. 
 
 I thought it would be fun to create a Facebook theme for `ggplot2` after seeing [this (kind of old) article](http://www.theatlantic.com/technology/archive/2014/02/when-you-fall-in-love-this-is-what-facebook-sees/283865/?utm_source=mitfb) where Facebook data analysts have clearly used [`ggplot2`](http://docs.ggplot2.org/current/) to make their graphs. I [tweeted about it]() and because I'm "on winter break" right now and I just revamped my website, I decided to create this blog post about it.
 
