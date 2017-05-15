@@ -11,7 +11,7 @@ This Mother's Day weekend, I traveled home to Chicago to attend [ProPublica's](h
 
 ## How a Hackathon Works
 
-In the beginning, a bunch of nerds like myself sit in a room drinking boxed coffee and eating mini muffins and talking about what they do for a living. I very quickly found out that I don't fit in here as well as I thought I would. I was surrounded by web developers and healthcare professionals, not statisticians. 
+In the beginning, a bunch of nerds like myself sit in a room drinking boxed coffee and eating mini muffins and talking about what they do for a living. I very quickly found out that I don't fit in here as well as I thought I would. I was surrounded by web developers, software engineers, CompSci majors, and healthcare professionals, not statisticians (although there was at least one data scientist).  
 I was quite nervous that I was too out of place, and I considered leaving and going straight to my mom's. I decided to stick it out, though, after listening to the ideas pitched by the other attendees. There were some really great ones, like an SMS messaging service for people to find mental health care in Chicago based on what bus stops they use, and a way for people to find accessibile medical facilities (ADA accessible, gender neutral restrooms, etc). After milling around the room for about a quarter hour listening to people talk about their ideas and their experience, I found [Charlie](https://www.linkedin.com/in/charles-arthur/), who was, from what I could tell, one of the only other R users in the room, and he pulled me into the DocBot team (more on DocBot later).
 
 The DocBot team also consists of 
@@ -25,11 +25,15 @@ The DocBot team also consists of
 
 We spent the first couple of hours brainstorming and planning how the DocBot should work. We outlined the flow of the tools, and split the work into four categories: accessing the API, writing the language used in the tool, creating user profiles, and chatbot platform and website mockup. We then determined which team members would work on which parts of the tool and got to work! 
 
+![Our brainstorm of a DocBot user's experience](../static/img/VitalIdeas.jpg)
+
 After lunch, we started developing DocBot, and everyone went home at around 8:30pm. Some of us kept working from home in the evening (mostly Matt, who developed the chatbot). In the morning on Sunday, we met up at about 9:00am (I was late because I snoozed my alarm one too many times) and prepared our presentation for the judges, and put the finishing touches (for the weekend) on DocBot.
 
 On Sunday afternoon, we had some pizza for lunch, gave our pitch for DocBot and watched the other presentations from the group. 
 
 ## What is DocBot?
+
+![Ferg (left) and Matt presenting our idea](../static/img/VitalPres.jpg)
 
 [DocBot](https://www.facebook.com/DocBot-661289917402677) is our answer to the question, "How do I find the best doctor for me?" Finding a new doctor when you move, change insurances, need a specialist, or need a specific procedure done can be incredibly frustrating. You need to know if the doctor accepts your insurance, is close to you, specializes in what you need, is experienced, and has good reviews. DocBot is a chatbot that can answer these questions in a place you probably already use regularly: Facebook Messenger. 
 
@@ -45,7 +49,9 @@ We also learned that hackathon teams should err on the side of *small*. The most
 
 Finally, when developing a tool that could win a prize, make sure you have the specifics really nailed down when you present it. It needs to solve a specific and well-defined problem in an understandable way that you can present in under two minutes. If you don't understand who would use your tool, why they would want to use it, and how your tool solves their problem, your pitch will not be successful. 
 
+## Happy Mother's Day!
 
+![At Mother's Day dinner with my momma. She was very surprised!](../static/img/momma.jpg)
 
 
 
