@@ -1,0 +1,172 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0003_ds29_1890_nation'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             1890
+Geographic level: Nation
+Dataset:          1890 Census: Population, Housing & Agriculture Data [US & States]
+   NHGIS code:    1890_sPHA
+   NHGIS ID:      ds29
+ 
+Tables:
+ 
+1. Total Population by Year
+   Universe:    Persons
+   Source code: NT1
+   NHGIS code:  AWH
+ 
+2. Non-White Population by Race
+   Universe:    Non-White Persons
+   Source code: NT3
+   NHGIS code:  AWL
+ 
+3. Native Colored Population by Place of Birth
+   Universe:    Native Colored Persons
+   Source code: NT5
+   NHGIS code:  AWN
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+    GISJOIN:     GIS Join Match Code
+    YEAR:        Data File Year
+    NATION:      Nation Name
+    NATIONA:     Nation Code
+    AREANAME:    Area name
+ 
+Table 1:     Total Population by Year
+Universe:    Persons
+Source code: NT1
+NHGIS code:  AWH
+    AWH001:      1890
+    AWH002:      1880
+ 
+Table 2:     Non-White Population by Race
+Universe:    Non-White Persons
+Source code: NT3
+NHGIS code:  AWL
+    AWL001:      Negroes
+    AWL002:      Mulattoes
+    AWL003:      Quadroons
+    AWL004:      Octoroons
+    AWL005:      Chinese
+    AWL006:      Japanese
+    AWL007:      Civilized Indians
+ 
+Table 3:     Native Colored Population by Place of Birth
+Universe:    Native Colored Persons
+Source code: NT5
+NHGIS code:  AWN
+    AWN001:      Maine
+    AWN002:      New Hampshire
+    AWN003:      Vermont
+    AWN004:      Massachusetts
+    AWN005:      Rhode Island
+    AWN006:      Connecticut
+    AWN007:      New York
+    AWN008:      New Jersey
+    AWN009:      Pennsylvania
+    AWN010:      Delaware
+    AWN011:      Maryland
+    AWN012:      District of Columbia
+    AWN013:      Virginia
+    AWN014:      West Virginia
+    AWN015:      North Carolina
+    AWN016:      South Carolina
+    AWN017:      Georgia
+    AWN018:      Florida
+    AWN019:      Ohio
+    AWN020:      Indiana
+    AWN021:      Illinois
+    AWN022:      Michigan
+    AWN023:      Wisconsin
+    AWN024:      Minnesota
+    AWN025:      Iowa
+    AWN026:      Missouri
+    AWN027:      North Dakota
+    AWN028:      South Dakota
+    AWN029:      Nebraska
+    AWN030:      Kansas
+    AWN031:      Kentucky
+    AWN032:      Tennessee
+    AWN033:      Alabama
+    AWN034:      Mississippi
+    AWN035:      Louisiana
+    AWN036:      Texas
+    AWN037:      Indian Territory
+    AWN038:      Oklahoma
+    AWN039:      Arkansas
+    AWN040:      Montana
+    AWN041:      Wyoming
+    AWN042:      Colorado
+    AWN043:      New Mexico
+    AWN044:      Arizona
+    AWN045:      Utah
+    AWN046:      Nevada
+    AWN047:      Idaho
+    AWN048:      Washington
+    AWN049:      Oregon
+    AWN050:      California
+    AWN051:      Alaska
+    AWN052:      State not specified (born in the United States)
+    AWN053:      Born at sea (under U.S. flag)
+    AWN054:      Born abroad (U.S. citizens born abroad)
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* Publications and research reports employing NHGIS data (either tabular or GIS)
+  must cite it appropriately. The citation should include the following:
+
+    Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+    IPUMS National Historical Geographic Information System: Version 12.0 [Database]. 
+    Minneapolis: University of Minnesota. 2017. 
+    http://doi.org/10.18128/D050.V12.0
+
+* Publications and research reports employing school attendance areas data
+  (either tabular or GIS) must cite it appropriately. The citation should
+  include the following:
+
+    The College of William and Mary and the Minnesota Population Center.
+    School Attendance Boundary Information System (SABINS): Version 1.0.
+    Minneapolis, MN: University of Minnesota 2011.
+
+* For policy briefs or articles in the popular press, we recommend that you cite the use of NHGIS data as follows:
+
+    IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+* If possible, citations involving school attendance areas should also include
+  the URL for the SABINS site:
+
+    http://www.sabinsdata.org/.
+
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+Printed matter should be sent to:
+
+    NHGIS
+    Minnesota Population Center
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455
+
+Send electronic material to: nhgis@umn.edu

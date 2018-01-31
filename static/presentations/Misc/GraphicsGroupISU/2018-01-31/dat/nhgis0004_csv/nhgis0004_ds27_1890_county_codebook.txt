@@ -1,0 +1,121 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0004_ds27_1890_county'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             1890
+Geographic level: County (by State)
+Dataset:          1890 Census: Population, Housing, Agriculture & Manufacturing Data [US, States & Counties]
+   NHGIS code:    1890_cPHAM
+   NHGIS ID:      ds27
+ 
+Tables:
+ 
+1. Non-White Population by Race by Year
+   Universe:    Non-White Persons
+   Source code: NT4
+   NHGIS code:  AVF
+ 
+2. Race/Nativity by Sex
+   Universe:    Persons
+   Source code: NT6
+   NHGIS code:  AV0
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+    GISJOIN:     GIS Join Match Code
+    YEAR:        Data File Year
+    STATE:       State Name
+    STATEA:      State Code
+    COUNTY:      County Name
+    COUNTYA:     County Code
+    AREANAME:    Area name
+ 
+Table 1:     Non-White Population by Race by Year
+Universe:    Non-White Persons
+Source code: NT4
+NHGIS code:  AVF
+    AVF001:      Negro >> 1890
+    AVF002:      Negro >> 1880
+    AVF003:      Negro >> 1870
+    AVF004:      Chinese >> 1890
+    AVF005:      Chinese >> 1880
+    AVF006:      Chinese >> 1870
+    AVF007:      Japanese >> 1890
+    AVF008:      Japanese >> 1880
+    AVF009:      Japanese >> 1870
+    AVF010:      Civilized Indian >> 1890
+    AVF011:      Civilized Indian >> 1880
+    AVF012:      Civilized Indian >> 1870
+ 
+Table 2:     Race/Nativity by Sex
+Universe:    Persons
+Source code: NT6
+NHGIS code:  AV0
+    AV0001:      White: Native-born of native parentage >> Male
+    AV0002:      White: Native-born of native parentage >> Female
+    AV0003:      White: Native-born of foreign parentage >> Male
+    AV0004:      White: Native-born of foreign parentage >> Female
+    AV0005:      White: Foreign-born >> Male
+    AV0006:      White: Foreign-born >> Female
+    AV0007:      Colored >> Male
+    AV0008:      Colored >> Female
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* Publications and research reports employing NHGIS data (either tabular or GIS)
+  must cite it appropriately. The citation should include the following:
+
+    Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+    IPUMS National Historical Geographic Information System: Version 12.0 [Database]. 
+    Minneapolis: University of Minnesota. 2017. 
+    http://doi.org/10.18128/D050.V12.0
+
+* Publications and research reports employing school attendance areas data
+  (either tabular or GIS) must cite it appropriately. The citation should
+  include the following:
+
+    The College of William and Mary and the Minnesota Population Center.
+    School Attendance Boundary Information System (SABINS): Version 1.0.
+    Minneapolis, MN: University of Minnesota 2011.
+
+* For policy briefs or articles in the popular press, we recommend that you cite the use of NHGIS data as follows:
+
+    IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+* If possible, citations involving school attendance areas should also include
+  the URL for the SABINS site:
+
+    http://www.sabinsdata.org/.
+
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+Printed matter should be sent to:
+
+    NHGIS
+    Minnesota Population Center
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455
+
+Send electronic material to: nhgis@umn.edu

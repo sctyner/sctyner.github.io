@@ -1,0 +1,126 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0003_ds1_1790_nation'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             1790
+Geographic level: Nation
+Dataset:          1790 Census: Population Data [US, States & Counties]
+   NHGIS code:    1790_cPop
+   NHGIS ID:      ds1
+ 
+Tables:
+ 
+1. Total Population
+   Universe:    Persons
+   Source code: NT1
+   NHGIS code:  AAA
+ 
+2. Race/Slave Status
+   Universe:    Persons
+   Source code: NT6
+   NHGIS code:  AAQ
+ 
+3. Total Number of Slaves
+   Universe:    Slaves
+   Source code: NT18
+   NHGIS code:  AAI
+ 
+4. Race
+   Universe:    Persons
+   Source code: NT21
+   NHGIS code:  AAM
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+    GISJOIN:     GIS Join Match Code
+    YEAR:        Data File Year
+    NATION:      Nation Name
+    NATIONA:     Nation Code
+    AREANAME:    Area name
+ 
+Table 1:     Total Population
+Universe:    Persons
+Source code: NT1
+NHGIS code:  AAA
+    AAA001:      Total
+ 
+Table 2:     Race/Slave Status
+Universe:    Persons
+Source code: NT6
+NHGIS code:  AAQ
+    AAQ001:      Non-White: Free
+    AAQ002:      Non-White: Slave
+    AAQ003:      White
+ 
+Table 3:     Total Number of Slaves
+Universe:    Slaves
+Source code: NT18
+NHGIS code:  AAI
+    AAI001:      Total
+ 
+Table 4:     Race
+Universe:    Persons
+Source code: NT21
+NHGIS code:  AAM
+    AAM001:      White
+    AAM002:      Black/Nonwhite
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* Publications and research reports employing NHGIS data (either tabular or GIS)
+  must cite it appropriately. The citation should include the following:
+
+    Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+    IPUMS National Historical Geographic Information System: Version 12.0 [Database]. 
+    Minneapolis: University of Minnesota. 2017. 
+    http://doi.org/10.18128/D050.V12.0
+
+* Publications and research reports employing school attendance areas data
+  (either tabular or GIS) must cite it appropriately. The citation should
+  include the following:
+
+    The College of William and Mary and the Minnesota Population Center.
+    School Attendance Boundary Information System (SABINS): Version 1.0.
+    Minneapolis, MN: University of Minnesota 2011.
+
+* For policy briefs or articles in the popular press, we recommend that you cite the use of NHGIS data as follows:
+
+    IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+* If possible, citations involving school attendance areas should also include
+  the URL for the SABINS site:
+
+    http://www.sabinsdata.org/.
+
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+Printed matter should be sent to:
+
+    NHGIS
+    Minnesota Population Center
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455
+
+Send electronic material to: nhgis@umn.edu

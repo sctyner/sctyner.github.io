@@ -1,0 +1,471 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0003_ds21_1870_nation'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             1870
+Geographic level: Nation
+Dataset:          1870 Census: Race & Nativity Data [US & States]
+   NHGIS code:    1870_sRN
+   NHGIS ID:      ds21
+ 
+Tables:
+ 
+1. Race by Nativity
+   Universe:    Persons
+   Source code: NT4
+   NHGIS code:  AN8
+ 
+2. Race by Place of Birth
+   Universe:    Persons
+   Source code: NT5
+   NHGIS code:  AN9
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+    GISJOIN:     GIS Join Match Code
+    YEAR:        Data File Year
+    NATION:      Nation Name
+    NATIONA:     Nation Code
+    AREANAME:    Area name
+ 
+Table 1:     Race by Nativity
+Universe:    Persons
+Source code: NT4
+NHGIS code:  AN8
+    AN8001:      White >> Native-born
+    AN8002:      White >> Foreign-born
+    AN8003:      Colored >> Native-born
+    AN8004:      Colored >> Foreign-born
+    AN8005:      Indian >> Native-born
+    AN8006:      Indian >> Foreign-born
+    AN8007:      Chinese >> Native-born
+    AN8008:      Chinese >> Foreign-born
+ 
+Table 2:     Race by Place of Birth
+Universe:    Persons
+Source code: NT5
+NHGIS code:  AN9
+    AN9001:      White >> Native-born: Alabama
+    AN9002:      White >> Native-born: Arkansas
+    AN9003:      White >> Native-born: California
+    AN9004:      White >> Native-born: Connecticut
+    AN9005:      White >> Native-born: Delaware
+    AN9006:      White >> Native-born: Florida
+    AN9007:      White >> Native-born: Georgia
+    AN9008:      White >> Native-born: Illinois
+    AN9009:      White >> Native-born: Indiana
+    AN9010:      White >> Native-born: Iowa
+    AN9011:      White >> Native-born: Kansas
+    AN9012:      White >> Native-born: Kentucky
+    AN9013:      White >> Native-born: Louisiana
+    AN9014:      White >> Native-born: Maine
+    AN9015:      White >> Native-born: Maryland
+    AN9016:      White >> Native-born: Massachusetts
+    AN9017:      White >> Native-born: Michigan
+    AN9018:      White >> Native-born: Minnesota
+    AN9019:      White >> Native-born: Mississippi
+    AN9020:      White >> Native-born: Missouri
+    AN9021:      White >> Native-born: Nebraska
+    AN9022:      White >> Native-born: Nevada
+    AN9023:      White >> Native-born: New Hampshire
+    AN9024:      White >> Native-born: New Jersey
+    AN9025:      White >> Native-born: New York
+    AN9026:      White >> Native-born: North Carolina
+    AN9027:      White >> Native-born: Ohio
+    AN9028:      White >> Native-born: Oregon
+    AN9029:      White >> Native-born: Pennsylvania
+    AN9030:      White >> Native-born: Rode Island
+    AN9031:      White >> Native-born: South Carolina
+    AN9032:      White >> Native-born: Tennessee
+    AN9033:      White >> Native-born: Texas
+    AN9034:      White >> Native-born: Vermont
+    AN9035:      White >> Native-born: Virginia and West Virginia
+    AN9036:      White >> Native-born: Wisconsin
+    AN9037:      White >> Native-born: Alaska Territory
+    AN9038:      White >> Native-born: Arizona Territory
+    AN9039:      White >> Native-born: Colorado Territory
+    AN9040:      White >> Native-born: Dakota Territory
+    AN9041:      White >> Native-born: District of Columbia
+    AN9042:      White >> Native-born: Idaho Territory
+    AN9043:      White >> Native-born: Indian Territory
+    AN9044:      White >> Native-born: Montana Territory
+    AN9045:      White >> Native-born: New Mexico Territory
+    AN9046:      White >> Native-born: Utah Territory
+    AN9047:      White >> Native-born: Washington Territory
+    AN9048:      White >> Native-born: Wyoming Territory
+    AN9049:      White >> Native-born: Born at sea
+    AN9050:      White >> Native-born: Native-born with birthplace not stated
+    AN9051:      White >> Foreign-born: Africa
+    AN9052:      White >> Foreign-born: Asia
+    AN9053:      White >> Foreign-born: The Atlantic Islands
+    AN9054:      White >> Foreign-born: Australia
+    AN9055:      White >> Foreign-born: Austria
+    AN9056:      White >> Foreign-born: Belgium
+    AN9057:      White >> Foreign-born: Bohemia
+    AN9058:      White >> Foreign-born: British America
+    AN9059:      White >> Foreign-born: Central America
+    AN9060:      White >> Foreign-born: China
+    AN9061:      White >> Foreign-born: Cuba
+    AN9062:      White >> Foreign-born: Denmark
+    AN9063:      White >> Foreign-born: Europe not stated
+    AN9064:      White >> Foreign-born: France
+    AN9065:      White >> Foreign-born: Germany
+    AN9066:      White >> Foreign-born: Gibraltar
+    AN9067:      White >> Foreign-born: Great Britain
+    AN9068:      White >> Foreign-born: Greece
+    AN9069:      White >> Foreign-born: Greenland
+    AN9070:      White >> Foreign-born: Holland
+    AN9071:      White >> Foreign-born: Hungary
+    AN9072:      White >> Foreign-born: India
+    AN9073:      White >> Foreign-born: Italy
+    AN9074:      White >> Foreign-born: Japan
+    AN9075:      White >> Foreign-born: Luxembourg
+    AN9076:      White >> Foreign-born: Malta
+    AN9077:      White >> Foreign-born: Mexico
+    AN9078:      White >> Foreign-born: Norway
+    AN9079:      White >> Foreign-born: The Pacific Islands
+    AN9080:      White >> Foreign-born: Poland
+    AN9081:      White >> Foreign-born: Portugal
+    AN9082:      White >> Foreign-born: Russia
+    AN9083:      White >> Foreign-born: The Sandwich Islands
+    AN9084:      White >> Foreign-born: South America
+    AN9085:      White >> Foreign-born: Spain
+    AN9086:      White >> Foreign-born: Sweden
+    AN9087:      White >> Foreign-born: Switzerland
+    AN9088:      White >> Foreign-born: Turkey
+    AN9089:      White >> Foreign-born: The West Indies
+    AN9090:      White >> Foreign-born: Born at sea (under foreign flag)
+    AN9091:      White >> Foreign-born: Birthplace unknown (foreign-born)
+    AN9092:      Colored >> Native-born: Alabama
+    AN9093:      Colored >> Native-born: Arkansas
+    AN9094:      Colored >> Native-born: California
+    AN9095:      Colored >> Native-born: Connecticut
+    AN9096:      Colored >> Native-born: Delaware
+    AN9097:      Colored >> Native-born: Florida
+    AN9098:      Colored >> Native-born: Georgia
+    AN9099:      Colored >> Native-born: Illinois
+    AN9100:      Colored >> Native-born: Indiana
+    AN9101:      Colored >> Native-born: Iowa
+    AN9102:      Colored >> Native-born: Kansas
+    AN9103:      Colored >> Native-born: Kentucky
+    AN9104:      Colored >> Native-born: Louisiana
+    AN9105:      Colored >> Native-born: Maine
+    AN9106:      Colored >> Native-born: Maryland
+    AN9107:      Colored >> Native-born: Massachusetts
+    AN9108:      Colored >> Native-born: Michigan
+    AN9109:      Colored >> Native-born: Minnesota
+    AN9110:      Colored >> Native-born: Mississippi
+    AN9111:      Colored >> Native-born: Missouri
+    AN9112:      Colored >> Native-born: Nebraska
+    AN9113:      Colored >> Native-born: Nevada
+    AN9114:      Colored >> Native-born: New Hampshire
+    AN9115:      Colored >> Native-born: New Jersey
+    AN9116:      Colored >> Native-born: New York
+    AN9117:      Colored >> Native-born: North Carolina
+    AN9118:      Colored >> Native-born: Ohio
+    AN9119:      Colored >> Native-born: Oregon
+    AN9120:      Colored >> Native-born: Pennsylvania
+    AN9121:      Colored >> Native-born: Rode Island
+    AN9122:      Colored >> Native-born: South Carolina
+    AN9123:      Colored >> Native-born: Tennessee
+    AN9124:      Colored >> Native-born: Texas
+    AN9125:      Colored >> Native-born: Vermont
+    AN9126:      Colored >> Native-born: Virginia and West Virginia
+    AN9127:      Colored >> Native-born: Wisconsin
+    AN9128:      Colored >> Native-born: Alaska Territory
+    AN9129:      Colored >> Native-born: Arizona Territory
+    AN9130:      Colored >> Native-born: Colorado Territory
+    AN9131:      Colored >> Native-born: Dakota Territory
+    AN9132:      Colored >> Native-born: District of Columbia
+    AN9133:      Colored >> Native-born: Idaho Territory
+    AN9134:      Colored >> Native-born: Indian Territory
+    AN9135:      Colored >> Native-born: Montana Territory
+    AN9136:      Colored >> Native-born: New Mexico Territory
+    AN9137:      Colored >> Native-born: Utah Territory
+    AN9138:      Colored >> Native-born: Washington Territory
+    AN9139:      Colored >> Native-born: Wyoming Territory
+    AN9140:      Colored >> Native-born: Born at sea
+    AN9141:      Colored >> Native-born: Native-born with birthplace not stated
+    AN9142:      Colored >> Foreign-born: Africa
+    AN9143:      Colored >> Foreign-born: Asia
+    AN9144:      Colored >> Foreign-born: The Atlantic Islands
+    AN9145:      Colored >> Foreign-born: Australia
+    AN9146:      Colored >> Foreign-born: Austria
+    AN9147:      Colored >> Foreign-born: Belgium
+    AN9148:      Colored >> Foreign-born: Bohemia
+    AN9149:      Colored >> Foreign-born: British America
+    AN9150:      Colored >> Foreign-born: Central America
+    AN9151:      Colored >> Foreign-born: China
+    AN9152:      Colored >> Foreign-born: Cuba
+    AN9153:      Colored >> Foreign-born: Denmark
+    AN9154:      Colored >> Foreign-born: Europe not stated
+    AN9155:      Colored >> Foreign-born: France
+    AN9156:      Colored >> Foreign-born: Germany
+    AN9157:      Colored >> Foreign-born: Gibraltar
+    AN9158:      Colored >> Foreign-born: Great Britain
+    AN9159:      Colored >> Foreign-born: Greece
+    AN9160:      Colored >> Foreign-born: Greenland
+    AN9161:      Colored >> Foreign-born: Holland
+    AN9162:      Colored >> Foreign-born: Hungary
+    AN9163:      Colored >> Foreign-born: India
+    AN9164:      Colored >> Foreign-born: Italy
+    AN9165:      Colored >> Foreign-born: Japan
+    AN9166:      Colored >> Foreign-born: Luxembourg
+    AN9167:      Colored >> Foreign-born: Malta
+    AN9168:      Colored >> Foreign-born: Mexico
+    AN9169:      Colored >> Foreign-born: Norway
+    AN9170:      Colored >> Foreign-born: The Pacific Islands
+    AN9171:      Colored >> Foreign-born: Poland
+    AN9172:      Colored >> Foreign-born: Portugal
+    AN9173:      Colored >> Foreign-born: Russia
+    AN9174:      Colored >> Foreign-born: The Sandwich Islands
+    AN9175:      Colored >> Foreign-born: South America
+    AN9176:      Colored >> Foreign-born: Spain
+    AN9177:      Colored >> Foreign-born: Sweden
+    AN9178:      Colored >> Foreign-born: Switzerland
+    AN9179:      Colored >> Foreign-born: Turkey
+    AN9180:      Colored >> Foreign-born: The West Indies
+    AN9181:      Colored >> Foreign-born: Born at sea (under foreign flag)
+    AN9182:      Colored >> Foreign-born: Birthplace unknown (foreign-born)
+    AN9183:      Indian >> Native-born: Alabama
+    AN9184:      Indian >> Native-born: Arkansas
+    AN9185:      Indian >> Native-born: California
+    AN9186:      Indian >> Native-born: Connecticut
+    AN9187:      Indian >> Native-born: Delaware
+    AN9188:      Indian >> Native-born: Florida
+    AN9189:      Indian >> Native-born: Georgia
+    AN9190:      Indian >> Native-born: Illinois
+    AN9191:      Indian >> Native-born: Indiana
+    AN9192:      Indian >> Native-born: Iowa
+    AN9193:      Indian >> Native-born: Kansas
+    AN9194:      Indian >> Native-born: Kentucky
+    AN9195:      Indian >> Native-born: Louisiana
+    AN9196:      Indian >> Native-born: Maine
+    AN9197:      Indian >> Native-born: Maryland
+    AN9198:      Indian >> Native-born: Massachusetts
+    AN9199:      Indian >> Native-born: Michigan
+    AN9200:      Indian >> Native-born: Minnesota
+    AN9201:      Indian >> Native-born: Mississippi
+    AN9202:      Indian >> Native-born: Missouri
+    AN9203:      Indian >> Native-born: Nebraska
+    AN9204:      Indian >> Native-born: Nevada
+    AN9205:      Indian >> Native-born: New Hampshire
+    AN9206:      Indian >> Native-born: New Jersey
+    AN9207:      Indian >> Native-born: New York
+    AN9208:      Indian >> Native-born: North Carolina
+    AN9209:      Indian >> Native-born: Ohio
+    AN9210:      Indian >> Native-born: Oregon
+    AN9211:      Indian >> Native-born: Pennsylvania
+    AN9212:      Indian >> Native-born: Rode Island
+    AN9213:      Indian >> Native-born: South Carolina
+    AN9214:      Indian >> Native-born: Tennessee
+    AN9215:      Indian >> Native-born: Texas
+    AN9216:      Indian >> Native-born: Vermont
+    AN9217:      Indian >> Native-born: Virginia and West Virginia
+    AN9218:      Indian >> Native-born: Wisconsin
+    AN9219:      Indian >> Native-born: Alaska Territory
+    AN9220:      Indian >> Native-born: Arizona Territory
+    AN9221:      Indian >> Native-born: Colorado Territory
+    AN9222:      Indian >> Native-born: Dakota Territory
+    AN9223:      Indian >> Native-born: District of Columbia
+    AN9224:      Indian >> Native-born: Idaho Territory
+    AN9225:      Indian >> Native-born: Indian Territory
+    AN9226:      Indian >> Native-born: Montana Territory
+    AN9227:      Indian >> Native-born: New Mexico Territory
+    AN9228:      Indian >> Native-born: Utah Territory
+    AN9229:      Indian >> Native-born: Washington Territory
+    AN9230:      Indian >> Native-born: Wyoming Territory
+    AN9231:      Indian >> Native-born: Born at sea
+    AN9232:      Indian >> Native-born: Native-born with birthplace not stated
+    AN9233:      Indian >> Foreign-born: Africa
+    AN9234:      Indian >> Foreign-born: Asia
+    AN9235:      Indian >> Foreign-born: The Atlantic Islands
+    AN9236:      Indian >> Foreign-born: Australia
+    AN9237:      Indian >> Foreign-born: Austria
+    AN9238:      Indian >> Foreign-born: Belgium
+    AN9239:      Indian >> Foreign-born: Bohemia
+    AN9240:      Indian >> Foreign-born: British America
+    AN9241:      Indian >> Foreign-born: Central America
+    AN9242:      Indian >> Foreign-born: China
+    AN9243:      Indian >> Foreign-born: Cuba
+    AN9244:      Indian >> Foreign-born: Denmark
+    AN9245:      Indian >> Foreign-born: Europe not stated
+    AN9246:      Indian >> Foreign-born: France
+    AN9247:      Indian >> Foreign-born: Germany
+    AN9248:      Indian >> Foreign-born: Gibraltar
+    AN9249:      Indian >> Foreign-born: Great Britain
+    AN9250:      Indian >> Foreign-born: Greece
+    AN9251:      Indian >> Foreign-born: Greenland
+    AN9252:      Indian >> Foreign-born: Holland
+    AN9253:      Indian >> Foreign-born: Hungary
+    AN9254:      Indian >> Foreign-born: India
+    AN9255:      Indian >> Foreign-born: Italy
+    AN9256:      Indian >> Foreign-born: Japan
+    AN9257:      Indian >> Foreign-born: Luxembourg
+    AN9258:      Indian >> Foreign-born: Malta
+    AN9259:      Indian >> Foreign-born: Mexico
+    AN9260:      Indian >> Foreign-born: Norway
+    AN9261:      Indian >> Foreign-born: The Pacific Islands
+    AN9262:      Indian >> Foreign-born: Poland
+    AN9263:      Indian >> Foreign-born: Portugal
+    AN9264:      Indian >> Foreign-born: Russia
+    AN9265:      Indian >> Foreign-born: The Sandwich Islands
+    AN9266:      Indian >> Foreign-born: South America
+    AN9267:      Indian >> Foreign-born: Spain
+    AN9268:      Indian >> Foreign-born: Sweden
+    AN9269:      Indian >> Foreign-born: Switzerland
+    AN9270:      Indian >> Foreign-born: Turkey
+    AN9271:      Indian >> Foreign-born: The West Indies
+    AN9272:      Indian >> Foreign-born: Born at sea (under foreign flag)
+    AN9273:      Indian >> Foreign-born: Birthplace unknown (foreign-born)
+    AN9274:      Chinese >> Native-born: Alabama
+    AN9275:      Chinese >> Native-born: Arkansas
+    AN9276:      Chinese >> Native-born: California
+    AN9277:      Chinese >> Native-born: Connecticut
+    AN9278:      Chinese >> Native-born: Delaware
+    AN9279:      Chinese >> Native-born: Florida
+    AN9280:      Chinese >> Native-born: Georgia
+    AN9281:      Chinese >> Native-born: Illinois
+    AN9282:      Chinese >> Native-born: Indiana
+    AN9283:      Chinese >> Native-born: Iowa
+    AN9284:      Chinese >> Native-born: Kansas
+    AN9285:      Chinese >> Native-born: Kentucky
+    AN9286:      Chinese >> Native-born: Louisiana
+    AN9287:      Chinese >> Native-born: Maine
+    AN9288:      Chinese >> Native-born: Maryland
+    AN9289:      Chinese >> Native-born: Massachusetts
+    AN9290:      Chinese >> Native-born: Michigan
+    AN9291:      Chinese >> Native-born: Minnesota
+    AN9292:      Chinese >> Native-born: Mississippi
+    AN9293:      Chinese >> Native-born: Missouri
+    AN9294:      Chinese >> Native-born: Nebraska
+    AN9295:      Chinese >> Native-born: Nevada
+    AN9296:      Chinese >> Native-born: New Hampshire
+    AN9297:      Chinese >> Native-born: New Jersey
+    AN9298:      Chinese >> Native-born: New York
+    AN9299:      Chinese >> Native-born: North Carolina
+    AN9300:      Chinese >> Native-born: Ohio
+    AN9301:      Chinese >> Native-born: Oregon
+    AN9302:      Chinese >> Native-born: Pennsylvania
+    AN9303:      Chinese >> Native-born: Rode Island
+    AN9304:      Chinese >> Native-born: South Carolina
+    AN9305:      Chinese >> Native-born: Tennessee
+    AN9306:      Chinese >> Native-born: Texas
+    AN9307:      Chinese >> Native-born: Vermont
+    AN9308:      Chinese >> Native-born: Virginia and West Virginia
+    AN9309:      Chinese >> Native-born: Wisconsin
+    AN9310:      Chinese >> Native-born: Alaska Territory
+    AN9311:      Chinese >> Native-born: Arizona Territory
+    AN9312:      Chinese >> Native-born: Colorado Territory
+    AN9313:      Chinese >> Native-born: Dakota Territory
+    AN9314:      Chinese >> Native-born: District of Columbia
+    AN9315:      Chinese >> Native-born: Idaho Territory
+    AN9316:      Chinese >> Native-born: Indian Territory
+    AN9317:      Chinese >> Native-born: Montana Territory
+    AN9318:      Chinese >> Native-born: New Mexico Territory
+    AN9319:      Chinese >> Native-born: Utah Territory
+    AN9320:      Chinese >> Native-born: Washington Territory
+    AN9321:      Chinese >> Native-born: Wyoming Territory
+    AN9322:      Chinese >> Native-born: Born at sea
+    AN9323:      Chinese >> Native-born: Native-born with birthplace not stated
+    AN9324:      Chinese >> Foreign-born: Africa
+    AN9325:      Chinese >> Foreign-born: Asia
+    AN9326:      Chinese >> Foreign-born: The Atlantic Islands
+    AN9327:      Chinese >> Foreign-born: Australia
+    AN9328:      Chinese >> Foreign-born: Austria
+    AN9329:      Chinese >> Foreign-born: Belgium
+    AN9330:      Chinese >> Foreign-born: Bohemia
+    AN9331:      Chinese >> Foreign-born: British America
+    AN9332:      Chinese >> Foreign-born: Central America
+    AN9333:      Chinese >> Foreign-born: China
+    AN9334:      Chinese >> Foreign-born: Cuba
+    AN9335:      Chinese >> Foreign-born: Denmark
+    AN9336:      Chinese >> Foreign-born: Europe not stated
+    AN9337:      Chinese >> Foreign-born: France
+    AN9338:      Chinese >> Foreign-born: Germany
+    AN9339:      Chinese >> Foreign-born: Gibraltar
+    AN9340:      Chinese >> Foreign-born: Great Britain
+    AN9341:      Chinese >> Foreign-born: Greece
+    AN9342:      Chinese >> Foreign-born: Greenland
+    AN9343:      Chinese >> Foreign-born: Holland
+    AN9344:      Chinese >> Foreign-born: Hungary
+    AN9345:      Chinese >> Foreign-born: India
+    AN9346:      Chinese >> Foreign-born: Italy
+    AN9347:      Chinese >> Foreign-born: Japan
+    AN9348:      Chinese >> Foreign-born: Luxembourg
+    AN9349:      Chinese >> Foreign-born: Malta
+    AN9350:      Chinese >> Foreign-born: Mexico
+    AN9351:      Chinese >> Foreign-born: Norway
+    AN9352:      Chinese >> Foreign-born: The Pacific Islands
+    AN9353:      Chinese >> Foreign-born: Poland
+    AN9354:      Chinese >> Foreign-born: Portugal
+    AN9355:      Chinese >> Foreign-born: Russia
+    AN9356:      Chinese >> Foreign-born: The Sandwich Islands
+    AN9357:      Chinese >> Foreign-born: South America
+    AN9358:      Chinese >> Foreign-born: Spain
+    AN9359:      Chinese >> Foreign-born: Sweden
+    AN9360:      Chinese >> Foreign-born: Switzerland
+    AN9361:      Chinese >> Foreign-born: Turkey
+    AN9362:      Chinese >> Foreign-born: The West Indies
+    AN9363:      Chinese >> Foreign-born: Born at sea (under foreign flag)
+    AN9364:      Chinese >> Foreign-born: Birthplace unknown (foreign-born)
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* Publications and research reports employing NHGIS data (either tabular or GIS)
+  must cite it appropriately. The citation should include the following:
+
+    Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+    IPUMS National Historical Geographic Information System: Version 12.0 [Database]. 
+    Minneapolis: University of Minnesota. 2017. 
+    http://doi.org/10.18128/D050.V12.0
+
+* Publications and research reports employing school attendance areas data
+  (either tabular or GIS) must cite it appropriately. The citation should
+  include the following:
+
+    The College of William and Mary and the Minnesota Population Center.
+    School Attendance Boundary Information System (SABINS): Version 1.0.
+    Minneapolis, MN: University of Minnesota 2011.
+
+* For policy briefs or articles in the popular press, we recommend that you cite the use of NHGIS data as follows:
+
+    IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+* If possible, citations involving school attendance areas should also include
+  the URL for the SABINS site:
+
+    http://www.sabinsdata.org/.
+
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+Printed matter should be sent to:
+
+    NHGIS
+    Minnesota Population Center
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455
+
+Send electronic material to: nhgis@umn.edu
