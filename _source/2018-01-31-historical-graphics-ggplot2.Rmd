@@ -9,5 +9,5 @@ categories: blog, graphics, ggplot2, rstats, history
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Slides are [here](../static/presentations/Misc/GraphicsGroupISU/Jan312018/2018-01-31.html)
+Slides are [here](../static/presentations/Misc/GraphicsGroupISU/Jan312018/historical-graphics-ggplot2.html)
 

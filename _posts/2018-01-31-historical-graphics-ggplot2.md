@@ -7,5 +7,5 @@ categories: blog, graphics, ggplot2, rstats, history
 
 
 
-Slides are [here](../static/presentations/Misc/GraphicsGroupISU/Jan312018/2018-01-31.html)
+Slides are [here](../static/presentations/Misc/GraphicsGroupISU/Jan312018/historical-graphics-ggplot2.html)
 
