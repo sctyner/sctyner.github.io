@@ -2,7 +2,7 @@
 title: "Recreating Historical Graphics"
 subtitle: "with `ggplot2`"
 author: "Sam Tyner"
-date: "2018/31/01"
+date: "2018/01/31"
 output:
   xaringan::moon_reader:
     lib_dir: libs
