@@ -1,0 +1,86 @@
+---
+layout: post
+title: "A CRAN Task View for Forensic Science"
+date: "2018-03-15 17:13:56 CDT"
+categories: blog, rstats, forensics, ctv
+editor_options: 
+  chunk_output_type: console
+---
+
+I have started a [CRAN task view](https://cran.r-project.org/web/views/) for Forensic Science. The CTV is available on my [Github page](https://github.com/sctyner/ctv-forsci). I welcome any feedback, additions, and pull requests.  
+
+
+CRAN Task View: Forensic Science with R
+---------------------------------------
+
+|                 |                                            
+|-----------------|------------------------------------------  
+| **Maintainer:** | Sam Tyner                                  
+| **Contact:**    | sctyner at iastate.edu                     
+| **Version:**    | 2018-02-14                                 
+| **URL:**        | <https://CRAN.R-project.org/view=ForSci>   
+
+This CRAN task view contains a list of packages, grouped by discipline, that can be used to perform forensci science tasks in R.
+
+Unless otherwise mentioned, all packages presented with hyperlinks are available from CRAN, the Comprehensive R Archive Network.
+
+Several of the areas discussed in this Task View are undergoing rapid change. Please send suggestions for additions and extensions for this task view to the [task view maintainer](mailto:sctyner@iastate.edu).
+
+Contributions are always welcome, and encouraged. The source file for this particular task view file are also in a GitHub repository (see below) so that pull requests are also possible.
+
+**DNA Evidence**
+
+-   [forensic](https://cran.r-project.org/package=forensic/index.html): Authored by Miriam Marusiakova. Date last modified on CRAN: 2012-10-29 08:58. Contains 5 functions for computing likelihood ratios and random match probabilities under various hypotheses. Depends on the packages [genetics](../packages/genetics/index.html) and [combinat](../packages/combinat).
+-   [paramlink](https://cran.r-project.org/package=paramlink/index.html): Authored by Magnus Dehli Vigeland. Date last modified on CRAN: 2018-01-05. Contains methods for parametric linkage and other pedigree analyses. Forensic applications include exclusion probabilities, genotype distributions and conditional simulations. Imports functions from the [packages](../packages/packages/index.html), [assertthat](../packages/assertthat/index.html), [graphics](../packages/graphics/index.html), [kinship2](../packages/kinship2/index.html), [maxLik](../packages/maxLik/index.html), [stats](../packages/stats/index.html), and [utils](../packages/utils) packages.
+-   [DNAtools](https://cran.r-project.org/package=DNAtools/index.html): Authored by Torben Tvedebrink and James Curran. Date last modified on CRAN: 2017-02-10. Computationally efficient tools for perfroming all pairwise comparisons for various allele and allele counts in a DNA database. Depends on [Rsolnp](../packages/Rsolnp/index.html), [multicool](../packages/multicool).
+-   [forensim](https://cran.r-project.org/package=forensim/index.html): Authored by Hinda Haned. Date last modified on CRAN: 2013-09-14. Provides several GUIs for the interpretation, simulation, and visualization of DNA mixture data. Depends on the [methods](../packages/methods/index.html), [tcltk](../packages/tcltk/index.html), [tcltk2](../packages/tcltk2/index.html), and [tkrplot](../packages/tkrplot) packages.
+-   [mixsep](https://cran.r-project.org/package=mixsep/index.html): Authored by Date Torben Tvedebrink. Date last modified on CRAN: 2013-04-23. Implements analyses of 2- and 3-person DNA mixture separation in a GUI. Depends on the [MASS](../packages/MASS/index.html), [tcltk](../packages/tcltk/index.html), [tcltk2](../packages/tcltk2/index.html), and [RODBC](../packages/RODBC) packages.
+-   [rforensicbatwing](https://cran.r-project.org/package=rforensicbatwing): Authored by Mikkel Meyer Andersen and Ian J. Wilson. Date last modified on CRAN: 2014-06-27. An R implementation of the C program BATWING for calculating forensic trace-suspect match probabilities. The primary functions `batwing` and `coalmatchprob` estimate the trace-suspect match probability for a lineage haplotype of STR markers using [coalescent theory](https://en.wikipedia.org/wiki/Coalescent_theory).
+-   [strvalidator](https://cran.r-project.org/package=strvalidator/index.html): Authored by Oskar Hansson. Date last modified on CRAN: 2017-08-11. From the author, "An open source platform for validation and process control. Tools to analyze data from internal validation of forensic short tandem repeat (STR) kits are provided." Requires installation of [RGtk2](../packages/RGtk2) among other packages, and this [can be difficult](https://gist.github.com/sebkopf/9405675#troubleshooting-for-gtk-224-issues).
+-   [pcrsim](https://cran.r-project.org/package=pcrsim/index.html): Authored by Oskar Hansson. Date last modified on CRAN: 2017-03-17. Provides GUI for simulating the forensic DNA process: generate random or fixed DNA profiles, create forensic samples including mixtures of diploid and haploid cells, simulate DNA extraction, normalization, degradation, amplification including stutters and inter-locus balance, and capillary electrophoresis. Depends on [strvalidator](../packages/strvalidator).
+
+**Glass Evidence**
+
+-   [tfer](https://cran.r-project.org/package=tfer/index.html): Authored by James Curran and TingYu Huang. Date last modified on CRAN: 2010-11-07. From the authors, "functions for simulating the number of recovered glass fragments given the conditions set by the user on factors affecting the transfer, persistence and recovery of glass fragments. A large simulation size will provide precise estimates of transfer probabilities to be used in the Bayesian interpretation of forensic glass evidence." Depends on [methods](../packages/methods) package.
+
+**Firearm/Toolmark Evidence**
+
+-   [bulletr](https://cran.r-project.org/package=bulletr/index.html): Authored by Eric Hare, Heike Hofmann, and Ganesh Krishnan. Date last modified on CRAN: 2017-04-25. Development version available at [<span class="GitHub">bulletr</span>](https://github.com/CSAFE-ISU/bulletr/). Analyzing and comparing striations on fired bullets using x3p format data. Relies on the [xml2](../packages/xml2/index.html), [zoo](../packages/zoo/index.html), [ggplot2](../packages/ggplot2/index.html), [plyr](../packages/plyr/index.html), [dplyr](../packages/dplyr/index.html), [reshape2](../packages/reshape2/index.html), [plotly](../packages/plotly/index.html), [robustbase](../packages/robustbase/index.html), and [smoother](../packages/smoother) packages.
+
+**Latent Print Evidence**
+
+-   [<span class="GitHub">shoeprintr</span>](https://github.com/CSAFE-ISU/shoeprintr/) is a package under development for comparing two shoeprint images. Authored by Soyoung Park and Alicia Carriquiry.
+-   [<span class="GitHub">solefinder</span>](https://github.com/CSAFE-ISU/solefinder/) is a package under development containing a bundle of tools to analyze and compare shoeprints. Authored by Guillermo Basulto-Elias and MartinSilerio-Vazquez.
+
+**Handwriting**
+
+-   [<span class="GitHub">handwriter</span>](https://github.com/CSAFE-ISU/handwriter/) is a package under development for foresic handwriting analysis. Authored by Nick Berry.
+
+**Steganalysis**
+
+-   [<span class="GitHub">stegasaur</span>](https://github.com/richfitz/stegasaur/) is a package under development for stenanography (embedding hidden messages in images) in R. Authored by Rich FitzJohn and David Miller.
+
+**Datasets and data tools**
+
+-   Data from the the book Introduction to Data Analysis with R for Forensic Scientists by James Michael Curran is provided in the [dafs](https://cran.r-project.org/package=dafs) package by James Curran and Danny Chang.
+-   The data object `fgl` in the [MASS](https://cran.r-project.org/package=MASS) package contains 214 observations of 10 variables on glass fragments collected by B. German.
+-   [<span class="GitHub">x3ptools</span>](https://github.com/heike/x3ptools/) is a package under development for working with x3p image files in R. Authored by Heike Hofmann, Ganesh Krishnan, and Eric Hare. For more information about x3p files, see http://www.openfmc.org/.
+
+### CRAN packages:
+
+-   [bulletr](https://cran.r-project.org/package=bulletr)
+-   [dafs](https://cran.r-project.org/package=dafs)
+-   [DNAtools](https://cran.r-project.org/package=DNAtools)
+-   [forensic](https://cran.r-project.org/package=forensic)
+-   [forensim](https://cran.r-project.org/package=forensim)
+-   [mixsep](https://cran.r-project.org/package=mixsep)
+-   [paramlink](https://cran.r-project.org/package=paramlink)
+-   [pcrsim](https://cran.r-project.org/package=pcrsim)
+-   [rforensicbatwing](https://cran.r-project.org/package=rforensicbatwing)
+-   [strvalidator](https://cran.r-project.org/package=strvalidator)
+-   [tfer](https://cran.r-project.org/package=tfer)
+
+### Related links:
+
+-   [Here's a link](http://sctyner.github.io)
+-   [GitHub repository for this Task View](https://github.com/sctyner/ctv-forsci)
