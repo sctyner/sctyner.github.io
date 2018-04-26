@@ -234,21 +234,22 @@
 % this is used to print the name and address at the top of
 % the page with a hline in between
 %
-\def\namefont{\large\bf}
+\def\namefont{\Large\bf}
 \def\@linename{\begingroup
   \def\\{, }
   {\namefont\@name}
   \vskip 2pt
-  \fullline
-  \vskip 2pt
   % where do you live?
   \@ifundefined{@addressone}{%
+    	\fullline
+  \vskip 2pt
     % do nothing
   }{%
     \leavevmode\hbox to \textwidth
       {\hfill\vbox{\hbox{\@addressone}
 		   \hbox{\@addresstwo}
 		  }%
+  	  
       }\par
   }
 \endgroup}
