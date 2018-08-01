@@ -125,8 +125,8 @@ At minimum 2 parameters in the objective function (Ripley et al. 2017):
 
 | Name | Parameter | Statistic | Picture |
 |:-----|:---------:|:---------:|:--------:|
-| density | $\beta_1$ | $s_{i1}(x) = \sum_j x_{ij}$| <img src="img/outdegree.png" style="width: 30%"/> |
-| reciprocity | $\beta_2$ | $s_{i2}(x) = \sum_j x_{ij}x_{ji}$| <img src="img/reciprocity.png" style="width: 30%"/> |
+| density | $\beta_1$ | $s_{i1}(x) = \sum_j x_{ij}$| <img src="img/outdegree.png" width="30%"> |
+| reciprocity | $\beta_2$ | $s_{i2}(x) = \sum_j x_{ij}x_{ji}$| <img src="img/reciprocity.png" width="30%"/> |
 <!--| covariate-alter | $\beta_3$ | $\sum_j x_{ij}z_j$ | <img src="img/covaralter.png" style="width: 50%"/>|
 | covariate-ego  | $\beta_5$ | $z_i\sum_j x_{ij}$ | <img src="img/covarego.png" style="width: 50%"/>|-->
 
