@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Model Visualization Techniques for a Social Network Model</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sam Tyner, PhD Heike Hofmann, PhD" />
+    <link rel="stylesheet" href="theme-bright.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Model Visualization Techniques for a Social Network Model
+### Sam Tyner, PhD<br>Heike Hofmann, PhD
+### JSM 2018<br>2018/08/02
+
+---
+
+
+
+
+
+
+# Outline
+
+### Part I
+
+- Social networks 
+--
+
+- Network visualizations
+--
+
+- Stochastic Actor-Oriented Model: a model for dynamic social networks
+
+
+### Part II
+
+- Model visualization
+    * Put the model in the data space
+    * Visualize collections of models 
+    * Explore algorithms, not just main result
+
+---
+class: inverse, center, middle
+# Part I
+
+![](https://i.giphy.com/media/meFoDw6PrMo5q/source.gif)
+    
+---
+class: inverse, center, middle 
+# Social networks 
+
+---
+class: plotslide, center
+# Small friendship network 
+
+Mitchell &amp; Amos (1997) - *Teenage friends and lifestyle study* 
+
+&lt;img src="img/alldataviz-1.png" width=75%/&gt;
+
+### Key data properties: 
+
+- Directed networks - teenagers say who their friends are 
+--
+
+- Have multiple observations over time 
+--
+
+- Many factors can influence formation of ties, e.g. drinking behavior 
+
+---
+class: inverse, center, middle 
+# Network visualizations 
+
+---
+class: plotslide, center
+
+![](img/toyplots-1.png)  ![](img/toyplots-2.png)
+
+---
+class: inverse, center, middle 
+# Stochastic Actor-Oriented Model (SAOM)
+
+---
+class: definition
+# What is a SAOM?
+
+### A statistical model applied to *dynamic* social networks which takes both the *network structure* and the *node-level covariates* into account
+
+### First developed by Snijders (1996)
+
+---
+
+# How does it do that? 
+
+- Assume *conditional independence* of actors / nodes 
+- Model the unobserved tie changes one-at-a-time in a *continuous time Markov Chain*, which is broken into 2 parts: 
+    * Estimate the *rate* at which actors make changes in the network in between observations: `\(\alpha_m\)`
+    * Maximize an actor's *objective function* when it makes a change: `\(f_{i}(x, \boldsymbol{\beta}, \mathbf{Z})\)`
+
+---
+class: math
+# Rate function
+
+- In a period `\(m\)` (between observations) the waiting time until one actor's next opportunity for change follows an `\(Exp\)` distribution with mean `\(\alpha_m^{-1}\)`
+- In period `\(m\)`, the waiting time until *any* actor gets to change follows an `\(Exp\)` distribution with mean `\((n\alpha_m)^{-1}\)`
+
+---
+class: math
+# Objective function 
+
+Actor `\(i\)` gets the opportunity to change, and attempts to maximize its *objective function*:
+`$$f_{i}(x, \boldsymbol{\beta}, \mathbf{Z}) = \sum_{k=1}^K \beta_{k} s_{ik}(x,\mathbf{Z})$$`
+
+- If a change in a tie from `\(x_{ij}\)` to `\(x'_{ij} = 1- x_{ij}\)` increases the value of `\(f_{i}(x, \boldsymbol{\beta}, \mathbf{Z})\)`, then `\(i\)` wants to make that change
+
+---
+class: plotslide
+# Parameters 
+
+At minimum 2 parameters in the objective function (Ripley et al. 2017): 
+
+| Name | Parameter | Statistic | Picture |
+|:-----|:---------:|:---------:|:--------:|
+| density | `\(\beta_1\)` | `\(s_{i1}(x) = \sum_j x_{ij}\)`| &lt;img src="img/outdegree.png" style="width: 30%"/&gt; |
+| reciprocity | `\(\beta_2\)` | `\(s_{i2}(x) = \sum_j x_{ij}x_{ji}\)`| &lt;img src="img/reciprocity.png" style="width: 30%"/&gt; |
+&lt;!--| covariate-alter | `\(\beta_3\)` | `\(\sum_j x_{ij}z_j\)` | &lt;img src="img/covaralter.png" style="width: 50%"/&gt;|
+| covariate-ego  | `\(\beta_5\)` | `\(z_i\sum_j x_{ij}\)` | &lt;img src="img/covarego.png" style="width: 50%"/&gt;|--&gt;
+
+&lt;img src="slides_files/figure-html/densrecipexrepeat-1.png" width="49%" /&gt;&lt;img src="slides_files/figure-html/densrecipexrepeat-2.png" width="49%" /&gt;
+
+---
+class: plotslide
+# More Parameters 
+
+- `\(s_{i3}\)` ( `\(\beta_3\)` ): jumping transitive triplet (node covariate parameter)
+- `\(s_{i4}\)` ( `\(\beta_4\)` ): number of doubly acheived distances `\(\geq 2\)`  (structure parameter like `\(\beta_1, \beta_2\)` )
+- If fitted parameter is high, dotted lines are "encouraged" 
+
+&lt;img src="slides_files/figure-html/jtt-1.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Fitting &amp; Simulation
+
+- Done with the R package RSiena  (Ripley et al 2017)
+- Uses a *continuous time Markov chain* (CTMC) to approximate the creation and dissolution of ties one-at-a-time between network observations 
+- Relies on the *edge probability*, `\(p_{ij}\)`: 
+`$$p_{ij} = \frac{\exp\{f_{i}(x(i \leadsto j), \boldsymbol{\beta}, \mathbf{Z})\}}{\sum_{h=1}^n \exp\{f_{i}(x(i \leadsto h), \boldsymbol{\beta}, \mathbf{Z})\}}$$`
+where `\(x(i \leadsto j) \approx x\)` with tie `\(i\to j\)` equal to `\(x'_{ij}\)`
+
+---
+class: inverse, center, middle
+# Part II
+
+![](http://www.gifbin.com/bin/082012/1346863311_car_almost_hits_mad_during_handbrake_turn.gif)
+
+---
+class: definition 
+# Model Visualization for SAOMs
+
+**Model visualization** summarizes the model with graphical, as opposed to numerical, summaries to answer questions of interest
+
+Three main approaches (Wickham et al 2015): 
+
+- View collections of models
+    * fit SAOM to data many times 
+- View the model in the data-space
+    * network "average"
+- Exploring algorithms
+    * animation of CTMC 
+
+---
+
+# View collections of models 
+
+![](img/distests-1.png)
+
+- fitted models 1,000 times 
+- due to simulation, values will be different 
+- what do we see? 
+
+---
+
+# View the model in the data space
+
+### *What is an "average" network from a model?* 
+
+### Idea: 
+
+- simulate 1,000 networks from a fitted model
+--
+
+- count up the number times an edge occurs
+--
+
+- put that edge in the network if it shows up at least 5% of the time
+--
+
+- weight the edges by the proportion of occurrences in the 1,000 simulations  
+
+---
+class: plotslide
+# Average Network: what is the average wave 2 simulated from a very simple model? 
+
+![](img/M1W2avg.png)
+
+---
+class: plotslide
+# How does the average compare to the data? 
+
+
+&lt;img src="img/w1w2dataonly.png" width="60%"/&gt; 
+
+&lt;img src="img/summary2-1.png" width ="90%"/&gt;
+
+---
+
+# Exploring algorithms 
+
+### *What's going on "under the hood"?*
+
+### Idea: 
+
+- Observe the simulation steps that are used in model fitting
+- Animate the CTMC that is underlying 
+
+---
+class: plotslide
+# Video 1: Node-link diagram (geomnet, tweenr, gganimate)
+
+&lt;iframe src="https://player.vimeo.com/video/240089108" width="600" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/240089108"&gt;SAOM Microstep Node-Link Animation&lt;/a&gt; from &lt;a href="https://vimeo.com/sctyner"&gt;Sam Tyner&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+---
+class: plotslide
+# Video 2: Serialized adjacency matrix (ggplot2, gganimate)
+
+&lt;iframe src="https://player.vimeo.com/video/240092677" width="600" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/240092677"&gt;SAOM Microstep Adjacency Matrix Animation&lt;/a&gt; from &lt;a href="https://vimeo.com/sctyner"&gt;Sam Tyner&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+---
+
+# Conclusion
+
+- Model visualization helps us understand the complicated SAO models better
+- Forces us to look at them in new ways 
+- Shows us phenomenon we may not have seen otherwise 
+ 
+
+---
+
+# References 
+
+Michell, L. and Amos, A. (1997), "Girls, pecking order and smoking," Social Science &amp; Medicine, 44, 1861-1869.
+
+Ripley, R. M., Snijders, T. A., Boda, Z., Vrs, A., and Preciado, P. (2017), Manual for RSiena, University of Oxford: Department of Statistics; Nuffield College; University of Groningen: Department of Sociology, https://www.stats.ox.ac.uk/~snijders/ siena/RSiena_Manual.pdf.
+
+Snijders, T. A. B. (1996), "Stochastic actor-oriented models for network change," Journal of Mathematical Sociology, 21, 149–172.
+
+Wickham, H., Cook, D., and Hofmann, H. (2015), “Visualizing statistical models: Re- moving the blindfold,” Statistical Analysis and Data Mining: The ASA Data Science Journal, 8, 203–225.
+
+---
+
+# R &amp; R Packages 
+
+Pedersen, T.L. (2016). tweenr: Interpolate Data for Smooth Animations. R package version
+  0.1.5. https://CRAN.R-project.org/package=tweenr
+
+R Core Team (2018). R: A language and environment for statistical computing. R Foundation for
+  Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+Ripley, R. M., Snijders, T. A., Boda, Z., Vrs, A., and Preciado, P. (2017), Manual for RSiena, University of Oxford: Department of Statistics; Nuffield College; University of Groningen: Department of Sociology, https://www.stats.ox.ac.uk/~snijders/ siena/RSiena_Manual.pdf.
+
+Robinson, D. (2016). gganimate: Create easy animations with ggplot2. R package version 0.1.0.9000.
+  http://github.com/dgrtwo/gganimate (now https://github.com/thomasp85/gganimate)
+  
+Tyner, S. and Hofmann, H. (2016). geomnet: Network Visualization in the 'ggplot2'
+  Framework. R package version 0.2.0. https://CRAN.R-project.org/package=geomnet
+
+Wickham, H. (2017). tidyverse: Easily Install and Load the 'Tidyverse'. R package version
+  1.2.1. https://CRAN.R-project.org/package=tidyverse
+  
+---
+class: center, middle
+
+# Thanks! 
+
+&lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"&gt;
+
+## Questions? Reach out!  
+
+### &lt;i class="fas fa-globe"&gt;&lt;/i&gt; https://sctyner.github.io
+
+### &lt;i class="far fa-envelope"&gt;&lt;/i&gt; [sctyner@iastate.edu](mailto:sctyner@iastate.edu)
+
+### &lt;i class="fab fa-github"&gt;&lt;/i&gt; &lt;i class="fab fa-twitter"&gt;&lt;/i&gt; &lt;i class="fab fa-linkedin"&gt;&lt;/i&gt; &lt;i class="fab fa-vimeo"&gt;&lt;/i&gt; [sctyner](https://github.com/sctyner)
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

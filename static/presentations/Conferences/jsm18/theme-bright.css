@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Actor);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+  font-family: 'Actor', sans-serif;
+}
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: 400;
+  margin-bottom: 0;
+  color: #a0cf31;
+}
+h4 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: 400;
+  margin-bottom: 0;
+  color: #6A94D4;
+}
+
+a, a > code {
+  color: rgb(249, 38, 114);
+  text-decoration: none;
+}
+.footnote {
+  position: absolute;
+  bottom: 3em;
+  padding-right: 4em;
+  font-size: 90%;
+}
+.remark-code-line-highlighted     { background-color: #ffff88; }
+
+.inverse {
+  background-color: #e91b86;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+}
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #ffffff;
+}
+.definition {
+  background-color: #ff9a4a;
+  color: #d6d6d6;
+  text-shadow: 0 0 0 0;
+}
+.definition h1{
+  color: #025687;
+}
+.definition h2, .definition h3 {
+  color: #444444;
+}
+.math {
+  background-color: #92C8E8;
+  color: #000000;
+  text-shadow: 0 0 0 0;
+}
+.math h1{
+  color: #000000;
+}
+.plotslide h1{
+  font-size:110%;
+  color: #000000;
+}
+.majorpoint {
+  background-color: #a0cf31;
+  color: #000000;
+  text-shadow: 0 0 0 0;
+}
+.majorpoint h1{
+  color: #4c082b;
+}
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+.pull-left {
+  float: left;
+  width: 47%;
+}
+.pull-right {
+  float: right;
+  width: 47%;
+}
+.pull-right ~ * {
+  clear: both;
+}
+img, video, iframe {
+  max-width: 100%;
+}
+blockquote {
+  border-left: solid 5px lightgray;
+  padding-left: 1em;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee }
+
+li { line-height: 1.85em; }
+ul li {
+  list-style-type: none;
+}
+ul li:before {
+  content: "\f20e";
+  font-family: "FontAwesome";
+  margin-right: 10px;
+  color: #e91b86;
+}
+ul li li:before {
+  content: "\f0c1";
+  font-family: "FontAwesome";
+  margin-right: 10px;
+  color: #e91b86;
+}
+.remark-inline-code {
+  color: #01456d;
+  font-size: 200%;
+}
+
+h1.remark-inline-code {
+  color: #01456d;
+  font-size: 100%;
+}
+
+@page { margin: 0; }
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}

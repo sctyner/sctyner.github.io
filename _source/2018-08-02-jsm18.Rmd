@@ -1,0 +1,13 @@
+---
+layout: post
+title: "JSM 2018 - Vancouver, BC, Canada"
+date: "2018-08-02 10:30:00 PDT"
+categories: blog, plotcon, plotly, ggplot2, rstats
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Slides are [here](../static/presentations/Conferences/jsm18/slides.html)
+
