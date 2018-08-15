@@ -8,6 +8,7 @@ output:
     df_print: paged
 layout: post
 categories: blog, rstats, forensics, glass
+ext-js: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
 ---
 
 
