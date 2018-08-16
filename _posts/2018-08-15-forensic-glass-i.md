@@ -21,12 +21,15 @@ categories: blog, rstats, forensics, glass
 It is easy to imagine a crime scene with glass fragments: a burglar may have broken a glass door, a glass bottle could have been used in an assault, or a domestic disturbance may involve throwing something through a window. There are many ways that glass can break and that glass fragments can be transferred. The study of glass fragments is important to forensic science because the glass broken at the scene can transfer to the perpetrator's shoes, clothing, or even their hair [1].  
 
 Crime scene investigators collect fragments of glass at the scene as a part of the evidence collection process and the fragments are sent to the forensics lab for processing. Similarly, evidence such as clothing and shoes are collected from a suspect, and if glass is found, the fragments are compared to the fragments found at the scene. We refer to the relevant measurements/observations of the crime scene glass as \\(G_C\\) for Glass from the Crime scene. In cases like these, some glass fragments are found on the suspect's clothing or perhaps in the suspect's vehicle. The amount of glass found on the suspect is usally much smaller than the amount available from the scene for testing and analysis. Thus, after the relevant measurements/observations from the suspect, \\(G_S\\), are made, the glass that was found on the suspect is often destroyed. The fundamental forensic task at hand is to determine if the source of the glass found on the suspect is the window from the crime scene or another, unknown source. This is generally broadened and formalized as a pair of competing hypotheses written in terms of the measurements on the two glass sources: 
+
+
 $$
 \begin{align*}
 H_0 & : \quad G_C \text{ and } G_S \text{ come from the same source} \\
 H_1 & : \quad G_C \text{ and } G_S \text{ come from different sources}  
 \end{align*}
 $$
+
 
 The forensic expert analyzes samples from the two sources, \\(C\\) and \\(S\\) for crime scene and suspect, respectively, obtaining the measurements \\(G_C\\) and \\(G_S\\). Then, the expert makes a comparison following a pre-defined methodology to determine whether or not \\(G_C\\) and \\(G_S\\) come from the same source. 
 
