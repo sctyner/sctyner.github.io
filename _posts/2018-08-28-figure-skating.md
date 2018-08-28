@@ -53,6 +53,6 @@ The next time you're called to jury duty[^crime], keep in mind that a lot of for
 [^dear]: Dear Jonathan, if you're reading this, thank you! And thank you for *Getting Curious* and *Queer Eye*. Also, I wanna be your best friend. 
 [^sober]: Remember, I was driving when I thought of this, so I swear I was completely sober. 
 [^commies]: Because, you know, communism. 
-[^guns]: For example, you can read more about ballistics conclusions in the "Opinions and Conclusions" section of https://afte.org/about-us/code-of-ethics.
+[^guns]: For example, you can read more about ballistics conclusions in the "Opinions and Conclusions" section [here](https://afte.org/about-us/code-of-ethics).
 [^1]: More on DNA here: Norrgard, K. (2008) Forensics, DNA fingerprinting, and CODIS. *Nature Education* 1(1):35
 [^crime]: Or accused of a crime. 
