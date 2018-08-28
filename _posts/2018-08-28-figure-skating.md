@@ -1,6 +1,5 @@
 ---
-title: "Figure Skating and Forensic Science"
-subtitle: "They have more in common than you think!"
+title: "Figure Skating and Forensic Science: they have more in common than you'd think!"
 date: "2018-08-28 15:50:37 CDT"
 editor_options:
   chunk_output_type: inline
