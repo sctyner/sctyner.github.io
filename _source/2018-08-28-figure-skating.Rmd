@@ -22,7 +22,7 @@ Well, as a postdoc at [CSAFE](https://forensicstats.org/), I think about forensi
 <figure>
   <center>
     <img src="https://media.giphy.com/media/28fZ7zDQVrVwumo7wU/source.gif" width='50%'/>
-    <figcaption>Jonathan Van Ness in Netflix's <i>Queer Eye<i/></figcaption>
+    <figcaption>Jonathan Van Ness in Netflix's Queer Eye</figcaption>
   </center>
 </figure>
 
@@ -47,11 +47,11 @@ The next time you're called to jury duty[^crime], keep in mind that a lot of for
 <figure>
   <center>
     <img src="https://imgix.bustle.com/uploads/image/2018/7/31/56f329ae-462e-4b89-8ccc-4e14011930a5-giphy-9.gif" width='50%'/>
-    <figcaption>Jonathan Van Ness in Netflix's <i>Queer Eye</i></figcaption>
+    <figcaption>Jonathan Van Ness in Netflix's Queer Eye</figcaption>
   </center>
 </figure>
 
-***
+<br>
 
 [^dear]: Dear Jonathan, if you're reading this, thank you! And thank you for *Getting Curious* and *Queer Eye*. Also, I wanna be your best friend. 
 [^sober]: Remember, I was driving when I thought of this, so I swear I was completely sober. 
