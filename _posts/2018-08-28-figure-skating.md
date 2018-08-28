@@ -14,7 +14,7 @@ categories: blog, forensics, subjectivity
 
 #### You're probably wondering where on Earth the title of this post comes from. 
 
-Well, as a postdoc at [CSAFE](https://forensicstats.org/), I think about forensic science pretty much every day. And as a self-proclaimed lifelong learner, I listen to podcasts pretty much every day. This week, as I drove to work, I was listening to ["What's it like to do a triple axel? with Mirai Nagasu" ](https://www.earwolf.com/episode/whats-it-like-to-do-a-triple-axel-with-mirai-nagasu/), an episode from April 2018 of Jonathan Van Ness's podcast *Getting Curious*. As Mirai and Jonathan[^dear] were discussing the judging of figure skating and the many Olympic figure skating rivalries throughout history, I realized something unusual: figure skating and forensic science have a lot in common.[^sober] 
+Well, as a postdoc at [CSAFE](https://forensicstats.org/), I think about forensic science pretty much every day. And as a self-proclaimed lifelong learner, I listen to podcasts pretty much every day. This week, as I drove to work, I was listening to ["What's it like to do a triple axel? with Mirai Nagasu" ](https://www.earwolf.com/episode/whats-it-like-to-do-a-triple-axel-with-mirai-nagasu/), an episode of Jonathan Van Ness's podcast *Getting Curious* from April 2018. As Mirai and Jonathan[^dear] were discussing the judging of figure skating and the many Olympic figure skating rivalries throughout history, I realized something unusual: figure skating and forensic science have a lot in common.[^sober] 
 
 <figure>
   <center>
