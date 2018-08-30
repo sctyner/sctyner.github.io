@@ -16,7 +16,12 @@ categories: blog, rstats, forensics, shoes
 
 In the mess of a crime scene, one of the most abundant pieces of evidence is a shoe outsole impression. A *shoe outsole impression* is the trace of a shoe that is left behind when the pattern of the sole is transferred in some way to the walking surface. Sometimes, the shoe impressions need to be "lifted" like fingerprints with powdering methods, and impressions are also often left in pliable materials such as sand, dirt, or snow. These crime scene impressions are collected using dusting or casting techniques to obtain the print left behind. The photo below shows a cast left behind by a shoe in a pile of dirt.[^1] 
 
-![](../static/img/shoecast.png)
+<figure>
+  <center>
+    <img src="../static/img/shoecast.png" width='75%'/>
+    <figcaption>The impression left by a Nike left shoe. Source: <a href="https://github.com/CSAFE-ISU/slides/tree/master/02_weekly-updates/images/James">Github</a></figcaption>
+  </center>
+</figure>
 
 In casework, a forenic scientist will examine the crime scene impression and identify the class, subclass, and identifying characteristics of the shoe sole. In statistics, we'd call these *sources of variability*.
 
@@ -24,7 +29,12 @@ In casework, a forenic scientist will examine the crime scene impression and ide
 
 There are many characteristics of footwear impressions that examiners look for. First, the size of the shoe is determined, then the style and manufacturer, if possible. These characteristics are known as *class characteristics* because there are many, many shoes that share these characteristics, but they can be used to easily exclude most other shoes. For instance, a very popular shoe in the United States is the Nike Air Force one, pictured below [1]. So, seeing a Nike logo and concentric circles in an impression from a Men's size 13 instantly excludes all shoes that are not Nike Air Force Ones in Men's size 13. 
 
-![](../static/img/nikeaf1.png)
+<figure>
+  <center>
+    <img src="../static/img/nikeaf1.png" width='75%'/>
+    <figcaption>The outsole of a Nike Air Force One. Source: <a href="https://www.nike.com/t/air-force-1-mid-07-womens-shoe-0nT1KyYW">Nike</a></figcaption>
+  </center>
+</figure>
 
 Next, *subclass characteristics* are examined. These characteristics are shared by a subset of elements in a class, but not by all elements in the class. In shoe impressions, subclass characteristics usually occur during the manufacturing process. For instance, air bubbles may form in one manufacturing run but not in another. Or, the different molds used to create the same style and size shoes can have slight differences, such as where pattern elements intersect [2]. Just like with class characteristics, subclass characteristics can be used to *eliminate* possible shoes very easily. 
 
