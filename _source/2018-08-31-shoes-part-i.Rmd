@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
 
 # What is footwear impression evidence? 
 
-In the mess of a crime scene, one of the most abundant pieces of evidence is a shoe outsole impression. A *shoe outsole impression* is the trace of a shoe that is left behind when the pattern of the sole is transferred in some way to the walking surface. Sometimes, the shoe impressions need to be "lifted" like fingerprints with powdering methods, and impressions are also often left in pliable materials such as sand, dirt, or snow. These crime scene impressions are collected using dusting or casting techniques to obtain the print left behind. The photo below shows a cast left behind by a shoe in a pile of dirt.[^1] 
+In the mess of a crime scene, one of the most abundant pieces of evidence is a shoe outsole impression. A *shoe outsole impression* is the trace of a shoe that is left behind when the pattern of the sole is transferred in some way to the walking surface. Sometimes, the shoe impressions need to be "lifted" like fingerprints with powdering methods, or they are dusted and photographed. Footwear impressions are also often found in pliable materials such as sand, dirt, or snow, which are collected using casting. The photo below shows a cast left behind by a shoe in a pile of dirt.[^1] 
 
 <figure>
   <center>
