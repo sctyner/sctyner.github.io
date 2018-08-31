@@ -70,6 +70,7 @@ I will continue to blog about footwear analysis as a part of CSAFE. Watch this s
 1. Smith, Michael B. 2009. "The Forensic Analysis of Footwear Impression Evidence.(Report)." *Forensic Science Communications.* 11 (3). Federal Bureau of Investigation.
 2. Bodziak, William J. 1986. "Manufacturing Processes for Athletic Shoe Outsoles and Their Significance in the Examination of Footwear Impression Evidence." *Journal of Forensic Science.* 31 (1): 153–76.
 
+<hr>
 
 [^1]: Thanks to CSAFE student employee James Kruse for the cast and photo.
 
