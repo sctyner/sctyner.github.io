@@ -52,7 +52,7 @@ The search for the killer ended when investigators uploaded the offender's DNA p
 
 There has been [some speculation](http://www.sacbee.com/news/local/crime/article209987599.html) that the DNA evidence may not be admissable, due to a statement on the GEDMatch upload page (see below) regarding permission to share DNA. 
 
-![Upload screen on GEDMatch.com](../static/img/GEDupload.png)
+<img src="../static/img/GEDupload.png" width=85%/>
 
 However, the [terms of service and privacy policy](https://www.gedmatch.com/tos.htm) of the company GEDMatch, Inc. clearly states that "users participating in this Site agree that their information will be shared with other users," and "[w]hile the results presented on this site are intended solely for genealogical research, we are unable to guarantee that users will not find other uses." In addition, as of May 20, 2018, they also updated their policy to include "DNA obtained and authorized by law enforcement to either: (1) identify a perpetrator of a violent crime against another individual; or (2) identify remains of a deceased individual" as an authorized DNA upload.
 
