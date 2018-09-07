@@ -7,7 +7,7 @@ output:
   html_document:
     df_print: paged
 layout: post
-categories: blog, forensics, subjectivity
+categories: blog, forensics, subjectivity, personal
 ---
 
 
