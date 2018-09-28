@@ -1,0 +1,10 @@
+---
+layout: post
+title: "An interactive crash course in bookdown"
+date: "2018-01-31 12:00:00 CST"
+categories: blog, rstats, bookdown, graphics
+---
+
+
+
+For the Iowa State University Dept. of [Statistics Graphics Working Group](http://isu-graphics.rbind.io/) on 2018-09-28. Slides are [here](../static/presentations/Misc/GraphicsGroupISU/2018-09-28/slides-gg-9-28.html)

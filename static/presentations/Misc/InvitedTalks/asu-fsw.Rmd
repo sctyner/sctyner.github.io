@@ -1,0 +1,160 @@
+---
+title: "Statistical Minds:"
+subtitle: "How thinking like a statistician<br>can make you a better forensic scientist"
+author: "Dr. Sam Tyner<br>Iowa State University, CSAFE"
+date: "October 11, 2018"
+output:
+  xaringan::moon_reader:
+    css: ["default", "default-fonts", "css/asu-fsw.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning=FALSE)
+```
+
+```{r pkgs}
+library(ggplot2)
+```
+
+class: quote
+
+> # "There are three kinds of lies..." 
+
+--
+
+- #### lies 
+
+--
+
+- ### damned lies
+
+--
+
+- ## statistics
+
+---
+# "Statistics" 
+
+--
+
+.pull-left[
+
+No formal experience: 
+
+- math
+- data
+- numbers
+- sports
+
+]
+
+--
+
+.pull-right[
+
+Took one or two stats classes:
+
+- model 
+- hypothesis test
+- $p$-value
+- confusing
+
+]
+
+--
+
+.img-center[
+
+<img src="https://media.giphy.com/media/3owzW5c1tPq63MPmWk/giphy.gif?cid=3640f6095babc7a3373061442e6452c5"/>
+
+]
+
+--
+
+You probably know more than you think you do! 
+
+---
+# Does this look familiar? 
+
+```{r bellcurve, echo=FALSE, fig.align='center', fig.height=4, fig.width=9}
+x <- seq(52, 76, .1)
+y <- dnorm(x, mean = 64, sd = 3)
+qplot(x=x,y=y,geom='line', size = I(3), color = I("blue"), lineend = "round") + theme_void() 
+```
+
+--
+
+"bell curve" aka the **normal distribution** 
+
+---
+# The Normal Distribution
+
+- Used to describe variability in a population
+
+--
+
+- Characterized by 2 parameters: 
+
+--
+
+- First, the *mean* value ( $\mu$ ) (aka *average* aka *expected value*): the "best guess" for the population
+
+--
+
+- Second, the *standard deviation* ( $\sigma$ ) (or *variance* which is equal to $\sigma^2$): the average distance an observation is from the average
+
+--
+
+
+For example: 
+
+In the US, women's heights follow a normal distribution with mean 64in (5'4") and standard deviation 3in. (For women aged 20+. [Source.](https://www.cdc.gov/nchs/data/series/sr_03/sr03_039.pdf))
+
+- Pick a woman at random: best guess, she's 5'4", but wouldn't be surprised if she was as short as 5'1" or as tall as 5'7"
+
+---
+# What is statistics?
+
+--
+
+- **Statistics**: "the study of how best to collect, analyze, and draw conclusions from data" (from a textbook)
+
+--
+
+- **Statistics**: "a branch of mathematics dealing with the collection, classification, analysis, interpretation of numerical facts, for drawing inferences on the basis of their quantifiable likelihood (probability) of data." (from [Wikipedia](https://en.wikipedia.org/wiki/Statistics))
+
+--
+
+- **Statistics**: "the study of uncertainty" (my definition)
+
+---
+# Uncertainty
+
+What is the average height of women in the US aged 20 years & over? 
+
+--
+
+- Trick question (Sorry!)
+
+--
+
+There is NO WAY to know the true answer to this question 
+
+--
+
+**Ground truth**: the (usually un-knowable) facts of a population, case, etc. 
+
+--
+
+Unless we construct it, we can never be 100% certain about ground truth
+
+---
+class: quote
+
+> ## "Information...is not dangerous in itself. The question is: How do you choose to use it? You can grab a knife to chop your garlic or to slit someone's throat; it is *you* who gives the knife its character." - *Linda Bacon, PhD*

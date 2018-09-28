@@ -1,0 +1,369 @@
+---
+title: "An interactive crash course in `bookdown`"
+subtitle: "Prepared for Iowa State Graphics Group"
+author: "Sam Tyner"
+date: "2018/09/28"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# Outline
+
+1. Why `bookdown`?
+2. What does `bookdown` assume about you? 
+3. Tricky little bits
+4. LaTeX vs. `bookdown`
+5. Your first book with `bookdown` 
+
+---
+# Why `bookdown`? 
+
+In the author's [own words](https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#4), books should be:
+
+- easy to write
+- cheap 
+- dynamic
+- quickly edited & re-released
+- authored by a few people, edited/reviewed/contributed to by many
+
+---
+class: inverse, center
+# What does `bookdown` assume about you? 
+
+![](https://media.giphy.com/media/l1J9yApnGts8EXYoo/giphy.gif)
+
+---
+# R/RStudio
+
+`bookdown` assumes you know how to use R, including
+
+- how to install packages 
+- how to put code chunks in a .Rmd file
+- how to render plots from R code in a .Rmd file
+
+Working knowledge of / a desire to use RStudio is not necessary but is exceedingly helpful.
+
+If you're seeing this, I assume you have this minimal working knowledge of R/RStudio. 
+
+---
+# Markdown
+
+`bookdown` assumes you are comfortable writing in Markdown, including
+
+- headers
+- tables
+- font formatting (*italics*, **bold**, etc.)
+
+Luckily, this is not hard to learn. See the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) or the [cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+
+---
+# `bibtex`
+
+`bookdown` assumes you know how to work with .bib files, including: 
+
+- You know what bibliography style you want 
+- You understand inline citations
+- You understand the structure of entries in a .bib file
+
+See this [user guide](https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM) and this [fill-in-the-blank](https://truben.no/latex/bibtex/) Bibtex editor
+
+---
+# LaTeX Math 
+
+`bookdown` assumes you know how to write math things (equations, formulae, etc.) with LaTeX
+
+![This is your brain on LaTeX](https://media.giphy.com/media/a9uGhT7WoO0p2/giphy.gif)
+
+Here's the [Wikibook](https://en.wikibooks.org/wiki/LaTeX/Mathematics) for LaTeX. Good luck.
+
+If you're seeing this, I assume you're familiar with the not-so-gentle giant that is LaTeX
+
+---
+class: inverse, center
+# Tricky Bits 
+
+![How you doin'?](https://media.giphy.com/media/3oriNNm0VCA73UhVbq/giphy.gif)
+
+---
+# Math mode
+
+For `displaymath`, sometimes you need to enter mathmode (via `$$`...`$$` or `\(`...`\)`), and sometimes you don't...
+
+- If the math expression creates something in `displaymath` (e.g. `equation`, `eqnarray`, `align`), don't put it in math mode 
+- Otherwise, it needs mathmode (e.g. `matrix`,  `array`, etc.)
+
+.pull-left[
+Need math mode: 
+
+    $$a^2 + b^2 = c^2$$
+    
+$$a^2 + b^2 = c^2$$     
+]
+.pull-right[
+Don't need math mode: 
+
+    \begin{equation}
+     a^2 + b^2 = c^2
+     \end{equation}
+\begin{equation}
+a^2 + b^2 = c^2
+\end{equation} 
+
+]
+
+---
+# Inserting images
+
+Can do `![caption](path)` like in usual .Rmd things, but (AFAIK):
+
+- Figure numbering is hard (or impossible)
+- "" referencing ""
+- "" alignment ""
+
+
+Instead, do `knitr::include_graphics()` inside an R code chunk. 
+
+Why?
+
+--
+
+- Figure naming, referencing, and numbering included "for free" (`fig:chunkname`)
+- Can control size, alginment, etc. very easily 
+
+---
+# Inserting images
+
+.pull-left[
+    ````
+    ```{r, eval = FALSE}
+    knitr::include_graphics("otrii.png")
+    ```
+    ````
+with code chunk options:
+`{r bey, fig.height=2,fig.align='center', fig.cap = "Beyonce", echo=FALSE}`
+]
+
+.pull-right[
+```{r bey, fig.height=2,fig.align='center', fig.cap = "Beyonce", echo=FALSE}
+knitr::include_graphics("otrii.png")
+```
+]
+
+---
+# Inserting tables 
+
+Again, can do it in the [usual markdown way](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables), but (AFAIK):
+
+- Table numbering is hard (or impossible)
+- "" captions ""
+- "" referencing ""
+- "" alignment ""
+
+Instead, do `knitr::kable()` inside an R code chunk. 
+
+Why?
+
+--
+
+- Table naming, referencing, and numbering included "for free" (`tab:chunkname`)
+- `caption` is an argument in the function 
+- Get all the other "good stuff" from LaTeX/`xtable`. e.g. `digits`, `longtable`, etc. 
+
+---
+# Inserting tables
+
+    ```{r, eval = FALSE}
+    knitr::kable(head(mtcars), caption="mtcars data")
+    ```
+With chunk options `{results='asis'}` gives:   
+
+```{r table2, results='asis', echo=FALSE}
+knitr::kable(head(mtcars), caption="mtcars data", format = 'html')
+```
+
+
+---
+class: inverse, center
+# LaTeX v. `bookdown`
+
+![](bookdown-rap-battle.gif)
+
+---
+# References & Citations
+
+Difference between using LaTeX (left) and using `bookdown` (right) for references:
+
+.pull-left[
+- Label sections with `\label{section-label}` after `\section{Section name}`. Refer to them with `\ref{section` `-label}`.
+
+- Inline citations with `\citet{biblabel}`, `\citep{biblabel}`
+
+- Figure/table references with `\ref{fig-` `or-tab-label}`
+
+- Label equations with `\label{eqnname}` after `begin{equation}`. Refer to them with `\ref{eqn` `name}`.
+]
+
+.pull-right[
+- Label sections with `{#section-label}` after `## Section name`. Refer to them with `\@ref(label)`
+
+- Inline citations with `@biblabel`, `[@biblabel]`
+
+- Figure/table references with `\@ref(fig:figlabel)` / `\@ref(tab:tablabel)`. `figlabel` and `tablabel` should be the code chunk names 
+
+- Label equations with `(\#eq:eqnname)` the line above `\end{equation}`. Refer to them with `\@ref(eq:eqnname)`
+]
+
+---
+# Theorems, Proofs, etc. 
+
+Difference between using LaTeX (left) and using `bookdown` (right) for different [text environments](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems):
+
+.pull-left[
+
+- Use `\begin{}` `\end{}` for `theorem`, `proof`, `definition`, etc. 
+
+- Label and reference them with `\label{` `thmname}` and `\ref{` `thmname}`
+
+]
+
+.pull-right[
+- Use "code chunks" : 
+    ````
+    ```'{theorem, 
+    name="theorem name", label="lab"}
+    ```
+    ````
+
+- Label them with `label="lab"` and reference them with `\@ref(prefix:label)` where `prefix` is one of `thm`, `lem`, [etc.](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems)
+]
+
+---
+# Customization
+
+.pull-left[
+In LaTeX, create custom formats with: 
+
+- `\newcommand{` `}` 
+- `\renewcommand{` `}` 
+- `\newenvironment{` `}` 
+
+]
+
+.pull-right[
+In `bookdown`, create [custom formats](https://bookdown.org/yihui/bookdown/custom-blocks.html) with: 
+
+- `{block}` environment + custom [CSS](https://github.com/rstudio/bookdown/blob/master/inst/examples/css/style.css) styles 
+- Similar to the way `{theorem}` works
+
+]
+
+---
+# Other random fun `bookdown` facts
+
+...that I discovered while writing these slides
+
+1. Part and Appendix [headers](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#special-headers) for separating different groups of chapters 
+2. Text [references](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references) to save your sanity when writing figure/table captions
+3. You can [embed whole webpages](https://bookdown.org/yihui/bookdown/web-pages-and-shiny-apps.html) in online books written with `bookdown`. (i.e. for `shiny` apps)
+
+![](https://media.giphy.com/media/l0IypeKl9NJhPFMrK/giphy.gif) 
+
+---
+class: inverse, center
+# Your first book with `bookdown`
+
+![](https://media.giphy.com/media/wCiFka9RsSW9W/giphy.gif)
+
+---
+# Your first book repo
+
+If you have a Github.com account, 
+
+1. Log in. 
+2. Fork a copy of https://github.com/iastat/isu-thesis 
+3. Clone the forked repo to your computer 
+
+If you have git but not Github, 
+
+1. Go to https://github.com/iastat/isu-thesis
+2. Click "clone or download", & copy the URL. 
+3. Clone the repo on your computer using `git clone`
+
+If you have neither git nor Github, 
+
+1. Go to https://github.com/iastat/isu-thesis
+2. Click "clone or download"
+3. Click "Dowload zip"
+
+Open the `index.Rmd` file in RStudio.
+
+---
+class: center, middle
+# Congrats! 
+
+You've just taken a very important step in writing your thesis! 
+
+![](https://media.giphy.com/media/l0Iy6RfxFjVqP8NQQ/giphy.gif)
+
+---
+# Full disclosure
+
+I did NOT write my thesis in bookdown. 
+
+I had a lot of stuff in .Rnw files already, and was not willing/able to convert everything over to .Rmd at the time when `bookdown` was picking up speed. 
+
+So, if you want to use bookdown (and I think you should), just know that I'm not the *best* source for troubleshooting.
+
+![](https://i.gifer.com/2MI1.gif)
+
+---
+# Important points
+
+- File structure: getting and keeping files organized is just about as important as doing the actual work. If you can't find it, did you even do it? 
+    - Think about some other folders you might need: data, code, images, raw-data, etc. 
+
+- Anything with "isu" in the filename came directly from the grad college. Don't edit these files (unless you REALLY know what you're doing).
+
+- There's also no need to change anything in _config.yml (again, unless you REALLY know what you're doing.)
+
+- Trial and error. When something doesn't work, just keep trying different things and doing new google searches. 
+
+![](https://media.giphy.com/media/ml3A3OWN3sT1S/giphy.gif)
+
+---
+# Getting started 
+
+Open index.Rmd. 
+
+1. Fill in your name
+2. Fill in your major professor (if applicable)
+3. Fill in your committee (if applicable)
+4. Create a cool-sounding, impermanent title. 
+5. In the "Build" tab in RStudio, click "Build Book." 
+
+---
+# Keep going
+
+Play around for a little bit. I'll go around and answer questions. Some things you could try: 
+
+- Create a new chapter (see _bookdown.yml for a hint of how to do this)
+- Insert R code & a plot
+- Insert an image
+- Write the dedication (preface/dedication.tex)
+
+---
+# Conclusion
+
+- If you want to do a book/thesis in bookdown, it's worth sitting down and reading the bookdown book. 
+- Covers stuff you probably didn't even think of (very true for me)
+
+- If you want bookdown's author to answer your questions, formatting them in the [optimal way](https://yihui.name/en/2018/05/github-issue-format/) will help your cause.  

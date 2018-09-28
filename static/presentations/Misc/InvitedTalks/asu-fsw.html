@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Statistical Minds:</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Dr. Sam Tyner Iowa State University, CSAFE" />
+    <meta name="date" content="2018-10-11" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/asu-fsw.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Statistical Minds:
+## How thinking like a statistician<br>can make you a better forensic scientist
+### Dr. Sam Tyner<br>Iowa State University, CSAFE
+### October 11, 2018
+
+---
+
+
+
+
+
+
+class: quote
+
+&gt; # "There are three kinds of lies..." 
+
+--
+
+- #### lies 
+
+--
+
+- ### damned lies
+
+--
+
+- ## statistics
+
+---
+# "Statistics" 
+
+--
+
+.pull-left[
+
+No formal experience: 
+
+- math
+- data
+- numbers
+- sports
+
+]
+
+--
+
+.pull-right[
+
+Took one or two stats classes:
+
+- model 
+- hypothesis test
+- `\(p\)`-value
+- confusing
+
+]
+
+--
+
+.img-center[
+
+&lt;img src="https://media.giphy.com/media/3owzW5c1tPq63MPmWk/giphy.gif?cid=3640f6095babc7a3373061442e6452c5"/&gt;
+
+]
+
+--
+
+You probably know more than you think you do! 
+
+---
+# Does this look familiar? 
+
+&lt;img src="asu-fsw_files/figure-html/bellcurve-1.png" style="display: block; margin: auto;" /&gt;
+
+--
+
+"bell curve" aka the **normal distribution** 
+
+---
+# The Normal Distribution
+
+- Used to describe variability in a population
+
+--
+
+- Characterized by 2 parameters: 
+
+--
+
+- First, the *mean* value ( `\(\mu\)` ) (aka *average* aka *expected value*): the "best guess" for the population
+
+--
+
+- Second, the *standard deviation* ( `\(\sigma\)` ) (or *variance* which is equal to `\(\sigma^2\)`): the average distance an observation is from the average
+
+--
+
+
+For example: 
+
+In the US, women's heights follow a normal distribution with mean 64in (5'4") and standard deviation 3in. (For women aged 20+. [Source.](https://www.cdc.gov/nchs/data/series/sr_03/sr03_039.pdf))
+
+- Pick a woman at random: best guess, she's 5'4", but wouldn't be surprised if she was as short as 5'1" or as tall as 5'7"
+
+---
+# What is statistics?
+
+--
+
+- **Statistics**: "the study of how best to collect, analyze, and draw conclusions from data" (from a textbook)
+
+--
+
+- **Statistics**: "a branch of mathematics dealing with the collection, classification, analysis, interpretation of numerical facts, for drawing inferences on the basis of their quantifiable likelihood (probability) of data." (from [Wikipedia](https://en.wikipedia.org/wiki/Statistics))
+
+--
+
+- **Statistics**: "the study of uncertainty" (my definition)
+
+---
+# Uncertainty
+
+What is the average height of women in the US aged 20 years &amp; over? 
+
+--
+
+- Trick question (Sorry!)
+
+--
+
+There is NO WAY to know the true answer to this question 
+
+--
+
+**Ground truth**: the (usually un-knowable) facts of a population, case, etc. 
+
+--
+
+Unless we construct it, we can never be 100% certain about ground truth
+
+---
+class: quote
+
+&gt; ## "Information...is not dangerous in itself. The question is: How do you choose to use it? You can grab a knife to chop your garlic or to slit someone's throat; it is *you* who gives the knife its character." - *Linda Bacon, PhD*
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
