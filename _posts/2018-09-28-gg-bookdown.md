@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An interactive crash course in bookdown"
-date: "2018-01-31 12:00:00 CST"
+date: "2018-09-28 14:00:00 CST"
 categories: blog, rstats, bookdown, graphics
 ---
 
