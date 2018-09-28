@@ -1,6 +1,6 @@
 ---
 title: "An interactive crash course in `bookdown`"
-subtitle: "Prepared for Iowa State Graphics Group"
+subtitle: "Prepared for Iowa State Graphics Group<br>Follow along: [bit.ly/isu-gg-9-28](http://bit.ly/isu-gg-9-28)"
 author: "Sam Tyner"
 date: "2018/09/28"
 output:
