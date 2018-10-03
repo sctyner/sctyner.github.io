@@ -41,6 +41,8 @@ class: quote
 ---
 # "Statistics" 
 
+What do you hear?
+
 --
 
 .pull-left[
@@ -116,6 +118,8 @@ For example:
 
 In the US, women's heights follow a normal distribution with mean 64in (5'4") and standard deviation 3in. (For women aged 20+. [Source.](https://www.cdc.gov/nchs/data/series/sr_03/sr03_039.pdf))
 
+--
+
 - Pick a woman at random: best guess, she's 5'4", but wouldn't be surprised if she was as short as 5'1" or as tall as 5'7"
 
 ---
@@ -144,7 +148,7 @@ What is the average height of women in the US aged 20 years & over?
 
 --
 
-There is NO WAY to know the true answer to this question 
+There is NO WAY to know the true answer to this question. (Why?)
 
 --
 
@@ -152,8 +156,236 @@ There is NO WAY to know the true answer to this question
 
 --
 
-Unless we construct it, we can never be 100% certain about ground truth
+Unless we construct it (i.e. for an experiment), we can **never** be 100% certain about ground truth
 
+---
+# Uncertainty in forensic science
+
+--
+
+- How many striae to we need to be 100% certain a bullet found at the crime scene came from a suspect's gun? 
+
+--
+
+- How can we be sure that the fingerprint found at the crime scene in the zoo came from a human and not a [koala](https://io9.gizmodo.com/5798400/koalas-have-exactly-the-same-fingerprints-as-humans)?
+
+--
+
+- Can we match a bullet to a gun after the gun has been fired 3,000 times? 
+
+--
+
+- How common is the pair of shoes that left the bloody shoeprint at the crime scene? 
+
+---
+# How can statistics help? 
+
+1. Data collection for population inference
+    - Your conclusion is only as good as your data. 
+2. Experimental design
+    - Control the sources variability to determine causation
+3. Modeling
+    - What existing relationships can we account for so we can get closer to the truth (with less uncertainty)? 
+4. Hypothesis tests
+    - Make a conclusion and quantify your uncertainty
+    
+These are all built on top of each other: 
+
+.img-center[
+
+<img src="img/statpyramid.png" height="200px"/>
+
+]
+
+
+
+---
+class: center, middle, inverse
+# Data collection for population inference
+
+---
+# Population vs. Sample
+
+To learn about a population: 
+
+- take a sample from the population
+- collect data from the sample
+- make inference (educated guess) about the population based on the data in the sample 
+
+--
+
+Carefully control how we make inference in order to minimize and quantify uncertainty. 
+
+--
+
+Not just any sample will do! 
+
+---
+# Good samples 
+
+Good samples are: 
+
+- **Large**: "rule of thumb" is greater than 30, but depends on size of population, resources, etc. 
+- **Representative**: every type of unit in the population that matters is represented in the sample, and each type is represented in proportion to how common it is in the population 
+- **Random**: every unit in the population should have an equal opportunity to be included in the sample 
+
+---
+# Bad samples 
+
+Bad samples are: 
+
+- **Small**: they don't capture enough of the variation in the population at large.
+- **Unrepresentative**: some group is over- or under-represented in the sample e.g. including Jeff Bezos in a sample to learn about average salary in the U.S. 
+- **Biased**: the way the sample is selected favors one type of observation over others. e.g. Asking people, "How much do you spend on groceries?" outside of a Wal-Mart vs. a Whole Foods
+
+---
+# Bring Data 
+
+> ### "In God we trust; all others bring data." - W. Edwards Deming, PhD 
+
+Your conclusions are only as good as the data you used to make them. 
+
+- Example: making a firearm identification on "only 3 consecutive matching striae" on a bullet
+- Really??? What do the data say? 
+
+--
+
+.img-center[
+
+  <img src="img/csm.png" width="50%"/>
+
+]
+
+---
+# Oh, the humanity! 
+
+- forensic scientists form conclusions based on training and experience
+- human memories are imperfect & biased 
+- human brains are not as accurate as computers at recalling information
+- humans make mistakes 
+
+Save yourself time, energy, and stress by learning from the data! 
+
+--
+
+.img-center[
+
+  <img src="img/csm.png" width="50%"/>
+
+]
+
+
+---
+class: center, middle, inverse
+# Modeling
+
+---
+# Variables 
+
+Reduce uncertainty with a *model*
+
+- dependent variable: what you want to learn about
+- explanatory variable: something that might *explain* changes in the dependent variable
+
+--
+
+For example: 
+
+If we wanted to learn about *weight* of adults in the U.S. (our dependent variable), what *explanatory variable* should we use? 
+
+--
+
+- Height 
+
+---
+# Good models
+
+**Good models** explain as much of the uncertainty in the dependent variable as possible while:
+  * remaining general & broadly applicable 
+  * allowing for some small, controlled amount of uncertainty
+  
+--
+
+i.e. If I take a sample from the same population, the model I built on the old sample should get close to the new data, but it won't ever be perfect. 
+
+---
+# Bad models
+
+**Bad models** usually fall into one or more of these categories: 
+  * overfit: they work really well for the sample data, but not for similar data from the population
+  * uninterpretable: they are so complicated that we can't really tell what's going on with the data 
+  * ignore lurking variables: lurking variables aren't in the model but probably explain both the explanatory & dependent variables.
+
+.img-center[
+
+![](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15031843/m3_examining_relationships_topic_3_1_scatter_linear_corr_causation2.gif)
+
+]
+
+---
+class: center, middle, inverse
+# Experimental Design
+
+---
+# Causation
+
+Correlation $\neq$ causation
+
+Causation can only be established with a well-designed experiment 
+
+---
+class: center, middle, inverse
+# Hypothesis tests
+
+---
+# Need to talk about
+
+- uncertainty: error rates (false positive, false negative)
+- structure of hypotheses (prosecution, defense)
+- proposition level 
+
+
+---
+# Keep in mind<sup>1</sup>
+
+.img-center[
+
+<img src="img/knowns.png", height="400px"/>
+
+]
+
+.footnote[
+[1] Thanks, Donald Rumsfeld.
+]
+
+---
+# Conclusion
+
+- Thinking like a statistician means thinking about uncertainty 
+
+- Ask yourself: 
+    * What do I know for sure? 
+    * How do I know that? 
+    * What don't I know? 
+    * How can I answer my questions?  
+    * Can I quantify what I don't know? 
+
+--
+
+- You need to be honest about what you don't know:
+    * You need to know what you don't know, and you need to communicate that.
+    * "I don't know" is better than a weak guess based on little to no data
+    * 45% of wrongful convictions found by the Innocence Project were due (at least in part) by some misuse of forensic science
+    * Source: [innocenceproject.org/causes/misapplication-forensic-science](https://www.innocenceproject.org/causes/misapplication-forensic-science/)
+
+--
+
+- Honesty and awareness about uncertainty can lead to 
+    * better outcomes
+    * more justice
+    * forensic scientists with less stress 
+    
+    
 ---
 class: quote
 
