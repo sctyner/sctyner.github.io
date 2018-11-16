@@ -9,6 +9,9 @@ categories: blog, data, government
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+### If the post looks funky use [this](../static/presentations/Misc/GraphicsGroupISU/2018-11-16-us-govt-data.html) instead. 
+
+
 Inspiration and primary source for all of this information: [Statistical Programs of the United States Government Fiscal Year 2017](https://obamawhitehouse.archives.gov/sites/default/files/omb/assets/information_and_regulatory_affairs/statistical-programs-2017.pdf)
 
 # Principal Statistical Agency Programs
@@ -26,29 +29,29 @@ The report linked at the top contains descriptions of every agency and every sta
 1. Bureau of Economic Analysis (BEA): (12/509 $\approx$ 2%) 
     - Description: "BEA is responsible for the preparation, development, and interpretation of the Nation's economic accounts." 
     - Home Agency: Department of Commerce (DOC)
-    - Website: https://www.bea.gov/
-    - API: https://apps.bea.gov/API/signup/index.cfm
+    - [Website](https://www.bea.gov/)
+    - [API](https://apps.bea.gov/API/signup/index.cfm)
 2. Bureau of Justice Statistics (BJS): (42/69  $\approx$ 61%)
     - Description: "BJS collects, analyzes, publishes, and disseminates statistical information on all aspects of the criminal justice system; assists State, Tribal, and local governments in gathering and
 analyzing justice statistics; and disseminates high value information and statistics to inform policymakers, researchers, criminal justice practitioners and the general public." 
     - Home Agency: Department of Justice (DOJ)
-    - Website: https://www.bjs.gov/ 
-    - ~~API~~ Prayer directed at CSVs living here: https://www.bjs.gov/datacollection.cfm  
+    - [Website](https://www.bjs.gov/)
+    - [Data](https://www.bjs.gov/datacollection.cfm)
 3. Bureau of Labor Statistics (BLS): (168/2167  $\approx$ 8%)
     - Description: "BLS is responsible for measuring labor market activity, working conditions, and price changes in the economy."
     - Home Agency: Department of Labor (DOL)
-    - Website: https://www.bls.gov/
-    - API: https://www.bls.gov/developers/api_r.htm (An R script for accessing their API!!)
+    - [Website](https://www.bls.gov/)
+    - [API](https://www.bls.gov/developers/api_r.htm) (An R script for accessing their API!!)
 4. Bureau of Transportation Statistics (BTS): (15/84  $\approx$ 18%) 
     - Description: "BTS compiles, analyzes, and disseminates information about the Nation's transportation systems, including the extent, use, condition, performance, and consequences of those systems."
     - Home Agency: Department of Transportation (DOT)
-    - Website: https://www.bts.gov/
-    - ~~API~~ Prayers directed at: https://www.bts.gov/browse-statistical-products-and-data (but they have an [app](https://www.bts.gov/browse-statistical-products-and-data/pocket-guide-transportation/pocket-guide-transportation), so I guess that's cool?) 
+    - [Website](https://www.bts.gov/)
+    - [Data](https://www.bts.gov/browse-statistical-products-and-data) (an  [app](https://www.bts.gov/browse-statistical-products-and-data/pocket-guide-transportation/pocket-guide-transportation)) 
 5. Census Bureau (Census): (2311/6551 $\approx$ 35%)
     - Description: "Census measures and disseminates information about the Nation’s ever-changing economy, society, and institutions." 
     - Home Agency: DOC
-    - Website: https://www.census.gov/
-    - APIs (plural!): https://www.census.gov/data/developers/data-sets.html 
+    - [Website](https://www.census.gov/)
+    - [APIs (plural!)](https://www.census.gov/data/developers/data-sets.html)
 6. Economic Research Service (ERS): (1/359  $\approx$ .3%) 
     - Description: "ERS provides economic and other social science research and analysis to inform public and private decision making on agriculture, food, natural resources, and rural America."
     - Home Agency: United States Department of Agriculture (USDA)
@@ -174,8 +177,8 @@ Of the fifteen US federal government departments, fourteen have additional stati
     a. Office of Population Affairs (OPA) : https://www.hhs.gov/opa/
     a. Substance Abuse and Mental Health Services Administration (SAMHSA) : https://www.samhsa.gov/data/all-reports  
 
-1. Department of Homeland Security 
-: https://www.dhs.gov/dhs-developer-community    a. Citizenship and Immigration Services (CIS) : https://www.uscis.gov/tools/reports-studies/immigration-forms-data 
+1. Department of Homeland Security : https://www.dhs.gov/dhs-developer-community
+    a. Citizenship and Immigration Services (CIS) : https://www.uscis.gov/tools/reports-studies/immigration-forms-data 
     a. Coast Guard : https://www.uscg.mil/
     a. Customs and Border Protection (CBP) : https://www.cbp.gov/trade/itrac-requests, https://www.cbp.gov/newsroom/stats
     a. Federal Emergency Management Agency’s (FEMA) : https://www.fema.gov/data-visualization, https://www.fema.gov/data-feeds 
@@ -186,8 +189,8 @@ Of the fifteen US federal government departments, fourteen have additional stati
     a. Office of Policy Development and Research (PD&R) : https://www.huduser.gov/portal/pdrdatas_landing.html
     a. Office of Public and Indian Housing (PIH) : https://www.hud.gov/program_offices/public_indian_housing/ih/pubs
 
-1. Department of the Interior
- : https://www.doi.gov/data, https://data.doi.gov/dataset    a. Bureau of Land Management (BLM) : https://www.blm.gov/about/data
+1. Department of the Interior : https://www.doi.gov/data, https://data.doi.gov/dataset
+    a. Bureau of Land Management (BLM) : https://www.blm.gov/about/data
     a. Bureau of Ocean Energy Management (BOEM) : https://www.boem.gov/Maps-and-GIS-Data/, https://www.boem.gov/Renewable-Energy-Program-Mapping-and-Data/, https://www.data.boem.gov/ (woof)
     a. Bureau of Reclamation (BoR)  : https://water.usbr.gov/ , https://www.usbr.gov/rsvrWater/HistoricalApp.html
     a. Fish and Wildlife Service (FWS) : https://www.fws.gov/southeast/data-management/, https://www.fws.gov/gis/data/national/
@@ -210,8 +213,8 @@ Of the fifteen US federal government departments, fourteen have additional stati
     a. Office of Federal Contract Compliance Programs (OFCCP) : https://www.dol.gov/ofccp/BTN/index.html
     a. Wage and Hour Division (WHD) : https://catalog.data.gov/dataset/whd-compliance-full
 
-1. Department of State
- : https://www.state.gov/api/v1/docs/, https://www.state.gov/developer/, https://www.state.gov/data/    a. Office of the U.S. Global AIDS Coordinator (OGAC) :https://www.pepfar.gov/priorities/data/index.htm, https://www.hiv.gov/locator#api 
+1. Department of State : https://www.state.gov/api/v1/docs/, https://www.state.gov/developer/, https://www.state.gov/data/
+    a. Office of the U.S. Global AIDS Coordinator (OGAC) :https://www.pepfar.gov/priorities/data/index.htm, https://www.hiv.gov/locator#api 
 
 1. Department of Transportation : https://www.transportation.gov/developer
     a. Federal Aviation Administration (FAA) : https://www.faa.gov/data_research/
