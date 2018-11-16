@@ -9,10 +9,19 @@ categories: blog, data, government
 
 ### If the post looks funky use [this](../static/presentations/Misc/GraphicsGroupISU/2018-11-16-us-govt-data.html) instead. 
 
+### Non-exhaustive list of R Package Sources for getting government data: 
+
+- [`federalregister`](https://github.com/rOpenGov/federalregister)
+- [`ropengov`](http://ropengov.github.io/projects/)
+- [`censusapi`](https://cran.r-project.org/web/packages/censusapi/censusapi.pdf)
+- [`censusr`](https://github.com/transportfoundry/censusr)
+- [`tidycensus`](https://www.r-pkg.org/pkg/tidycensus)
+- [`elevater`](https://cfpub.epa.gov/si/si_public_record_report.cfm?Lab=NHEERL&direntryid=335983)
+
+# Principal Statistical Agency Programs
 
 Inspiration and primary source for all of this information: [Statistical Programs of the United States Government Fiscal Year 2017](https://obamawhitehouse.archives.gov/sites/default/files/omb/assets/information_and_regulatory_affairs/statistical-programs-2017.pdf)
 
-# Principal Statistical Agency Programs
 
 "The Federal Statistical System of the United States is the decentralized network of federal agencies which produce data about the people, economy, natural resources, and infrastructure of the United States." ([Wikipedia](https://en.wikipedia.org/wiki/Federal_Statistical_System_of_the_United_States)) 
 
