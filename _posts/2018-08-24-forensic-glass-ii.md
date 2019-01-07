@@ -13,6 +13,9 @@ categories: blog, rstats, forensics, glass
 
 
 
+```
+## Error in library(randomForest): there is no package called 'randomForest'
+```
 
 This post is the second of two on the forensic analysis of glass evidence. The [first post](https://sctyner.github.io/forensic-glass-i.html) discusses the background problem, the manufacture of glass, and the format of the data for statistical analyses. Start there! 
 
@@ -56,7 +59,26 @@ Ultimately, Weis et al conclude that the modified 4 sigma criterion (#3) is the 
 
 The previous methods described do not take into account the correlations between element measurements. In addition, as the variablility of measurements of one or more elements increase within a pane, it is increasingly harder to reject the null hypothesis (that two fragments have the same source). This has implications in the courtroom: higher variability would tend to incriminate the defendant because the intervals of Weis et al would tend to be wider, and the null hypothesis not disproven. CSAFE researchers have developed a new method using *scores* derived from supervised machine learning methods such as random forest (RF) and Bayesian additive regression trees (BART). The scores take into account all 18 elemental measurements of the glass together and can account for the known relationships (linear and non-linear) between elemental concentrations. Consider, for example, the absolute correlation matrix shown below for the elements from Manufacturer 1. Correlations with absolute value near 1 are colored dark blue, while correlations near 0 colored white. As you can see, there are several off-diagonal pairs above 0.9, indicating strong relationships between those elements. 
 
-<img src="/figure/source/2018-08-24-forensic-glass-ii/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
+
+```
+## Error in mutate_impl(.data, dots): Evaluation error: is.character(x) is not TRUE.
+```
+
+```
+## Error in is.factor(x): object 'cor_glass2' not found
+```
+
+```
+## Error in is.factor(x): object 'cor_glass2' not found
+```
+
+```
+## Error in is.factor(x): object 'cor_glass2' not found
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'cor_glass2' not found
+```
 
 The previous methods do not incorporate this correlation information into their decision making process. In addition, the algorithms used by CSAFE researchers provide a ranking of the variables that are most discriminating when determining whether the glass fragments have the same or different sources. Finally, the algorithms compute the probability (the score) that the pair of fragments have the same source or a different source. The application of machine learning techniques to glass element analysis outperforms the traditional interval methods by keeping both the Type I and Type II error rates low, whereas the interval methods tend to have one very low and the other unacceptably high. 
 

@@ -15,6 +15,9 @@ categories: blog, rstats, forensics, glass
 
 
 
+```
+## Error in library(randomForest): there is no package called 'randomForest'
+```
 
 ## What is the forensic problem at hand? 
 
@@ -119,52 +122,43 @@ set.seed(345892)
 glass2.1test <- glass2.1 %>% sample_n(100)
 glass2.1train <- glass2.1 %>% filter(!(row %in% glass2.1test$row))
 rf1 <- randomForest(as.factor(pane)~., data=glass2.1train[,-20], xtest = glass2.1test[,-c(1,20)], ytest = as.factor(glass2.1test$pane), importance=T, ntree=1000, keep.forest = T)
+```
+
+```
+## Error in randomForest(as.factor(pane) ~ ., data = glass2.1train[, -20], : could not find function "randomForest"
+```
+
+```r
 rf1
 ```
 
 ```
-## 
-## Call:
-##  randomForest(formula = as.factor(pane) ~ ., data = glass2.1train[,      -20], xtest = glass2.1test[, -c(1, 20)], ytest = as.factor(glass2.1test$pane),      importance = T, ntree = 1000, keep.forest = T) 
-##                Type of random forest: classification
-##                      Number of trees: 1000
-## No. of variables tried at each split: 4
-## 
-##         OOB estimate of  error rate: 0.36%
-## Confusion matrix:
-##     P1  P2  P3  P4 class.error
-## P1 144   0   0   0 0.000000000
-## P2   1 135   0   0 0.007352941
-## P3   0   0 138   1 0.007194245
-## P4   0   0   0 141 0.000000000
-##                 Test set error rate: 1%
-## Confusion matrix:
-##    P1 P2 P3 P4 class.error
-## P1 20  1  0  0  0.04761905
-## P2  0 29  0  0  0.00000000
-## P3  0  0 26  0  0.00000000
-## P4  0  0  0 24  0.00000000
+## Error in eval(expr, envir, enclos): object 'rf1' not found
 ```
 
 ```r
 glass2.1$pred1 <- predict(rf1, glass2.1[,-c(1,20)])
+```
+
+```
+## Error in predict(rf1, glass2.1[, -c(1, 20)]): object 'rf1' not found
+```
+
+```r
 table(glass2.1$pred1, glass2.1$pane)
 ```
 
 ```
-##     
-##       P1  P2  P3  P4
-##   P1 164   0   0   0
-##   P2   1 165   0   0
-##   P3   0   0 165   0
-##   P4   0   0   0 165
+## Error in table(glass2.1$pred1, glass2.1$pane): all arguments must have the same length
 ```
 
 ```r
 varImpPlot(rf1)
 ```
 
-<img src="/figure/source/2018-08-15-forensic-glass-i/rf-1.png" title="plot of chunk rf" alt="plot of chunk rf" style="display: block; margin: auto;" />
+```
+## Error in varImpPlot(rf1): could not find function "varImpPlot"
+```
 
 Using a random forest, we are able to discriminate almost perfectly between the four panes. The function `randomForest::varImpPlot` shows the importance of each of the 18 elements in the data set. The two "most important" variables according to both metrics are Zr90 and Li7. The plot below shows the relationship between those two. We can see the groups are pretty well separated. 
 
@@ -185,31 +179,18 @@ Next, we can build a random forest on only the two most important variables, to 
 glasstrain2 <- glass2.1train[,c("pane","Zr90", "Li7")]
 glasstest2 <- glass2.1test[,c("pane","Zr90", "Li7")]
 rf2 <- randomForest(as.factor(pane) ~ ., data = glasstrain2, xtest = glasstest2[,-1], ytest = as.factor(glasstest2$pane), ntree=500, keep.forest = T, mtry = 2, maxnodes=4)
+```
+
+```
+## Error in randomForest(as.factor(pane) ~ ., data = glasstrain2, xtest = glasstest2[, : could not find function "randomForest"
+```
+
+```r
 rf2 
 ```
 
 ```
-## 
-## Call:
-##  randomForest(formula = as.factor(pane) ~ ., data = glasstrain2,      xtest = glasstest2[, -1], ytest = as.factor(glasstest2$pane),      ntree = 500, keep.forest = T, mtry = 2, maxnodes = 4) 
-##                Type of random forest: classification
-##                      Number of trees: 500
-## No. of variables tried at each split: 2
-## 
-##         OOB estimate of  error rate: 16.61%
-## Confusion matrix:
-##     P1 P2  P3  P4 class.error
-## P1 134 10   0   0  0.06944444
-## P2   3 93   0  40  0.31617647
-## P3   0  3 125  11  0.10071942
-## P4   0 11  15 115  0.18439716
-##                 Test set error rate: 11%
-## Confusion matrix:
-##    P1 P2 P3 P4 class.error
-## P1 19  2  0  0  0.09523810
-## P2  2 24  0  3  0.17241379
-## P3  0  1 25  0  0.03846154
-## P4  0  3  0 21  0.12500000
+## Error in eval(expr, envir, enclos): object 'rf2' not found
 ```
 
 ```r
@@ -218,13 +199,23 @@ Li7r <- range(glass2.1$Li7)
 newdata <- expand.grid(Zr90 = seq(zr90r[1],zr90r[2],length.out = 500),
                        Li7 = seq(Li7r[1],Li7r[2],length.out = 500))
 newdata$pred2 <- predict(rf2, newdata)
+```
 
+```
+## Error in predict(rf2, newdata): object 'rf2' not found
+```
+
+```r
 ggplot() + 
   geom_tile(data = newdata, aes(x = Zr90, y = Li7, fill = pred2), alpha = .4) + 
   geom_point(data = glass2.1, aes(x = Zr90, y = Li7, color = pane)) +
   scale_color_brewer(palette = "Set2") + 
   scale_fill_brewer(palette = "Set2") +
   labs(x = "log(Zr90) (ppm)", y = "log(Li7) (ppm)")
+```
+
+```
+## Error in FUN(X[[i]], ...): object 'pred2' not found
 ```
 
 <img src="/figure/source/2018-08-15-forensic-glass-i/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />

@@ -15,10 +15,35 @@ editor_options:
 library(tidyverse)
 library(sf)
 library(RPublica)
+```
+
+```
+## Error in library(RPublica): there is no package called 'RPublica'
+```
+
+```r
 library(albersusa)
+```
+
+```
+## Error in library(albersusa): there is no package called 'albersusa'
+```
+
+```r
 library(visdat)
+```
+
+```
+## Error in library(visdat): there is no package called 'visdat'
+```
+
+```r
 library(ggrepel)
 library(colorRamps)
+```
+
+```
+## Error in library(colorRamps): there is no package called 'colorRamps'
 ```
 
 ## ProPublica
@@ -38,6 +63,10 @@ First, I query all available `geos`:
 ```r
 # install.packages("RPublica")
 allgeos <- RPublica::geos()
+```
+
+```
+## Error in loadNamespace(name): there is no package called 'RPublica'
 ```
 
 The geo-level variables returned by `geos()` and prefixed with `geo.` are: 
@@ -63,20 +92,68 @@ First, let's look at which states and counties we have information on:
 
 # usa county map
 usa_counties <- albersusa::counties_sf(proj = "longlat")
+```
+
+```
+## Error in loadNamespace(name): there is no package called 'albersusa'
+```
+
+```r
 # usa state map
 usa_states <- albersusa::usa_sf(proj = "longlat")
+```
+
+```
+## Error in loadNamespace(name): there is no package called 'albersusa'
+```
+
+```r
 # get just county names
 allgeos %>% 
   mutate(geo.name = str_replace(geo.name, " County", "")) -> allgeos2
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'allgeos' not found
+```
+
+```r
 # separate states and counties
 cnty_geos <- allgeos2 %>% 
   filter(geo.kind !="state")
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'allgeos2' not found
+```
+
+```r
 state_geos <- allgeos2 %>% 
   filter(geo.kind == "state")
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'allgeos2' not found
+```
+
+```r
 # merge with map data
 cnty_geos_map <- merge(cnty_geos, usa_counties, by.x = c("geo.name", "geo.postal_abbreviation"), by.y = c("name", "iso_3166_2"), all = T)  
-state_geos_map <- merge(state_geos, usa_states, by.x = c("geo.name", "geo.postal_abbreviation"), by.y = c("name", "iso_3166_2"), all = T)  
+```
 
+```
+## Error in merge(cnty_geos, usa_counties, by.x = c("geo.name", "geo.postal_abbreviation"), : object 'cnty_geos' not found
+```
+
+```r
+state_geos_map <- merge(state_geos, usa_states, by.x = c("geo.name", "geo.postal_abbreviation"), by.y = c("name", "iso_3166_2"), all = T)  
+```
+
+```
+## Error in merge(state_geos, usa_states, by.x = c("geo.name", "geo.postal_abbreviation"), : object 'state_geos' not found
+```
+
+```r
 # map
 ggplot() + 
   geom_sf(data = cnty_geos_map, aes(fill = geo.kind, geometry = geometry), color = "white") + 
@@ -88,7 +165,9 @@ ggplot() +
         legend.position = c(.8,.3))
 ```
 
-<img src="/figure/source/2018-02-14-propublica-forensic-api/mapp-1.png" title="plot of chunk mapp" alt="plot of chunk mapp" style="display: block; margin: auto;" />
+```
+## Error in geom_sf(data = cnty_geos_map, aes(fill = geo.kind, geometry = geometry), : object 'cnty_geos_map' not found
+```
 
 So, there are a lot of states missing completely, and many where only a few counties are represented. This is important to keep in mind throughout the rest of our analysis. 
 
@@ -125,20 +204,38 @@ alldat2 <- allgeos %>%
   mutate(geos = map(.x = geo.ar_association_key_name, get_sys_geos),
          stats = map(.x = geo.ar_association_key_name, get_sys_stats),
          other = map(.x = geo.ar_association_key_name, get_sys_oth))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'allgeos' not found
+```
+
+```r
 # use unnest to unnest the data (What an aptly named function! I can't think of another way to describe it.)
 alldat3 <- alldat2 %>% 
   unnest(geos, .drop=FALSE) %>% 
   unnest(stats, .drop=FALSE) %>% 
   unnest(other, .drop = FALSE)
+```
 
+```
+## Error in eval(lhs, parent, parent): object 'alldat2' not found
+```
+
+```r
 visdat::vis_dat(alldat3)
 ```
 
-<img src="/figure/source/2018-02-14-propublica-forensic-api/purrrdat-1.png" title="plot of chunk purrrdat" alt="plot of chunk purrrdat" style="display: block; margin: auto;" />
+```
+## Error in loadNamespace(name): there is no package called 'visdat'
+```
 
 It looks like there are some columns that are all `NA`: `geo.district`, `geo.note`, `geo.population`, `district`, `note`, `population`. It seems like they were stored in one place (e.g. the `population1` column) and repeated elsewhere with no values. I drop those columns and continue. 
 
 
+```
+## Error in eval(lhs, parent, parent): object 'alldat3' not found
+```
 
 
 The `stats` and other variables are, according to the documentation: 
@@ -176,7 +273,9 @@ alldat4 %>%
   facet_wrap(~year, nrow=2) 
 ```
 
-![plot of chunk explore](/figure/source/2018-02-14-propublica-forensic-api/explore-1.png)
+```
+## Error in eval(lhs, parent, parent): object 'alldat4' not found
+```
 
 New York City has far more autopsies and a much higher budget than the others, but the North Carolina medical examiner typically performs way more autopsies than offices with similar budgets. 
 
@@ -187,10 +286,30 @@ Next, let's look at the personnel. First, I get all of the information about pat
 paths <- alldat4 %>% 
   select(c(8,9,37, 32, 22, which(str_detect(names(alldat4), "pathologist")))) %>% 
   unique()
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'alldat4' not found
+```
+
+```r
 paths <- paths %>% gather(type, number, pt_provisional_forensic_pathologists:uc_forensic_pathologists) %>% 
   mutate(number = parse_integer(number))
-paths <- paths %>% mutate(type = str_replace(type, "_forensic_pathologists", ""))
+```
 
+```
+## Error in eval(lhs, parent, parent): object 'paths' not found
+```
+
+```r
+paths <- paths %>% mutate(type = str_replace(type, "_forensic_pathologists", ""))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'paths' not found
+```
+
+```r
 paths %>% group_by(year, type) %>% summarize(total = sum(number, na.rm = T)) %>% 
 ggplot( aes(x = type, weight = total )) +
   geom_bar() + 
@@ -198,7 +317,9 @@ ggplot( aes(x = type, weight = total )) +
   labs(x = "Pathologist type", y = "Total count")
 ```
 
-<img src="/figure/source/2018-02-14-propublica-forensic-api/paths-1.png" title="plot of chunk paths" alt="plot of chunk paths" style="display: block; margin: auto;" />
+```
+## Error in eval(lhs, parent, parent): object 'paths' not found
+```
 
 Next, I combine the two uncertified categories and look at which organizations have the most uncertified pathologists working for them, on average from 2004-2010: 
 
@@ -210,6 +331,13 @@ paths %>% filter(type %in% c("pt_uc", "uc")) %>%
   summarize(tot = sum(number, na.rm = T)) %>% 
   ungroup() %>% group_by(name1, geo.postal_abbreviation) %>% 
   summarize(mean = mean(tot, na.rm = T)) %>% arrange(desc(mean))-> uc_paths
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'paths' not found
+```
+
+```r
 ggplot(data = uc_paths) + 
   geom_bar(aes(x = reorder(name1, mean), weight = mean, fill = geo.postal_abbreviation)) + 
   coord_flip() + 
@@ -217,7 +345,9 @@ ggplot(data = uc_paths) +
   scale_fill_manual(values = colorRamps::primary.colors(23), name = "State")
 ```
 
-<img src="/figure/source/2018-02-14-propublica-forensic-api/ucpaths-1.png" title="plot of chunk ucpaths" alt="plot of chunk ucpaths" style="display: block; margin: auto;" />
+```
+## Error in ggplot(data = uc_paths): object 'uc_paths' not found
+```
 
 Two of the busiest offices, North Carolina and New York City, also have the most uncertified forensic pathologists. This could be, as ProPublica describes [here](https://www.propublica.org/article/about-our-autopsy-data), because they have the most new hires who haven't yet passed their certification, a test only available once per year. Combined with the previous budget information, this suggests that the medical examiner's office of North Carolina is in desperate need of more funding so that they can hire more certified pathologists.
 
@@ -229,11 +359,39 @@ Finally, let's look at the accredidation of medical examiner offices.
 cnty_data <- alldat4 %>% 
   filter(geo.kind !="state") %>% 
   mutate(name = str_replace(name, " County", ""))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'alldat4' not found
+```
+
+```r
 state_data <- alldat4 %>% 
   filter(geo.kind == "state")
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'alldat4' not found
+```
+
+```r
 # merge with map data
 cnty_geos_map2 <- merge(cnty_data, usa_counties, by.x = c("name", "geo.postal_abbreviation"), by.y = c("name", "iso_3166_2"), all = T)  
+```
+
+```
+## Error in merge(cnty_data, usa_counties, by.x = c("name", "geo.postal_abbreviation"), : object 'cnty_data' not found
+```
+
+```r
 state_geos_map2 <- merge(state_data, usa_states, by.x = c("geo.name", "geo.postal_abbreviation"), by.y = c("name", "iso_3166_2"), all = T)  
+```
+
+```
+## Error in merge(state_data, usa_states, by.x = c("geo.name", "geo.postal_abbreviation"), : object 'state_data' not found
+```
+
+```r
 # map
 ggplot() + 
   geom_sf(data = cnty_geos_map2, aes(fill = accreditation, geometry = geometry), color = "white") + 
@@ -245,7 +403,9 @@ ggplot() +
         legend.position = c(.95,.3))
 ```
 
-<img src="/figure/source/2018-02-14-propublica-forensic-api/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
+```
+## Error in geom_sf(data = cnty_geos_map2, aes(fill = accreditation, geometry = geometry), : object 'cnty_geos_map2' not found
+```
 
 Labs that show up red on the map have blank value for accreditation. Based on my reading of the ProPublica documentation, it is unclear to me if those values are missing or if it should be "full" accreditation. 
 

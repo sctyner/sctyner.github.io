@@ -3,7 +3,7 @@ highlighter: rouge
 markdown: kramdown
 permalink: /:title.html
 paginate: 5
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 port: 3000
 safe: true
 #encoding: UTF-8
