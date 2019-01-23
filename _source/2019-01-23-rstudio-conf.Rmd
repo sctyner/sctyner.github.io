@@ -1,0 +1,65 @@
+---
+layout: post
+title: "Lessons learned at rstudio::conf"
+date: "2019-01-23 09:35:31 CST"
+categories: blog, rstats, rstudio
+---
+
+rstudio::conf was the most exciting and exhausting conference I have ever attended, and I'm not quite sure my introvert[^1] self is recovered yet, but here goes. What follows is a list of things I learned about attending conferences, about `R`, and about myself while attending rstudio::conf. 
+
+## 1. "Never half-ass two things. Whole-ass one thing." 
+
+```{r ron, fig.align='center', out.width="50%", echo = FALSE}
+knitr::include_graphics("https://i.pinimg.com/originals/c0/90/d0/c090d03aacaa0956f871f42b53540793.jpg")
+```
+
+Ron Swanson is not wrong about this. [Psychology](https://www.psychologytoday.com/us/blog/the-squeaky-wheel/201606/10-real-risks-multitasking-mind-and-body) backs him up. But, I believed the lie that I'm a great multitasker. (A mental self-deception more common in women than in men.) I'm not. I, like the vast majority of humans, am a terrible multitasker. 
+
+I finally came to terms with this during the workshop I took at rstudio::conf. I had all sorts of tabs open in Chrome, and was answering email during the lectures. Then, I looked up at the instructor and had no clue what was happening. It dawned on me that I had paid a lot of money for this and I better get my act together. 
+
+So, for the non-workshop portion of the conference, I just had my notebook open during the talks and left my computer in my bag. I gave my full attention to all presenters for the first time in my conference-going life. For so long, I believed the lie that I could listen to them and learn from them while also emailing, Tweeting, working on paper revisions, etc. No more. Whole-ass your conference attendance, people! If you need to work, find a quiet corner in a room where no one is presenting and work for 30 minutes. Then just jump into the next session! Nothing is lost by whole-assing your work and your conference attendance. This brings me to my next point...
+
+## 2. Conference FOMO is cancelled. 
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Is it possible to have FOMO for a conference you&#39;re attending? So many great talks lined up at <a href="https://twitter.com/hashtag/rstudioconf?src=hash&amp;ref_src=twsrc%5Etfw">#rstudioconf</a> today that I haven&#39;t a clue how to choose 🤪</p>&mdash; Adam T. Austin (@just_add_data) <a href="https://twitter.com/just_add_data/status/1086277148594196481?ref_src=twsrc%5Etfw">January 18, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I had this *same exact* thought when I was looking at the program. And while I'd like to think that Adam and I share some sort of Chicago suburbanite mental mind-meld, it's much more likely that a lot of people were thinking this and his was just the first tweet I saw about it. I have in the past tweeted about having conference FOMO[^2] and fully admit to falling prey to rosy online presences of conferences. 
+
+Some things to remember about Twitter: it's [chaos](https://yihui.name/en/2017/08/twitter-threads-vs-blogging/) and it's curated. It's true that rstudio::conf was a great experience for me and for many others. But it's also true that
+
+1. Attending rstudio::conf is expensive as hell. (I probably spent upwards of $3000 all told.) So realistically speaking, a lot of people just won't be able to go. 
+2. Attending rstudio::conf is thoroughly [exhausting](https://twitter.com/MilesMcBain/status/1086627528587051015). Not everyone can trade a week of work and being away from family for that.  
+3. NO ONE CAN DO ALL THE THINGS. NOT EVEN YOU! 
+
+We all make choices in our life that lead us down different paths and to different places. It's much better to appreciate where you are in this moment. When you see a tweet about a talk that sounds really appealing, make a note of that you want to watch it when it gets uploaded to YouTube and find the [slides](https://github.com/kbroman/RStudioConf2019Slides) for it. I will probably go back and watch or re-watch a lot of the presentations at some point, and I will probably download many of the slide decks. Just do it at your own speed. Having FOMO is really just admitting that you've put the unrealistic, perfectionistic expectations on yourself that you have to be everywhere all the time and do all the things. You don't. In fact, it's literally impossible. That being said...
+
+## 3. Every talk was excellent. 
+
+I don't know what happened behind the scenes[^3] but it seemed like every single presenter I saw had put so much *careful* thought into *each* slide in their talk. The story-telling was outstanding. This consistent excellence had to be orchestrated in some way. In most other conferences I've been to, the presenters tend to try to cram 60 minutes worth of material into 20, and they let story-telling slide in favor of walls of text, code, and equations. Each presenter was engaging, had minimal text on slides, and told a whole story in 20 minutes without rushing. I was especially impressed by [the Nolis' talk](https://nolisllc.com/assets/presentations/r-tensorflow-api.pdf), Jonathan McPherson's talk about [RStudio 1.2](https://github.com/jmcphers/rstudio-1.2-features), James Blair's [talk](https://github.com/sol-eng/plumber-model) about [`plumber`](https://www.rplumber.io/), and Miles McBain's talk about package ["magic"](https://docs.google.com/presentation/d/1iUz3A_xHIzeFIzOQ_JQLdGPbC82qcDEDSqvjIBiP1a8/edit#slide=id.p). Whoever helped all these presenters get their TED talk on, thank you. 
+
+## 4. Inclusivity happens with intention and on purpose.
+
+I had not heard of the [Pac-Man](https://www.ericholscher.com/blog/2017/aug/2/pacman-rule-conferences/) rule for conferences before Hadley's opening presentation. It's so great. I met so many awesome people at this conference because of it. The other little things that Hadley did to encourage inclusivity in that talk (e.g. "A question is a single sentence with a question mark at the end") really made the conference feel like a welcoming place. 
+
+I just *love* that comment about questions. The "question that is really a comment" trope is usually perpetrated by one particular type of conference attendee, and by reminding the audience what a question his, Hadley told all of us that our ideas and our questions are important. 
+
+I also imposed a purposeful inclusion rule on myself. I told myself that I would not approach a group of people (no matter how well they were "Pac-Man-ing") if that group did not include at least one woman or person of color. Now, rstudio::conf was definitely one of the more diverse conferences I've been to, but this was still something that was hard to do. In the end, I'm very glad I made this rule for myself because I met lots of new people that I wouldn't have otherwise. Inclusivity happens when people make it happen. 
+
+
+## 5. R users don't have to become R developers.
+
+This was a *huge* lesson for me. I was surrounded by amazing `R` users and developers, and I finally realized that the goal of using `R` is not to eventually become an amazing package writer.
+
+You can just, wait for it, use `R`! 
+
+And I've written packages. They're on CRAN. But I always felt bad because I don't love developing packages. I did it as part of my Master's project, and I've written packages for my own use while writing my thesis, but I've never loved the thought of sitting down and making an R package. And for the first time, I realized that that's okay. So much of the amazing work presented at rstudio::conf was "just" people using `R`. 
+
+I think there's a certain cult of `R`[^4] (and more specifically of `tidyverse`) users and developers that gives off the impression that you have to be this amazing package developer and your code has to be beautiful and [smell like roses](https://docs.google.com/presentation/d/1iUz3A_xHIzeFIzOQ_JQLdGPbC82qcDEDSqvjIBiP1a8/edit#slide=id.g4c0eda98f0_0_100), otherwise you don't belong. That's certainly how I've felt at other conferences and on Twitter at times. But, I belong and you belong. If you use R, you belong. That's enough. Mind officially blown. 
+
+
+
+[^1]: I'm using the [MBTI](https://www.myersbriggs.org/my-mbti-personality-type/mbti-basics/extraversion-or-introversion.htm) definition of introversion / extraversion. Introverts feel drained when interacting with people, while this same interaction energizes extraverts. 
+[^2]: Fear Of Missing Out
+[^3]: I'm sure something went on. Maybe a dozen emails containing best practices for presentations, maybe each presenter got an hour with someone from TED. But I'm convinced. There's no way all the presentations were just that good. (No offense.)
+[^4]: Yes, I said cult. And yes, I am a member of said cult, so it's fine. I freaking love the `tidyverse`, unapolagetically forever and ever. I've seen the pipe operator in my dreams. 
