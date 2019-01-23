@@ -56,7 +56,7 @@ And I've written packages. They're on CRAN. But I always felt bad because I don'
 I think there's a certain cult of `R`[^4] (and more specifically of `tidyverse`) users and developers that gives off the impression that you have to be this amazing package developer and your code has to be beautiful and [smell like roses](https://docs.google.com/presentation/d/1iUz3A_xHIzeFIzOQ_JQLdGPbC82qcDEDSqvjIBiP1a8/edit#slide=id.g4c0eda98f0_0_100), otherwise you don't belong. That's certainly how I've felt at other conferences and on Twitter at times. But, I belong and you belong. If you use R, you belong. That's enough. Mind officially blown. 
 
 
-
+***
 [^1]: I'm using the [MBTI](https://www.myersbriggs.org/my-mbti-personality-type/mbti-basics/extraversion-or-introversion.htm) definition of introversion / extraversion. Introverts feel drained when interacting with people, while this same interaction energizes extraverts. 
 [^2]: Fear Of Missing Out
 [^3]: I'm sure something went on. Maybe a dozen emails containing best practices for presentations, maybe each presenter got an hour with someone from TED. But I'm convinced. There's no way all the presentations were just that good. (No offense.)
