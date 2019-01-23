@@ -5,7 +5,7 @@ date: "2019-01-23 09:35:31 CST"
 categories: blog, rstats, rstudio
 ---
 
-rstudio::conf was the most exciting and exhausting conference I have ever attended, and I'm not quite sure my introvert[^1] self is recovered yet, but here goes. What follows is a list of things I learned about attending conferences, about `R`, and about myself while attending rstudio::conf. 
+rstudio::conf was the most exciting and exhausting conference I have ever attended, and I'm not quite sure my introvert[^1] self is fully recovered yet, but here goes. What follows is a list of things I learned about attending conferences, about `R`, and about myself while attending rstudio::conf. 
 
 ## 1. "Never half-ass two things. Whole-ass one thing." 
 
@@ -36,7 +36,7 @@ We all make choices in our life that lead us down different paths and to differe
 
 ## 3. Every talk was excellent. 
 
-I don't know what happened behind the scenes[^3] but it seemed like every single presenter I saw had put so much *careful* thought into *each* slide in their talk. The story-telling was outstanding. This consistent excellence had to be orchestrated in some way. In most other conferences I've been to, the presenters tend to try to cram 60 minutes worth of material into 20, and they let story-telling slide in favor of walls of text, code, and equations. Each presenter was engaging, had minimal text on slides, and told a whole story in 20 minutes without rushing. I was especially impressed by [the Nolis' talk](https://nolisllc.com/assets/presentations/r-tensorflow-api.pdf), Jonathan McPherson's talk about [RStudio 1.2](https://github.com/jmcphers/rstudio-1.2-features), James Blair's [talk](https://github.com/sol-eng/plumber-model) about [`plumber`](https://www.rplumber.io/), and Miles McBain's talk about package ["magic"](https://docs.google.com/presentation/d/1iUz3A_xHIzeFIzOQ_JQLdGPbC82qcDEDSqvjIBiP1a8/edit#slide=id.p). Whoever helped all these presenters get their TED talk on, thank you. 
+I don't know what happened behind the scenes[^3] but it seemed like every single presenter I saw had put so much *careful* thought into *each* slide in their talk. This consistent excellence had to be orchestrated in some way. The story-telling was outstanding. In most other conferences I've been to, the presenters tend to try to cram 60 minutes worth of material into 20, and they let story-telling slide in favor of walls of text, code, and equations. Each presenter was engaging, had minimal text on slides, and told a whole story in 20 minutes without rushing. I was especially impressed by [the Nolis' talk](https://nolisllc.com/assets/presentations/r-tensorflow-api.pdf), Jonathan McPherson's talk about [RStudio 1.2](https://github.com/jmcphers/rstudio-1.2-features), James Blair's [talk](https://github.com/sol-eng/plumber-model) about [`plumber`](https://www.rplumber.io/), and Miles McBain's talk about package ["magic"](https://docs.google.com/presentation/d/1iUz3A_xHIzeFIzOQ_JQLdGPbC82qcDEDSqvjIBiP1a8/edit#slide=id.p). Whoever helped all these presenters get their TED talk on, thank you. 
 
 ## 4. Inclusivity happens with intention and on purpose.
 
