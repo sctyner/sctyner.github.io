@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Graphics for the ISU LAS College Status of Women Report: Excel to `ggplot2`"
+title: "Graphics for the ISU LAS College Status of Women Report: Excel to ggplot2"
 date: "2019-02-01 13:10:00 CST"
 categories: graphics, rstats, ggplot2
 ---
