@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Graphics for the ISU LAS College Status of Women Report: Excel to `ggplot2`"
+date: "2018-11-16 10:13:19 CST"
+categories: graphics, rstats, ggplot2
+---
+
+
+Slides are [here](../static/presentations/Misc/GraphicsGroupISU/2019-02-01/las-status-women-graphics-group.html). 
+
+Note: As much as I love sharing data and code, I cannot for this presentation because the data are not mine to share. 
