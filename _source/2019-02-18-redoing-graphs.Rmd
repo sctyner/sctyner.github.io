@@ -1,0 +1,126 @@
+---
+layout: post
+title: "Reconstructing a plot from the National Weather Service"
+date: "2019-02-19 18:26:29 CST"
+categories: blog, graphics, ggplot2, rstats, weather
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+## A no-so-great graphic
+
+```{r badplot, echo = FALSE, fig.align='center',out.width='80%', fig.cap="Source: https://twitter.com/NWSDesMoines"}
+knitr::include_graphics("https://pbs.twimg.com/media/DzqWr_ZX4AAaY8B.png:large")
+```
+
+Why is it not so great? Mostly, the double y-axis is very misleading. On 1/18, it looks like we got more snow in one day than we did all winter! 
+
+```{r getdata}
+# install.packages("rnoaa")
+library(rnoaa)
+library(tidyverse)
+```
+
+
+Step 1: Get an [API token](https://www.ncdc.noaa.gov/cdo-web/token). (Mine took about 20 minutes to come through.) 
+
+```{r setkey, eval=FALSE}
+options(noaakey = "YOUR_KEY")
+```
+
+Step 2: Find the Des Moines weather station(s). 
+
+```{r getdsm, eval = FALSE}
+# all stations with historical data
+stat <- ghcnd_stations()
+```
+
+```{r getdsmforreal, echo = FALSE}
+# all stations with historical data
+stat <- read_csv("../static/dat/stations.csv")
+```
+
+```{r getdsm2}
+head(stat)
+stat %>% filter(str_detect(name, "MOINES")) %>% 
+  arrange(first_year, desc(last_year)) %>% 
+  filter(element == "SNOW") 
+
+dsm_info <- stat %>% filter(str_detect(name, "MOINES")) %>% 
+  arrange(first_year, desc(last_year)) %>% 
+  filter(element == "SNOW") %>% slice(3)
+dsm_id <- dsm_info %>% pull(id)
+
+```
+
+Step 3: Global Historical Climatology Network daily weather data for DSM Airport. Data documentation [here](https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt). 
+
+```{r gethistdat, eval = FALSE}
+hist_dsm_data <- ghcnd(dsm_id, refresh = TRUE)
+```
+
+```{r gethistdatforreal, echo=FALSE}
+hist_dsm_data <- read_csv("../static/dat/dsm_hist_weather.csv")
+```
+
+
+
+
+```{r gethistdat2}
+head(hist_dsm_data)
+
+hist_dsm_data %>% filter(element=="SNOW") %>% 
+  select(year, month,starts_with("VALUE")) %>% # per documentation, VALUE# indicates the day of the month 
+  gather(day, fall_mm, VALUE1:VALUE31) %>% # go from wide to long
+  mutate(day = parse_number(day)) %>% # convert day to a number
+  filter(!is.na(day)) %>% # get rid of days that are missing/don't exist
+  mutate(date = lubridate::make_date(year = year, month = month, day = day)) %>% # creat an actual date column
+  arrange(date) %>% 
+  filter(!is.na(fall_mm)) %>% # remove missings e.g. for February 30th 
+  filter(month %in% c(11, 12, 1, 2)) %>% # only want winter months
+  mutate(year2 = ifelse(month %in% c(1,2), year-1, year)) %>% # create another year variable to group by 
+  arrange(date) %>% 
+  group_by(year2) %>% # so we can get cumulative snowfall in a winter season.
+  mutate(fall_mm_cum = cumsum(fall_mm)) -> snow_data_hist
+
+head(snow_data_hist)
+
+avg_81_10 <- filter(snow_data_hist, year2 %in% 1981:2010) # date ranges to match original plot 
+
+snow_data_avg <- avg_81_10 %>% ungroup() %>% group_by(day, month) %>% 
+  mutate(avg_c_sum = mean(fall_mm_cum), avg_day_mm = mean(fall_mm)) # compute daily averages 
+
+snow_data_avg2 <- snow_data_avg %>% select(month, day, avg_c_sum, avg_day_mm) %>% 
+  unique() %>% filter(month != 2 | !(month == 2 & day >16)) # make sure date ranges match data available for 2019
+
+thisyear <- filter(snow_data_hist, year2 == 2018)
+
+head(thisyear) 
+
+
+thisyear %>% left_join(snow_data_avg2) %>% head() # combine historical data with this year's data
+
+```
+
+Step 4: Re-do the plot with a single y-axis
+
+```{r redoplot, out.width='80%', fig.align="center"}
+thisyear %>% left_join(snow_data_avg2) %>%
+  ggplot(aes(x = date)) + 
+  geom_line(aes(y = avg_c_sum*0.0393701, color = "1981-2010 Normal Snowfall"), size = 1.5)  + # multiply by 0.0393701 to convert mm to in
+  geom_line(aes(y = fall_mm_cum*0.0393701, color = "2018-19 Total Snowfall"), size = 1.5) + 
+  geom_segment(aes(x = date, xend = date, y = 0, yend = fall_mm*0.0393701, color ="2018-19 Daily Snowfall"), size = 1.5) + 
+  geom_segment(aes(x = date, xend = date, y = 0, yend = avg_day_mm*0.0393701, color ="1981-2010 Average Daily Snowfall"), size = 1.5, alpha = .6) + 
+  labs(x = "Date", y = "Snowfall (in)", title = "2018-19 Snowfall in Des Moines") + 
+  scale_x_date(date_breaks = "1 weeks", date_labels = "%m/%d") + 
+  scale_y_continuous(breaks = 0:7*5, position = "right") +  
+  theme_bw() + 
+  scale_color_manual(name = "", values = c("2018-19 Daily Snowfall" = "#00B0F0",
+                                           "1981-2010 Normal Snowfall" = "#00B050",
+                                           "2018-19 Total Snowfall" = "navy",
+                                           "1981-2010 Average Daily Snowfall" = "#71e8a7"), 
+                     guide = guide_legend(nrow = 2)) + 
+  theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5)) 
+ 
+``` 
