@@ -100,22 +100,9 @@ After a few failed attempts, and reading the [`rnoaa` documentation](https://cra
 
 ```r
 hist_dsm_data <- ghcnd(dsm_id, refresh = TRUE)
-```
-
-
-
-And now we corral the data for the visualization! We need (in inches): 
-
-1. Daily snowfall amounts for the current winter
-2. Historical average daily snowfall amounts for the 1981-2010 winters
-3. Cumulative amounts of 1 and 2. 
-
-The data are very wide, with 3 columns for each day of the month. 
-
-
-```r
 head(hist_dsm_data)
 ```
+
 
 ```
 ## # A tibble: 6 x 128
@@ -152,6 +139,15 @@ head(hist_dsm_data)
 ## #   QFLAG25 <lgl>, SFLAG25 <chr>, VALUE26 <dbl>, MFLAG26 <lgl>,
 ## #   QFLAG26 <lgl>, SFLAG26 <chr>, VALUE27 <dbl>, MFLAG27 <lgl>, …
 ```
+
+And now we corral the data for the visualization! We need (in inches): 
+
+1. Daily snowfall amounts for the current winter
+2. Historical average daily snowfall amounts for the 1981-2010 winters
+3. Cumulative amounts of 1 and 2. 
+
+The data are very wide, with 3 columns for each day of the month. 
+
 
 ```r
 # make wide data long 

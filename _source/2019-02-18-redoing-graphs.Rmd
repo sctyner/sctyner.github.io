@@ -66,10 +66,12 @@ After a few failed attempts, and reading the [`rnoaa` documentation](https://cra
 
 ```{r gethistdat, eval = FALSE}
 hist_dsm_data <- ghcnd(dsm_id, refresh = TRUE)
+head(hist_dsm_data)
 ```
 
 ```{r gethistdatforreal, echo=FALSE}
 hist_dsm_data <- read_csv("../static/dat/dsm_hist_weather.csv")
+head(hist_dsm_data)
 ```
 
 And now we corral the data for the visualization! We need (in inches): 
@@ -81,7 +83,6 @@ And now we corral the data for the visualization! We need (in inches):
 The data are very wide, with 3 columns for each day of the month. 
 
 ```{r gethistdat2}
-head(hist_dsm_data)
 # make wide data long 
 wide_to_long <- hist_dsm_data %>% filter(element=="SNOW") %>%  # just want snowfall totals
   select(year, month,starts_with("VALUE")) %>% # per documentation, VALUE# indicates the day of the month 
