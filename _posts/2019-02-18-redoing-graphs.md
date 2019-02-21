@@ -357,11 +357,11 @@ ggplot() +
   labs(y= "Snowfall in Inches", title = "2018-19 Snowfall in Des Moines") + 
   guides(color = "none") + 
   theme_bw() + 
-  theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5)) + 
+  theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5), aspect.ratio = .4) + 
   facet_wrap(~type2, nrow = 1, scales = "free_y" )
 ```
 
-<img src="/figure/source/2019-02-18-redoing-graphs/facetgeoms-1.png" title="plot of chunk facetgeoms" alt="plot of chunk facetgeoms" width="110%" />
+<img src="/figure/source/2019-02-18-redoing-graphs/facetgeoms-1.png" title="plot of chunk facetgeoms" alt="plot of chunk facetgeoms" width="100%" />
 
 
 
