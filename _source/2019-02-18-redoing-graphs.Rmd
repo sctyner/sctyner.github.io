@@ -10,11 +10,20 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 ## A no-so-great graphic
 
+It's been snowing a lot lately in Iowa, so someone sent me [this tweet](https://twitter.com/NWSDesMoines/status/1097357137158828032) about just how much snow we've been getting. Instead of getting shocked at the snow, I was shocked at the data visualization. 
+
 ```{r badplot, echo = FALSE, fig.align='center',out.width='80%', fig.cap="Source: https://twitter.com/NWSDesMoines"}
 knitr::include_graphics("https://pbs.twimg.com/media/DzqWr_ZX4AAaY8B.png:large")
 ```
 
-Why is it not so great? Mostly, the double y-axis is very misleading. On 1/18, it looks like we got more snow in one day than we did all winter! 
+Why is this graphic not so great? Mostly, the double y-axis is very misleading. On 1/18, it looks like we got more snow in one day than we did all winter! So, with another snowy day again today, I decided to re-make it without the dual y-axes. 
+
+
+## Making a better graphic
+
+The [National Weather Service](https://www.weather.gov/dmx/) takes in data from [NOAA](https://www.noaa.gov/). So, I went searching for an R package for getting NOAA data into R. Luckily, [rOpenSci](https://ropensci.org/tutorials/rnoaa_tutorial/) has one!  It's called `rnoaa`. What follows is how I got the data and re-created the graphic. 
+
+First, attach the necessary packages. 
 
 ```{r getdata}
 # install.packages("rnoaa")
@@ -23,13 +32,13 @@ library(tidyverse)
 ```
 
 
-Step 1: Get an [API token](https://www.ncdc.noaa.gov/cdo-web/token). (Mine took about 20 minutes to come through.) 
+Then, get an [API token](https://www.ncdc.noaa.gov/cdo-web/token) for the NOAA APIs. (Mine took about 20 minutes to come through.) Once you have that, set it up in your R session with `options()`: 
 
 ```{r setkey, eval=FALSE}
 options(noaakey = "YOUR_KEY")
 ```
 
-Step 2: Find the Des Moines weather station(s). 
+Next, find the Des Moines weather station(s) that will have the recorded data we want (historical daily snowfall). 
 
 ```{r getdsm, eval = FALSE}
 # all stations with historical data
@@ -43,18 +52,17 @@ stat <- read_csv("../static/dat/stations.csv")
 
 ```{r getdsm2}
 head(stat)
-stat %>% filter(str_detect(name, "MOINES")) %>% 
-  arrange(first_year, desc(last_year)) %>% 
-  filter(element == "SNOW") 
+stat %>% filter(str_detect(name, "MOINES")) %>% # look for "des moines"
+  arrange(first_year, desc(last_year)) %>% # make sure the years we want are covered (1981-2010, 2018-2019)
+  filter(element == "SNOW") # we need snowfall data
 
 dsm_info <- stat %>% filter(str_detect(name, "MOINES")) %>% 
   arrange(first_year, desc(last_year)) %>% 
-  filter(element == "SNOW") %>% slice(3)
-dsm_id <- dsm_info %>% pull(id)
-
+  filter(element == "SNOW") %>% slice(3) # 3rd row is actually DSM, IA, and has 70+ years of data
+dsm_id <- dsm_info %>% pull(id) # get the ID for this weather station
 ```
 
-Step 3: Global Historical Climatology Network daily weather data for DSM Airport. Data documentation [here](https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt). 
+After a few failed attempts, and reading the [`noaar` documentation](https://cran.r-project.org/web/packages/rnoaa/rnoaa.pdf), I decided that the best data source would be the Global Historical Climatology Network daily weather data. These data are documented [here](https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt). The `ghcnd()` function gets all weather data for a particular station.  
 
 ```{r gethistdat, eval = FALSE}
 hist_dsm_data <- ghcnd(dsm_id, refresh = TRUE)
@@ -64,35 +72,50 @@ hist_dsm_data <- ghcnd(dsm_id, refresh = TRUE)
 hist_dsm_data <- read_csv("../static/dat/dsm_hist_weather.csv")
 ```
 
+And now we corral the data for the visualization! We need (in inches): 
 
+1. Daily snowfall amounts for the current winter
+2. Historical average daily snowfall amounts for the 1981-2010 winters
+3. Cumulative amounts of 1 and 2. 
 
+The data are very wide, with 3 columns for each day of the month. 
 
 ```{r gethistdat2}
 head(hist_dsm_data)
-
-hist_dsm_data %>% filter(element=="SNOW") %>% 
+# make wide data long 
+wide_to_long <- hist_dsm_data %>% filter(element=="SNOW") %>%  # just want snowfall totals
   select(year, month,starts_with("VALUE")) %>% # per documentation, VALUE# indicates the day of the month 
   gather(day, fall_mm, VALUE1:VALUE31) %>% # go from wide to long
   mutate(day = parse_number(day)) %>% # convert day to a number
-  filter(!is.na(day)) %>% # get rid of days that are missing/don't exist
-  mutate(date = lubridate::make_date(year = year, month = month, day = day)) %>% # creat an actual date column
+  filter(!is.na(day)) # get rid of days that are missing/don't exist
+head(wide_to_long)
+# get winter data
+winter_data <- wide_to_long %>% 
+  mutate(date = lubridate::make_date(year = year, month = month, day = day)) %>% # create an actual date column
   arrange(date) %>% 
   filter(!is.na(fall_mm)) %>% # remove missings e.g. for February 30th 
-  filter(month %in% c(11, 12, 1, 2)) %>% # only want winter months
+  filter(month %in% c(11, 12, 1, 2))# only want winter months
+head(winter_data)
+# get cumulative totals
+snow_data_hist <- winter_data %>% 
   mutate(year2 = ifelse(month %in% c(1,2), year-1, year)) %>% # create another year variable to group by 
-  arrange(date) %>% 
-  group_by(year2) %>% # so we can get cumulative snowfall in a winter season.
-  mutate(fall_mm_cum = cumsum(fall_mm)) -> snow_data_hist
-
+  arrange(date) %>%                                           
+  group_by(year2) %>% # so we can get cumulative snowfall in a winter season, not in a calendar year.
+  mutate(fall_mm_cum = cumsum(fall_mm)) # compute cumulative snowfall 
 head(snow_data_hist)
 
-avg_81_10 <- filter(snow_data_hist, year2 %in% 1981:2010) # date ranges to match original plot 
+# get date ranges to match original plot
+avg_81_10 <- filter(snow_data_hist, year2 %in% 1981:2010)  
 
+head(avg_81_10)
+
+# compute daily averages over the 30 year period
 snow_data_avg <- avg_81_10 %>% ungroup() %>% group_by(day, month) %>% 
-  mutate(avg_c_sum = mean(fall_mm_cum), avg_day_mm = mean(fall_mm)) # compute daily averages 
+  mutate(avg_c_sum = mean(fall_mm_cum), avg_day_mm = mean(fall_mm)) 
 
+# make sure date ranges match data available for 2019
 snow_data_avg2 <- snow_data_avg %>% select(month, day, avg_c_sum, avg_day_mm) %>% 
-  unique() %>% filter(month != 2 | !(month == 2 & day >16)) # make sure date ranges match data available for 2019
+  unique() %>% filter(month != 2 | !(month == 2 & day >16))
 
 thisyear <- filter(snow_data_hist, year2 == 2018)
 
@@ -103,15 +126,15 @@ thisyear %>% left_join(snow_data_avg2) %>% head() # combine historical data with
 
 ```
 
-Step 4: Re-do the plot with a single y-axis
+Finally, re-do the plot with a single y-axis. I also added daily average snowfall in red to compare the daily totals with this year's daily snowfall. 
 
 ```{r redoplot, out.width='80%', fig.align="center"}
-thisyear %>% left_join(snow_data_avg2) %>%
+p <- thisyear %>% left_join(snow_data_avg2) %>%
   ggplot(aes(x = date)) + 
   geom_line(aes(y = avg_c_sum*0.0393701, color = "1981-2010 Normal Snowfall"), size = 1.5)  + # multiply by 0.0393701 to convert mm to in
   geom_line(aes(y = fall_mm_cum*0.0393701, color = "2018-19 Total Snowfall"), size = 1.5) + 
   geom_segment(aes(x = date, xend = date, y = 0, yend = fall_mm*0.0393701, color ="2018-19 Daily Snowfall"), size = 1.5) + 
-  geom_segment(aes(x = date, xend = date, y = 0, yend = avg_day_mm*0.0393701, color ="1981-2010 Average Daily Snowfall"), size = 1.5, alpha = .6) + 
+  geom_segment(aes(x = date, xend = date, y = 0, yend = avg_day_mm*0.0393701, color ="1981-2010 Average Daily Snowfall"), size = 1.5, alpha = .7) + 
   labs(x = "Date", y = "Snowfall (in)", title = "2018-19 Snowfall in Des Moines") + 
   scale_x_date(date_breaks = "1 weeks", date_labels = "%m/%d") + 
   scale_y_continuous(breaks = 0:7*5, position = "right") +  
@@ -122,5 +145,11 @@ thisyear %>% left_join(snow_data_avg2) %>%
                                            "1981-2010 Average Daily Snowfall" = "#71e8a7"), 
                      guide = guide_legend(nrow = 2)) + 
   theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5)) 
- 
+p
 ``` 
+
+So, what do you think? 
+
+```{r sidebyside, fig.show='hold', out.width='50%', fig.align='center', echo=FALSE}
+knitr::include_graphics("https://pbs.twimg.com/media/DzqWr_ZX4AAaY8B.png:large"); p
+```
