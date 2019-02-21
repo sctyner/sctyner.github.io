@@ -361,7 +361,7 @@ ggplot() +
   facet_wrap(~type2, nrow = 1, scales = "free_y" )
 ```
 
-<img src="/figure/source/2019-02-18-redoing-graphs/facetgeoms-1.png" title="plot of chunk facetgeoms" alt="plot of chunk facetgeoms" width="100%" />
+<img src="/figure/source/2019-02-18-redoing-graphs/facetgeoms-1.png" title="plot of chunk facetgeoms" alt="plot of chunk facetgeoms" width="110%" />
 
 
 

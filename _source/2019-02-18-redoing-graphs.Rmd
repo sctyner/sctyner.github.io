@@ -166,7 +166,7 @@ Today, I learned different having a different `geom_*`s in each facet panel is a
 
 My solution. Thanks to [this](https://stackoverflow.com/questions/7903972/can-you-specify-different-geoms-for-different-facets-in-a-ggplot) StackOverflow question. 
 
-```{r facetgeoms, out.width='100%'}
+```{r facetgeoms, out.width='110%'}
 snowdata <- thisyear %>% left_join(snow_data_avg2)
 snowdata2 <- snowdata %>% 
   gather(type, mm_snow, c(fall_mm, fall_mm_cum:avg_day_mm))
