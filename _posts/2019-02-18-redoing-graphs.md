@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reconstructing a plot from the National Weather Service"
-date: "2019-02-19 18:26:29 CST"
+date: "2019-02-20 22:07:34 CST"
 categories: blog, graphics, ggplot2, rstats, weather
 ---
 
@@ -10,7 +10,7 @@ categories: blog, graphics, ggplot2, rstats, weather
 
 It's been snowing a lot lately in Iowa, so someone sent me [this tweet](https://twitter.com/NWSDesMoines/status/1097357137158828032) about just how much snow we've been getting. Instead of getting shocked at the snow, I was shocked at the data visualization. 
 
-<img src="/https://pbs.twimg.com/media/DzqWr_ZX4AAaY8B.png:large" title="Source: https://twitter.com/NWSDesMoines" alt="Source: https://twitter.com/NWSDesMoines" width="80%" style="display: block; margin: auto;" />
+<img src="/../static/img/nwsplot.png" title="Source: https://twitter.com/NWSDesMoines" alt="Source: https://twitter.com/NWSDesMoines" width="80%" style="display: block; margin: auto;" />
 
 Why is this graphic not so great? Mostly, the double y-axis is very misleading. On 1/18, it looks like we got more snow in one day than we did all winter! So, with another snowy day again today, I decided to re-make it without the dual y-axes. 
 
