@@ -95,7 +95,7 @@ dsm_info <- stat %>% filter(str_detect(name, "MOINES")) %>%
 dsm_id <- dsm_info %>% pull(id) # get the ID for this weather station
 ```
 
-After a few failed attempts, and reading the [`noaar` documentation](https://cran.r-project.org/web/packages/rnoaa/rnoaa.pdf), I decided that the best data source would be the Global Historical Climatology Network daily weather data. These data are documented [here](https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt). The `ghcnd()` function gets all weather data for a particular station.  
+After a few failed attempts, and reading the [`rnoaa` documentation](https://cran.r-project.org/web/packages/rnoaa/rnoaa.pdf), I decided that the best data source would be the Global Historical Climatology Network daily weather data. These data are documented [here](https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt). The `ghcnd()` function gets all weather data for a particular station.  
 
 
 ```r
