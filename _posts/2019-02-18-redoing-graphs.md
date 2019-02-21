@@ -308,4 +308,4 @@ p
 
 So, what do you think? 
 
-<img src="/https://pbs.twimg.com/media/DzqWr_ZX4AAaY8B.png:large" title="plot of chunk sidebyside" alt="plot of chunk sidebyside" width="50%" style="display: block; margin: auto;" /><img src="/figure/source/2019-02-18-redoing-graphs/sidebyside-2.png" title="plot of chunk sidebyside" alt="plot of chunk sidebyside" width="50%" style="display: block; margin: auto;" />
+<img src="/../static/img/nwsplot.png" title="plot of chunk sidebyside" alt="plot of chunk sidebyside" width="50%" style="display: block; margin: auto;" /><img src="/figure/source/2019-02-18-redoing-graphs/sidebyside-2.png" title="plot of chunk sidebyside" alt="plot of chunk sidebyside" width="50%" style="display: block; margin: auto;" />

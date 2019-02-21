@@ -152,5 +152,5 @@ p
 So, what do you think? 
 
 ```{r sidebyside, fig.show='hold', out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics("https://pbs.twimg.com/media/DzqWr_ZX4AAaY8B.png:large"); p
+knitr::include_graphics("../static/img/nwsplot.png"); p
 ```
