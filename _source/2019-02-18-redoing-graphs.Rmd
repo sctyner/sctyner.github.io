@@ -154,3 +154,45 @@ So, what do you think?
 ```{r sidebyside, fig.show='hold', out.width='50%', fig.align='center', echo=FALSE}
 knitr::include_graphics("../static/img/nwsplot.png"); p
 ```
+
+
+### Addendum 
+
+Today, I learned different having a different `geom_*`s in each facet panel is a thing! 
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr">I’d wonder about putting the daily snow fall in a different facet and using scales = “free” (different geoms in different facets is a cool trick that I don’t think enough people know about)</p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/1098581656997425154?ref_src=twsrc%5Etfw">February 21, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+My solution. Thanks to [this](https://stackoverflow.com/questions/7903972/can-you-specify-different-geoms-for-different-facets-in-a-ggplot) StackOverflow question. 
+
+```{r facetgeoms, out.width='100%'}
+snowdata <- thisyear %>% left_join(snow_data_avg2)
+snowdata2 <- snowdata %>% 
+  gather(type, mm_snow, c(fall_mm, fall_mm_cum:avg_day_mm))
+
+snowdata2 <- snowdata2 %>% 
+  mutate(type2 = recode(type, fall_mm = "Daily Snowfall", fall_mm_cum = "Cumulative Snowfall", 
+                        avg_c_sum = "Cumulative Snowfall", avg_day_mm = "Daily Snowfall"),
+         in_snow = mm_snow * 0.0393701)
+head(snowdata2)
+
+ggplot() +
+  geom_line(data = snowdata2 %>% filter(type2 == "Cumulative Snowfall"), aes(x = date, y = in_snow, color = type), size = 1.5) + 
+  geom_bar(data = snowdata2 %>% filter(type2 == "Daily Snowfall"), aes(x = date, weight = in_snow, fill = type), size = 1.5, position = "dodge")  + 
+  scale_color_brewer(palette = "Paired") + 
+  scale_fill_brewer(name = "", palette = "Paired", labels = c("1981-2010 Average Snowfall", "2018-2019 Snowfall")) + 
+  scale_x_date(name = "Date (winter 2018-19)", breaks = "1 week", date_labels = "%m/%d") + 
+  labs(y= "Snowfall in Inches", title = "2018-19 Snowfall in Des Moines") + 
+  guides(color = "none") + 
+  theme_bw() + 
+  theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5)) + 
+  facet_wrap(~type2, nrow = 1, scales = "free_y" )
+
+```
+
+
+
+
+
+

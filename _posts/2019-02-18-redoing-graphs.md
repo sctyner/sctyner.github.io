@@ -309,3 +309,62 @@ p
 So, what do you think? 
 
 <img src="/../static/img/nwsplot.png" title="plot of chunk sidebyside" alt="plot of chunk sidebyside" width="50%" style="display: block; margin: auto;" /><img src="/figure/source/2019-02-18-redoing-graphs/sidebyside-2.png" title="plot of chunk sidebyside" alt="plot of chunk sidebyside" width="50%" style="display: block; margin: auto;" />
+
+
+### Addendum 
+
+Today, I learned different having a different `geom_*`s in each facet panel is a thing! 
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr">I’d wonder about putting the daily snow fall in a different facet and using scales = “free” (different geoms in different facets is a cool trick that I don’t think enough people know about)</p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/1098581656997425154?ref_src=twsrc%5Etfw">February 21, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+My solution. Thanks to [this](https://stackoverflow.com/questions/7903972/can-you-specify-different-geoms-for-different-facets-in-a-ggplot) StackOverflow question. 
+
+
+```r
+snowdata <- thisyear %>% left_join(snow_data_avg2)
+snowdata2 <- snowdata %>% 
+  gather(type, mm_snow, c(fall_mm, fall_mm_cum:avg_day_mm))
+
+snowdata2 <- snowdata2 %>% 
+  mutate(type2 = recode(type, fall_mm = "Daily Snowfall", fall_mm_cum = "Cumulative Snowfall", 
+                        avg_c_sum = "Cumulative Snowfall", avg_day_mm = "Daily Snowfall"),
+         in_snow = mm_snow * 0.0393701)
+head(snowdata2)
+```
+
+```
+## # A tibble: 6 x 9
+## # Groups:   year2 [1]
+##    year month   day date       year2 type    mm_snow type2          in_snow
+##   <dbl> <dbl> <dbl> <date>     <dbl> <chr>     <dbl> <chr>            <dbl>
+## 1  2018    11     1 2018-11-01  2018 fall_mm       0 Daily Snowfall       0
+## 2  2018    11     2 2018-11-02  2018 fall_mm       0 Daily Snowfall       0
+## 3  2018    11     3 2018-11-03  2018 fall_mm       0 Daily Snowfall       0
+## 4  2018    11     4 2018-11-04  2018 fall_mm       0 Daily Snowfall       0
+## 5  2018    11     5 2018-11-05  2018 fall_mm       0 Daily Snowfall       0
+## 6  2018    11     6 2018-11-06  2018 fall_mm       0 Daily Snowfall       0
+```
+
+```r
+ggplot() +
+  geom_line(data = snowdata2 %>% filter(type2 == "Cumulative Snowfall"), aes(x = date, y = in_snow, color = type), size = 1.5) + 
+  geom_bar(data = snowdata2 %>% filter(type2 == "Daily Snowfall"), aes(x = date, weight = in_snow, fill = type), size = 1.5, position = "dodge")  + 
+  scale_color_brewer(palette = "Paired") + 
+  scale_fill_brewer(name = "", palette = "Paired", labels = c("1981-2010 Average Snowfall", "2018-2019 Snowfall")) + 
+  scale_x_date(name = "Date (winter 2018-19)", breaks = "1 week", date_labels = "%m/%d") + 
+  labs(y= "Snowfall in Inches", title = "2018-19 Snowfall in Des Moines") + 
+  guides(color = "none") + 
+  theme_bw() + 
+  theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5)) + 
+  facet_wrap(~type2, nrow = 1, scales = "free_y" )
+```
+
+<img src="/figure/source/2019-02-18-redoing-graphs/facetgeoms-1.png" title="plot of chunk facetgeoms" alt="plot of chunk facetgeoms" width="100%" />
+
+
+
+
+
+
