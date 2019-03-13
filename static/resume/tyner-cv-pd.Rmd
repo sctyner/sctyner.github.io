@@ -336,7 +336,7 @@ Hackathon-style event for R users and developers living in middle America.
 
 Des Moines, Iowa 
 
-April 2019
+Apr. 2019
 
 ::: aside
 Please visit http://uuconf.rbind.io/ for more. 
@@ -348,7 +348,7 @@ Elected as the postdoctoral representative to the University Committee for the A
 
 Ames, Iowa 
 
-Present - Aug 2018
+Present - Aug. 2018
 
 ### Webmaster, Iowa Chapter of the ASA 
 
@@ -356,7 +356,7 @@ Maintain the online presence of the Iowa chapter of the American Statistical Ass
 
 Ames, Iowa
 
-Present - April 2018
+Present - Apr. 2018
 
 ### Co-founder and co-organizer, R-Ladies Ames 
 
@@ -364,7 +364,7 @@ Founded the Ames chapter of the global organization R-Ladies, which promotes gen
 
 Ames, Iowa
 
-Present - December 2016
+Present - Dec. 2016
 
 ::: aside
 with Natalia daSilva
@@ -376,7 +376,7 @@ Served alongside faculty and staff as the student member of ISU statistics depar
 
 Ames, Iowa 
 
-May 2017 - August 2014
+May 2017 - Aug. 2014
 
 ### The Iowa STAT-ers Club 
 
@@ -384,7 +384,7 @@ Led this Statistics Department graduate student organization in multiple executi
 
 Ames, Iowa 
 
-May 2016 - August 2012
+May 2016 - Aug. 2013
 
 
 Honors & Awards {data-icon=trophy}
