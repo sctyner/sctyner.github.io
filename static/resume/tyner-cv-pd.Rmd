@@ -1,7 +1,7 @@
 ---
 title: "Samantha C. Tyner's Curriculum Vitae"
 author: Samantha C. Tyner, PhD.
-date: "`r Sys.Date()`"
+date: "Mar. 13, 2019"
 output:
   pagedown::html_resume:
     # set it to true for a self-contained HTML page but it'll take longer to render
