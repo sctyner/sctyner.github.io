@@ -328,8 +328,8 @@ snowdata2 <- snowdata %>%
   gather(type, mm_snow, c(fall_mm, fall_mm_cum:avg_day_mm))
 
 snowdata2 <- snowdata2 %>% 
-  mutate(type2 = recode(type, fall_mm = "Daily Snowfall", fall_mm_cum = "Cumulative Snowfall", 
-                        avg_c_sum = "Cumulative Snowfall", avg_day_mm = "Daily Snowfall"),
+  mutate(type2 = recode(type, fall_mm = "Daily", fall_mm_cum = "Cumulative Snowfall", 
+                        avg_c_sum = "Cumulative Snowfall", avg_day_mm = "Daily"),
          in_snow = mm_snow * 0.0393701)
 head(snowdata2)
 ```
@@ -337,20 +337,20 @@ head(snowdata2)
 ```
 ## # A tibble: 6 x 9
 ## # Groups:   year2 [1]
-##    year month   day date       year2 type    mm_snow type2          in_snow
-##   <dbl> <dbl> <dbl> <date>     <dbl> <chr>     <dbl> <chr>            <dbl>
-## 1  2018    11     1 2018-11-01  2018 fall_mm       0 Daily Snowfall       0
-## 2  2018    11     2 2018-11-02  2018 fall_mm       0 Daily Snowfall       0
-## 3  2018    11     3 2018-11-03  2018 fall_mm       0 Daily Snowfall       0
-## 4  2018    11     4 2018-11-04  2018 fall_mm       0 Daily Snowfall       0
-## 5  2018    11     5 2018-11-05  2018 fall_mm       0 Daily Snowfall       0
-## 6  2018    11     6 2018-11-06  2018 fall_mm       0 Daily Snowfall       0
+##    year month   day date       year2 type    mm_snow type2 in_snow
+##   <dbl> <dbl> <dbl> <date>     <dbl> <chr>     <dbl> <chr>   <dbl>
+## 1  2018    11     1 2018-11-01  2018 fall_mm       0 Daily       0
+## 2  2018    11     2 2018-11-02  2018 fall_mm       0 Daily       0
+## 3  2018    11     3 2018-11-03  2018 fall_mm       0 Daily       0
+## 4  2018    11     4 2018-11-04  2018 fall_mm       0 Daily       0
+## 5  2018    11     5 2018-11-05  2018 fall_mm       0 Daily       0
+## 6  2018    11     6 2018-11-06  2018 fall_mm       0 Daily       0
 ```
 
 ```r
 ggplot() +
   geom_line(data = snowdata2 %>% filter(type2 == "Cumulative Snowfall"), aes(x = date, y = in_snow, color = type), size = 1.5) + 
-  geom_bar(data = snowdata2 %>% filter(type2 == "Daily Snowfall"), aes(x = date, weight = in_snow, fill = type), size = 1.5, position = "dodge")  + 
+  geom_bar(data = snowdata2 %>% filter(type2 == "Daily"), aes(x = date, weight = in_snow, fill = type), size = 1.5, position = "dodge")  + 
   scale_color_brewer(palette = "Paired") + 
   scale_fill_brewer(name = "", palette = "Paired", labels = c("1981-2010 Average Snowfall", "2018-2019 Snowfall")) + 
   scale_x_date(name = "Date (winter 2018-19)", breaks = "1 week", date_labels = "%m/%d") + 
@@ -363,6 +363,23 @@ ggplot() +
 ```
 
 <img src="/figure/source/2019-02-18-redoing-graphs/facetgeoms-1.png" title="plot of chunk facetgeoms" alt="plot of chunk facetgeoms" width="100%" style="display: block; margin: auto;" />
+
+```r
+ggplot() +
+  geom_line(data = snowdata2 %>% filter(type2 == "Cumulative Snowfall"), aes(x = date, y = in_snow, color = type), size = 1.5) + 
+  geom_bar(data = snowdata2 %>% filter(type2 == "Daily"), aes(x = date, weight = in_snow, fill = type), size = 1.5, position = "dodge")  + 
+  scale_color_brewer(palette = "Paired") + 
+  scale_fill_brewer(name = "", palette = "Paired", labels = c("1981-2010 Average Snowfall", "2018-2019 Snowfall")) + 
+  scale_x_date(name = "Date (winter 2018-19)", breaks = "1 week", date_labels = "%m/%d") + 
+  labs(y= "Snowfall in Inches", title = "2018-19 Snowfall in Des Moines") + 
+  guides(color = "none") + 
+  theme_bw() + 
+  theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5), 
+        axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  facet_grid(type2~., space = "free", scales = "free_y")
+```
+
+<img src="/figure/source/2019-02-18-redoing-graphs/facetgeoms-2.png" title="plot of chunk facetgeoms" alt="plot of chunk facetgeoms" width="100%" style="display: block; margin: auto;" />
 
 
 

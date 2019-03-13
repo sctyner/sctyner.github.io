@@ -172,14 +172,14 @@ snowdata2 <- snowdata %>%
   gather(type, mm_snow, c(fall_mm, fall_mm_cum:avg_day_mm))
 
 snowdata2 <- snowdata2 %>% 
-  mutate(type2 = recode(type, fall_mm = "Daily Snowfall", fall_mm_cum = "Cumulative Snowfall", 
-                        avg_c_sum = "Cumulative Snowfall", avg_day_mm = "Daily Snowfall"),
+  mutate(type2 = recode(type, fall_mm = "Daily", fall_mm_cum = "Cumulative Snowfall", 
+                        avg_c_sum = "Cumulative Snowfall", avg_day_mm = "Daily"),
          in_snow = mm_snow * 0.0393701)
 head(snowdata2)
 
 ggplot() +
   geom_line(data = snowdata2 %>% filter(type2 == "Cumulative Snowfall"), aes(x = date, y = in_snow, color = type), size = 1.5) + 
-  geom_bar(data = snowdata2 %>% filter(type2 == "Daily Snowfall"), aes(x = date, weight = in_snow, fill = type), size = 1.5, position = "dodge")  + 
+  geom_bar(data = snowdata2 %>% filter(type2 == "Daily"), aes(x = date, weight = in_snow, fill = type), size = 1.5, position = "dodge")  + 
   scale_color_brewer(palette = "Paired") + 
   scale_fill_brewer(name = "", palette = "Paired", labels = c("1981-2010 Average Snowfall", "2018-2019 Snowfall")) + 
   scale_x_date(name = "Date (winter 2018-19)", breaks = "1 week", date_labels = "%m/%d") + 
@@ -189,6 +189,20 @@ ggplot() +
   theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5), aspect.ratio = .4, 
         axis.text.x = element_text(angle = 45, hjust = 1)) + 
   facet_wrap(~type2, nrow = 1, scales = "free_y" )
+
+
+ggplot() +
+  geom_line(data = snowdata2 %>% filter(type2 == "Cumulative Snowfall"), aes(x = date, y = in_snow, color = type), size = 1.5) + 
+  geom_bar(data = snowdata2 %>% filter(type2 == "Daily"), aes(x = date, weight = in_snow, fill = type), size = 1.5, position = "dodge")  + 
+  scale_color_brewer(palette = "Paired") + 
+  scale_fill_brewer(name = "", palette = "Paired", labels = c("1981-2010 Average Snowfall", "2018-2019 Snowfall")) + 
+  scale_x_date(name = "Date (winter 2018-19)", breaks = "1 week", date_labels = "%m/%d") + 
+  labs(y= "Snowfall in Inches", title = "2018-19 Snowfall in Des Moines") + 
+  guides(color = "none") + 
+  theme_bw() + 
+  theme(legend.position = "bottom", plot.title = element_text(face = "bold", hjust = .5), 
+        axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  facet_grid(type2~., space = "free", scales = "free_y")
 ```
 
 
