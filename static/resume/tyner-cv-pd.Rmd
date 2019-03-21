@@ -12,7 +12,7 @@ Aside
 ================================================================================
 
 
-![Samantha C Tyner, PhD](https://avatars0.githubusercontent.com/u/6137322?s=460&v=4){width=80%}
+![Samantha C Tyner, PhD](../img/sam-avatar.png){width=80%}
 
 
 Contact Info {#contact}
@@ -236,7 +236,7 @@ Ames, Iowa
 
 ### The Joy of Clustering 
 
-[Significance Magazine Online](http://www. statslife.org.uk/culture/2553-the-joy-of-clustering). 11 Nov 2015
+[Significance Magazine Online](http://www.statslife.org.uk/culture/2553-the-joy-of-clustering). 11 Nov 2015
 
 Ames, Iowa
 
