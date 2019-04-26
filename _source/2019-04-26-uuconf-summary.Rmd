@@ -6,5 +6,5 @@ categories: rstats, community
 ---
 
 
-Slides are [here](../static/presentations/Misc/GraphicsGroupISU/2019-04-026/uu-graphics-group-presentation.html). 
+Slides are [here](../static/presentations/Misc/GraphicsGroupISU/2019-04-26/uu-graphics-group-presentation.html). 
 
