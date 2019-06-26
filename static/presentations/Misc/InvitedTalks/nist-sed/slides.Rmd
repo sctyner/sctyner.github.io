@@ -2,11 +2,11 @@
 title: "Making your projects more reproducible and efficient"
 subtitle: "with `rmarkdown`, `tidyverse`, and related R packages"
 author: "Sam Tyner"
-date: "2019-06-27 at 1pm EDT<br>NIST Bldg 101, LR B, Gaithersburg, MD"
+date: "2019-06-27 at 1pm EDT<br>NIST Bldg 101, LR B, Gaithersburg, MD<br>Slides available at bit.ly/sctNIST19"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: xaringan-themer.css
+    css: [xaringan-themer.css, custom.css]
     nature:
       highlightStyle: github
       highlightLines: true
@@ -41,10 +41,15 @@ Part II: Efficiency
 3. `purrr` : remove `for` loops from your vocabulary
 4. (if time) `tidymodels` : applying `tidyverse` principles to modeling
 
----
-# Disclaimer 
 
-The tools presented here represent one way of conducting data analysis projects in R.
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
+---
+# Disclaimers 
+
+The tools presented here represent one possible way of conducting data analysis projects in R.
 
 I make no claims that:
 
@@ -54,7 +59,9 @@ I make no claims that:
 
 I am presenting these tools because they were taught to me in grad school. I liked them and found them beneficial, so I have continued to use them and expand my understanding of them. 
 
-Final disclaimer: One or more authors and/or maintainers of many of the packages I will present are my academic siblings.
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 
 
@@ -67,6 +74,11 @@ class: inverse, center, middle
 ```{r,echo=FALSE}
 knitr::include_graphics("http://phdcomics.com/comics/archive/phd031214s.gif")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: inverse, center, middle
 # 1. The RStudio IDE
@@ -74,6 +86,10 @@ class: inverse, center, middle
 ```{r, echo = FALSE, out.width="60%"}
 knitr::include_graphics("https://www.rstudio.com/wp-content/uploads/2014/07/RStudio-Logo-Blue-Gray-400x140@2x.png")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Why RStudio? 
@@ -89,11 +105,22 @@ Project management:
     * Keeping everything in the RStudio-created directory makes work easier to share and reproduce
     * This directory should stand alone: your entire project should be reproducible with those files alone. 
     
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+    
+
+    
 ---
 ## File `r emo::ji("arrow_right")` New Project...
 ```{r, out.width="45%", fig.show='hold', echo=FALSE}
 knitr::include_graphics(c("img/rproj-1.png", "img/rproj-2.png", "img/rproj-3.png"))
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+    
 
 ---
 class: inverse, center, middle
@@ -105,6 +132,10 @@ knitr::include_graphics(c("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811
                           "http://hexb.in/hexagons/knitr.png"
                           ))
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # .Rmd file 
@@ -138,6 +169,10 @@ Rmd = R + **Markdown**
 <li>Items</li>
 </ul>
 ````
+]
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
 ]
 
 ---
@@ -174,6 +209,9 @@ Rmd = R + **Markdown**
 ```
 ]
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # .Rmd file 
@@ -186,19 +224,27 @@ Rmd = **R** + Markdown
 plot(faithful)
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # .Rmd file 
 
 Use an Rmd file to put R code and results into: 
 
-- PDFs 
-- Webpages (HTML)
-- HTML slides 
-- Word documents
-- Websites 
+- PDFs
+- webpages (HTML)
+- HTML slides
+- MS Word documents
+- Presentation Ninja slides (e.g. these slides. See the [`xaringan`](https://slides.yihui.name/xaringan/#1) package),
 - and more! 
 
 Visit [rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/) for example galleries.
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Components of a .Rmd file
@@ -208,6 +254,10 @@ a. YAML Header
 b. Markdown 
 
 c. R code chunks
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # a. YAML Header
@@ -239,6 +289,10 @@ End YAML with `---`
 
 More on YAML + .Rmd Documents in Chapter 2 of [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/basics.html)
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # b. Markdown 
 
@@ -259,6 +313,10 @@ After the closing `---` of the YAML header, begin writing your document in [Pand
 
 ![](img/nist.png)
 
+]
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
 ]
 
 ----
@@ -296,6 +354,10 @@ End code chunk with three more backticks on a new line.
     * `out.width = '50%'`: plot output will be half the width of the rendered page
     * `fig.show = 'hold'`: if a chunk makes $\geq 2$ plots, show them after all other code in the chunk has been run
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # a + b + c: Simple example 
 
@@ -311,6 +373,10 @@ knitr::include_graphics("img/small-ex-3.png")
 
 .pull-right[
 When `cache = TRUE`, the directories `*_cache/` and `*_files/` are created. The plot is saved as `myplot.png` in `*_files/figure-latex/`
+]
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
 ]
 
 ---
@@ -330,6 +396,10 @@ If using RStudio, no code is needed to convert from .Rmd to any format: just cli
 rmarkdown::render("input.Rmd")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # More output
 
@@ -339,6 +409,9 @@ Other packages build on the functionality of `knitr` + `rmarkdown` to create
 - Books 
 - and more! 
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 class: inverse, center, middle
@@ -347,6 +420,10 @@ class: inverse, center, middle
 ```{r echo = FALSE, out.width="33%"}
 knitr::include_graphics(c("img/rticles.png", "https://camo.githubusercontent.com/0cab37d0a0a1237bc1fd97f41ceff51ce42f4444/68747470733a2f2f626f6f6b646f776e2e6f72672f79696875692f626c6f67646f776e2f696d616765732f6c6f676f2e706e67", "https://camo.githubusercontent.com/3a6eb33909ba8de431b07a0f1fd7cb800f7ba2db/68747470733a2f2f626f6f6b646f776e2e6f72672f79696875692f626f6f6b646f776e2f696d616765732f6c6f676f2e706e67"))
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`rticles`](https://github.com/rstudio/rticles) `r emo::ji("package")`: journal templates
@@ -372,6 +449,11 @@ rmarkdown::draft("MyJSSArticle.Rmd",
                  template = "jss_article", package = "rticles")
 ```
 
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # The [`blogdown`](https://bookdown.org/yihui/blogdown/) `r emo::ji("package")`: websites 
 
@@ -383,6 +465,10 @@ Maintain a personal website using Markdown + R.
 ```{r, echo = FALSE, out.width="35%", fig.align="center"}
 knitr::include_graphics("https://bookdown.org/yihui/blogdown/images/cover.png")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`bookdown`](https://bookdown.org/yihui/bookdown/) `r emo::ji("package")`: write books 
@@ -398,6 +484,10 @@ Write a book with R Markdown!
 knitr::include_graphics("https://bookdown.org/yihui/bookdown/images/cover.jpg")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # The [`pagedown`](https://github.com/rstudio/pagedown) `r emo::ji("package")`: paged HTML 
 
@@ -410,6 +500,9 @@ Replace PDF output from LaTeX with the more easily machine-read HTML
 knitr::include_graphics("img/pagedown.png")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # More R Markdown possibilities
@@ -436,7 +529,12 @@ install.packages("flexdashboard")
     In RStudio: File `r emo::ji("arrow_right")` New File `r emo::ji("arrow_right")` R Markdown `r emo::ji("arrow_right")` 
     
     From Template `r emo::ji("arrow_right")` Flex Dashboard
-    
+
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: inverse, center, middle
 # Part II: Efficiency 
@@ -444,6 +542,14 @@ class: inverse, center, middle
 ```{r echo = FALSE, fig.align="center", out.width = "70%"}
 knitr::include_graphics("https://imgs.xkcd.com/comics/is_it_worth_the_time_2x.png")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 class: inverse, center, middle
@@ -453,8 +559,11 @@ class: inverse, center, middle
 knitr::include_graphics("https://avatars1.githubusercontent.com/u/22032646?s=200&v=4")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
-class: primary
 # Tidy Tools Principles 
 
 From the [Tidy Tools Manifesto](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html)
@@ -469,8 +578,11 @@ See also:
 - The `tidyverse` style guide: [style.tidyverse.org](https://style.tidyverse.org/)
 - The tidy evaluation guide: [tidyeval.tidyverse.org](https://tidyeval.tidyverse.org/) 
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
-class: primary
 # a. Reuse existing data structures 
 
 Use things of class `data.frame`, `list`, `tibble` in favor of creating a separate data structure / class. 
@@ -489,6 +601,10 @@ my_tbl <- tibble(x = rnorm(100), y = x +5)
 
 - It never uses `row.names()`. (i.e. don't encode information somewhere other than the data table)
 - It only recycles vectors of length 1. (Recycling vectors of greater lengths is a frequent source of bugs.)
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # b. Compose functions with `%>%` 
@@ -523,6 +639,9 @@ Tidy Tips for writing functions:
 - Function names should be verbs.
 
 Note: Using `%>%` is NOT compulsory in the `tidyverse` and related packages.  
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # c. Functional programming
@@ -539,6 +658,10 @@ Most important reason for using FP:
 knitr::include_graphics("https://imgs.xkcd.com/comics/functional_2x.png")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # d. Design for Humans `r emo::ji("developer")` `r emo::ji("developer")` `r emo::ji("developer")`
 
@@ -553,6 +676,9 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/functional_2x.png")
 - Function families are identified by a common prefix, not a common suffix. (e.g. `str_sub`, `str_replace`, `str_remove` in `stringr`)
     * Helps with recall & autocomplete to make writing code faster.
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 class: inverse, center, middle
@@ -564,6 +690,10 @@ knitr::include_graphics(c(                         "https://d33wubrfki0l68.cloud
 "https://d33wubrfki0l68.cloudfront.net/071952491ec4a6a532a3f70ecfa2507af4d341f9/c167c/images/hex-dplyr.png",
   "https://d33wubrfki0l68.cloudfront.net/0ab849ed51b0b866ef6895c253d3899f4926d397/dbf0f/images/hex-ggplot2.png"))
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`tibble`](https://tibble.tidyverse.org/) `r emo::ji("package")`
@@ -578,6 +708,9 @@ library(tibble)
 as_tibble(iris)
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`readr`](https://readr.tidyverse.org/) `r emo::ji("package")`
@@ -594,12 +727,20 @@ library(tidyverse)
 bb_dat <- read_csv("https://raw.githubusercontent.com/tidyverse/tidyr/master/data-raw/billboard.csv")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `readr` (cont.)
 
 ```{r}
 head(bb_dat)
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `readr` (cont.)
@@ -610,6 +751,10 @@ head(bb_dat)
 bb_dat$artist %>% head
 parse_number(bb_dat$artist %>% head)
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`tidyr`](https://tidyr.tidyverse.org/) `r emo::ji("package")`
@@ -622,12 +767,20 @@ bb_dat <- bb_dat %>% gather(week, position, wk1:wk76)
 head(bb_dat)
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `tidyr` (cont.)
 
 ```{r}
 bb_dat %>% spread(week, position) %>% head 
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Wide `r emo::ji("left_right_arrow")` long data 
@@ -636,6 +789,9 @@ bb_dat %>% spread(week, position) %>% head
 knitr::include_graphics("https://omnianalytics.io/wp-content/uploads/2018/08/file35535a5445eb.gif")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`dplyr`](https://dplyr.tidyverse.org/) `r emo::ji("package")`
@@ -654,6 +810,11 @@ bb_dat %>% mutate(week = parse_number(week)) %>%
 head(bb_dat, 3)
 ```
 
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `dplyr` (cont.)
 
@@ -668,6 +829,9 @@ bb_dat %>% filter(!is.na(position)) %>%
 head(bb_dat_summ)
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`ggplot2`](https://ggplot2.tidyverse.org/) `r emo::ji("package")`
@@ -678,6 +842,10 @@ Implements [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Sta
 ggplot(data = bb_dat_summ, aes(x = length, y = highest)) + 
   geom_point()
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `ggplot2` (cont.)
@@ -690,6 +858,10 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
   geom_smooth(method = "lm")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `ggplot2` (cont.)
 
@@ -699,6 +871,10 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
   geom_smooth(method = "lm") + 
   xlim(0,30)
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # More core `tidyverse` resources 
@@ -715,6 +891,10 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
 
 [Tidy Data Science Workshop](https://tidy-ds.wjakethompson.com/)
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: inverse, center, middle
 # 3. `purrr` : remove `for` loops from your vocabulary
@@ -722,6 +902,10 @@ class: inverse, center, middle
 ```{r, echo=FALSE, fig.align="center", out.width="30%"}
 knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/9221ddead578362bd17bafae5b85935334984429/37a68/images/hex-purrr.png")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # What is the [`purrr`](https://purrr.tidyverse.org/) `r emo::ji("package")`?
@@ -735,6 +919,10 @@ knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/9221ddead578362bd
 ```{r, echo = FALSE, fig.align='center', out.width="75%"}
 knitr::include_graphics("img/purr_cupcakes.jpg")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `purrr`
@@ -757,8 +945,16 @@ bb_dat_summ <- bb_dat_summ %>% ungroup()
 bb_dat_summ %>% select(length, highest) %>% map(mean, na.rm = TRUE)
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # Compare to other methods
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ```{r}
 mean_length <- mean(bb_dat_summ$length, na.rm = TRUE)
@@ -776,6 +972,8 @@ for(i in c("length", "highest")){
 mymeans
 ```
 
+
+
 ---
 # Why use `purrr` instead? 
 
@@ -788,6 +986,10 @@ mymeans
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("img/map_picture.png")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Another example
@@ -806,6 +1008,10 @@ mysims <- crossing(mu,sigma) %>%
 glimpse(mysims)
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 ## Visualize simulations 
 
@@ -813,6 +1019,10 @@ glimpse(mysims)
 mysims %>% unnest() %>% ggplot(aes(x = sims)) + geom_histogram() + 
   facet_grid(sigma~mu, labeller = "label_both")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Use `purrr` for modeling 
@@ -822,6 +1032,10 @@ bb_dat_mods <- bb_dat %>% nest(-artist, -track) %>%
   mutate(lms = map(data, ~lm(data = ., position ~ week, ))) 
 bb_dat_mods[114,] ; bb_dat_mods$lms[[114]]    
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `purrr` for modeling 
@@ -833,6 +1047,9 @@ bb_dat_mods %>% mutate(intercept = map_dbl(lms, ~coef(.)[1]),
   arrange(slope)
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Other `purrr` functions 
@@ -842,6 +1059,9 @@ bb_dat_mods %>% mutate(intercept = map_dbl(lms, ~coef(.)[1]),
 - `pmap(.l, .f, ...)`: perform function `.f` on 3 or more objects of the same length in a list `.l` 
 - `detect(.x, .f, ...)`: for a function `.f` that returns a logical value, return the first element of `.x` that returns `TRUE` 
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # More `purrr` resources 
@@ -852,6 +1072,10 @@ bb_dat_mods %>% mutate(intercept = map_dbl(lms, ~coef(.)[1]),
 
 - [Iteration](https://r4ds.had.co.nz/iteration.html), Chapter 21 in *R for Data Science*
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: inverse, center, middle
 # 4. (if time) `tidymodels` : applying `tidyverse` principles to modeling
@@ -860,8 +1084,16 @@ class: inverse, center, middle
 knitr::include_graphics("img/tidymodels.png")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+] 
+
 ---
 # `tidymodels` packages `r emo::ji("package")` `r emo::ji("package")` `r emo::ji("package")`
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 All stored in a [Github organization](https://github.com/tidymodels)
 
@@ -896,6 +1128,11 @@ From the package [website](https://tidymodels.github.io/rsample/):
 knitr::include_graphics("https://raw.githubusercontent.com/tidymodels/rsample/master/rsample_hex_thumb.png")
 ```
 
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `r emo::ji("package")`: `parsnip`
 
@@ -912,6 +1149,10 @@ From the [website](https://tidymodels.github.io/parsnip/):
 ```{r, echo=FALSE, fig.align='center', out.width="25%"}
 knitr::include_graphics("https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/parsnip.png")
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 class: primary
@@ -933,6 +1174,10 @@ sonar_rec <- recipe(Class ~ ., data = Sonar) %>%
 knitr::include_graphics("https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/recipes.png")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: primary
 # `r emo::ji("package")`: `yardstick`
@@ -950,6 +1195,10 @@ From the [website](https://tidymodels.github.io/yardstick): "yardstick is a pack
 knitr::include_graphics("https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/yardstick.png")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `tidymodels` resources
 
@@ -959,10 +1208,27 @@ knitr::include_graphics("https://raw.githubusercontent.com/topepo/rstudio-conf-2
 
 Max Kuhn's rstudio::conf 2019 [Applied Machine Learning workshop](https://github.com/topepo/rstudio-conf-2019) and [`parsnip` talk](https://resources.rstudio.com/rstudio-conf-2019/parsnip-a-tidy-model-interface)
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: center, middle
 # Thank you! 
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 --
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+
 # Questions?
+
+#### <i class="fas fa-globe"></i> sctyner.github.io <i class="fas fa-grip-lines-vertical"></i>  <i class="far fa-envelope"></i> sctyner90@gmail.com
+
+#### <i class="fab fa-github"></i> github.com/sctyner <i class="fas fa-grip-lines-vertical"></i> <i class="fab fa-twitter"></i> @sctyner
+
+#### <i class="fab fa-linkedin"></i> linkedin.com/in/sctyner
+

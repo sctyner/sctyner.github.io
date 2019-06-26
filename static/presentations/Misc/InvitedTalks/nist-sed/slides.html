@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Sam Tyner" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -13,7 +14,7 @@ class: center, middle, inverse, title-slide
 # Making your projects more reproducible and efficient
 ## with <code>rmarkdown</code>, <code>tidyverse</code>, and related R packages
 ### Sam Tyner
-### 2019-06-27 at 1pm EDT<br>NIST Bldg 101, LR B, Gaithersburg, MD
+### 2019-06-27 at 1pm EDT<br>NIST Bldg 101, LR B, Gaithersburg, MD<br>Slides available at bit.ly/sctNIST19
 
 ---
 
@@ -35,10 +36,15 @@ Part II: Efficiency
 3. `purrr` : remove `for` loops from your vocabulary
 4. (if time) `tidymodels` : applying `tidyverse` principles to modeling
 
----
-# Disclaimer 
 
-The tools presented here represent one way of conducting data analysis projects in R.
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
+---
+# Disclaimers 
+
+The tools presented here represent one possible way of conducting data analysis projects in R.
 
 I make no claims that:
 
@@ -48,7 +54,9 @@ I make no claims that:
 
 I am presenting these tools because they were taught to me in grad school. I liked them and found them beneficial, so I have continued to use them and expand my understanding of them. 
 
-Final disclaimer: One or more authors and/or maintainers of many of the packages I will present are my academic siblings.
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 
 
@@ -59,11 +67,20 @@ class: inverse, center, middle
 # Part I: Reproducibility 
 
 ![](http://phdcomics.com/comics/archive/phd031214s.gif)&lt;!-- --&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: inverse, center, middle
 # 1. The RStudio IDE
 
 &lt;img src="https://www.rstudio.com/wp-content/uploads/2014/07/RStudio-Logo-Blue-Gray-400x140@2x.png" width="60%" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Why RStudio? 
@@ -79,15 +96,30 @@ Project management:
     * Keeping everything in the RStudio-created directory makes work easier to share and reproduce
     * This directory should stand alone: your entire project should be reproducible with those files alone. 
     
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+    
+
+    
 ---
 ## File ➡️ New Project...
 &lt;img src="img/rproj-1.png" width="45%" /&gt;&lt;img src="img/rproj-2.png" width="45%" /&gt;&lt;img src="img/rproj-3.png" width="45%" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+    
 
 ---
 class: inverse, center, middle
 # 2. The .Rmd file, `rmarkdown`, and `knitr` 
 
 &lt;img src="https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a802ddc524c3271302893a149/a7003/images/bandthree2.png" width="33%" /&gt;&lt;img src="http://hexb.in/hexagons/rmarkdown.png" width="33%" /&gt;&lt;img src="http://hexb.in/hexagons/knitr.png" width="33%" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # .Rmd file 
@@ -121,6 +153,10 @@ Rmd = R + **Markdown**
 &lt;li&gt;Items&lt;/li&gt;
 &lt;/ul&gt;
 ````
+]
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
 ]
 
 ---
@@ -157,6 +193,9 @@ Rmd = R + **Markdown**
 ```
 ]
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # .Rmd file 
@@ -172,19 +211,27 @@ plot(faithful)
 
 &lt;img src="slides_files/figure-html/unnamed-chunk-5-1.png" width="47%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # .Rmd file 
 
 Use an Rmd file to put R code and results into: 
 
-- PDFs 
-- Webpages (HTML)
-- HTML slides 
-- Word documents
-- Websites 
+- PDFs
+- webpages (HTML)
+- HTML slides
+- MS Word documents
+- Presentation Ninja slides (e.g. these slides. See the [`xaringan`](https://slides.yihui.name/xaringan/#1) package),
 - and more! 
 
 Visit [rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/) for example galleries.
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Components of a .Rmd file
@@ -194,6 +241,10 @@ a. YAML Header
 b. Markdown 
 
 c. R code chunks
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # a. YAML Header
@@ -225,6 +276,10 @@ End YAML with `---`
 
 More on YAML + .Rmd Documents in Chapter 2 of [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/basics.html)
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # b. Markdown 
 
@@ -245,6 +300,10 @@ After the closing `---` of the YAML header, begin writing your document in [Pand
 
 ![](img/nist.png)
 
+]
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
 ]
 
 ----
@@ -282,6 +341,10 @@ End code chunk with three more backticks on a new line.
     * `out.width = '50%'`: plot output will be half the width of the rendered page
     * `fig.show = 'hold'`: if a chunk makes `\(\geq 2\)` plots, show them after all other code in the chunk has been run
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # a + b + c: Simple example 
 
@@ -293,6 +356,10 @@ End code chunk with three more backticks on a new line.
 
 .pull-right[
 When `cache = TRUE`, the directories `*_cache/` and `*_files/` are created. The plot is saved as `myplot.png` in `*_files/figure-latex/`
+]
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
 ]
 
 ---
@@ -313,6 +380,10 @@ If using RStudio, no code is needed to convert from .Rmd to any format: just cli
 rmarkdown::render("input.Rmd")
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # More output
 
@@ -322,12 +393,19 @@ Other packages build on the functionality of `knitr` + `rmarkdown` to create
 - Books 
 - and more! 
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 class: inverse, center, middle
 # 3. `rticles` , `blogdown`, &amp; others: templates galore
 
 &lt;img src="img/rticles.png" width="33%" /&gt;&lt;img src="https://camo.githubusercontent.com/0cab37d0a0a1237bc1fd97f41ceff51ce42f4444/68747470733a2f2f626f6f6b646f776e2e6f72672f79696875692f626c6f67646f776e2f696d616765732f6c6f676f2e706e67" width="33%" /&gt;&lt;img src="https://camo.githubusercontent.com/3a6eb33909ba8de431b07a0f1fd7cb800f7ba2db/68747470733a2f2f626f6f6b646f776e2e6f72672f79696875692f626f6f6b646f776e2f696d616765732f6c6f676f2e706e67" width="33%" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`rticles`](https://github.com/rstudio/rticles) 📦: journal templates
@@ -354,6 +432,11 @@ In R:
 rmarkdown::draft("MyJSSArticle.Rmd", template = "jss_article", package = "rticles")
 ```
 
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # The [`blogdown`](https://bookdown.org/yihui/blogdown/) 📦: websites 
 
@@ -363,6 +446,10 @@ Maintain a personal website using Markdown + R.
 - Advanced topic! Read the `blogdown` [book](https://bookdown.org/yihui/blogdown/) before proceeding! 
 
 &lt;img src="https://bookdown.org/yihui/blogdown/images/cover.png" width="35%" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`bookdown`](https://bookdown.org/yihui/bookdown/) 📦: write books 
@@ -376,6 +463,10 @@ Write a book with R Markdown!
 
 &lt;img src="https://bookdown.org/yihui/bookdown/images/cover.jpg" width="35%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # The [`pagedown`](https://github.com/rstudio/pagedown) 📦: paged HTML 
 
@@ -386,6 +477,9 @@ Replace PDF output from LaTeX with the more easily machine-read HTML
 
 &lt;img src="img/pagedown.png" width="40%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # More R Markdown possibilities
@@ -413,12 +507,25 @@ install.packages("flexdashboard")
     In RStudio: File ➡️ New File ➡️ R Markdown ➡️ 
     
     From Template ➡️ Flex Dashboard
-    
+
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: inverse, center, middle
 # Part II: Efficiency 
 
 &lt;img src="https://imgs.xkcd.com/comics/is_it_worth_the_time_2x.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 class: inverse, center, middle
@@ -426,8 +533,11 @@ class: inverse, center, middle
 
 &lt;img src="https://avatars1.githubusercontent.com/u/22032646?s=200&amp;v=4" width="40%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
-class: primary
 # Tidy Tools Principles 
 
 From the [Tidy Tools Manifesto](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html)
@@ -442,8 +552,11 @@ See also:
 - The `tidyverse` style guide: [style.tidyverse.org](https://style.tidyverse.org/)
 - The tidy evaluation guide: [tidyeval.tidyverse.org](https://tidyeval.tidyverse.org/) 
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
-class: primary
 # a. Reuse existing data structures 
 
 Use things of class `data.frame`, `list`, `tibble` in favor of creating a separate data structure / class. 
@@ -463,6 +576,10 @@ my_tbl &lt;- tibble(x = rnorm(100), y = x +5)
 
 - It never uses `row.names()`. (i.e. don't encode information somewhere other than the data table)
 - It only recycles vectors of length 1. (Recycling vectors of greater lengths is a frequent source of bugs.)
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # b. Compose functions with `%&gt;%` 
@@ -497,6 +614,9 @@ Tidy Tips for writing functions:
 - Function names should be verbs.
 
 Note: Using `%&gt;%` is NOT compulsory in the `tidyverse` and related packages.  
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # c. Functional programming
@@ -514,6 +634,10 @@ Most important reason for using FP:
 &lt;p class="caption"&gt;https://xkcd.com/1270/&lt;/p&gt;
 &lt;/div&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # d. Design for Humans 👩‍💻 👨‍💻 👩‍💻
 
@@ -528,12 +652,19 @@ Most important reason for using FP:
 - Function families are identified by a common prefix, not a common suffix. (e.g. `str_sub`, `str_replace`, `str_remove` in `stringr`)
     * Helps with recall &amp; autocomplete to make writing code faster.
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 class: inverse, center, middle
 # 2. Core `tidyverse` for data storage, manipulation, transformation, &amp; visualization
 
 &lt;img src="https://d33wubrfki0l68.cloudfront.net/f55c43407ae8944b985e2547fe868e5e2b3f9621/720bb/images/hex-tibble.png" width="20%" /&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/66d3133b4a19949d0b9ddb95fc48da074b69fb07/7dfb6/images/hex-readr.png" width="20%" /&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/5f8c22ec53a1ac61684f3e8d59c623d09227d6b9/b15de/images/hex-tidyr.png" width="20%" /&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/071952491ec4a6a532a3f70ecfa2507af4d341f9/c167c/images/hex-dplyr.png" width="20%" /&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/0ab849ed51b0b866ef6895c253d3899f4926d397/dbf0f/images/hex-ggplot2.png" width="20%" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`tibble`](https://tibble.tidyverse.org/) 📦
@@ -566,6 +697,9 @@ as_tibble(iris)
 ## # … with 140 more rows
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`readr`](https://readr.tidyverse.org/) 📦
@@ -607,6 +741,10 @@ bb_dat &lt;- read_csv("https://raw.githubusercontent.com/tidyverse/tidyr/master/
 ## See spec(...) for full column specifications.
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `readr` (cont.)
 
@@ -641,6 +779,10 @@ head(bb_dat)
 ## #   wk71 &lt;lgl&gt;, wk72 &lt;lgl&gt;, wk73 &lt;lgl&gt;, wk74 &lt;lgl&gt;, wk75 &lt;lgl&gt;, wk76 &lt;lgl&gt;
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `readr` (cont.)
 
@@ -663,6 +805,10 @@ parse_number(bb_dat$artist %&gt;% head)
 ```
 ## [1]   2   2   3   3 504  98
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`tidyr`](https://tidyr.tidyverse.org/) 📦
@@ -687,6 +833,10 @@ head(bb_dat)
 ## 5  2000 504 Boyz     Wobble Wobble        03:35 2000-04-15   wk1         57
 ## 6  2000 98^0         Give Me Just One Ni… 03:24 2000-08-19   wk1         51
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `tidyr` (cont.)
@@ -721,11 +871,18 @@ bb_dat %&gt;% spread(week, position) %&gt;% head
 ## #   wk73 &lt;dbl&gt;, wk74 &lt;dbl&gt;, wk75 &lt;dbl&gt;, wk76 &lt;dbl&gt;, wk8 &lt;dbl&gt;, wk9 &lt;dbl&gt;
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # Wide ↔️ long data 
 
 &lt;img src="https://omnianalytics.io/wp-content/uploads/2018/08/file35535a5445eb.gif" width="70%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`dplyr`](https://dplyr.tidyverse.org/) 📦
@@ -753,6 +910,11 @@ head(bb_dat, 3)
 ## 2 2Ge+her      The Hardest Part Of ... 03:15      1       91
 ## 3 3 Doors Down Kryptonite              03:53      1       81
 ```
+
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `dplyr` (cont.)
@@ -782,6 +944,9 @@ head(bb_dat_summ)
 ## 6 Joe          I Wanna Know              4     44
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # The [`ggplot2`](https://ggplot2.tidyverse.org/) 📦
@@ -795,6 +960,10 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
 ```
 
 &lt;img src="slides_files/figure-html/unnamed-chunk-31-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `ggplot2` (cont.)
@@ -810,6 +979,10 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
 
 &lt;img src="slides_files/figure-html/unnamed-chunk-32-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `ggplot2` (cont.)
 
@@ -822,6 +995,10 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
 ```
 
 &lt;img src="slides_files/figure-html/unnamed-chunk-33-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # More core `tidyverse` resources 
@@ -838,11 +1015,19 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
 
 [Tidy Data Science Workshop](https://tidy-ds.wjakethompson.com/)
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: inverse, center, middle
 # 3. `purrr` : remove `for` loops from your vocabulary
 
 &lt;img src="https://d33wubrfki0l68.cloudfront.net/9221ddead578362bd17bafae5b85935334984429/37a68/images/hex-purrr.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # What is the [`purrr`](https://purrr.tidyverse.org/) 📦?
@@ -854,6 +1039,10 @@ class: inverse, center, middle
 - write less &amp; faster code with the `map()` family of functions 
 
 &lt;img src="img/purr_cupcakes.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `purrr`
@@ -884,8 +1073,16 @@ bb_dat_summ %&gt;% select(length, highest) %&gt;% map(mean, na.rm = TRUE)
 ## [1] 44.12303
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # Compare to other methods
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 
 ```r
@@ -921,6 +1118,8 @@ mymeans
 ## [1] 44.12303
 ```
 
+
+
 ---
 # Why use `purrr` instead? 
 
@@ -931,6 +1130,10 @@ mymeans
 - It's fast and slick
 
 &lt;img src="img/map_picture.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Another example
@@ -955,8 +1158,12 @@ glimpse(mysims)
 ## Variables: 3
 ## $ mu    &lt;int&gt; 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5
 ## $ sigma &lt;int&gt; 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3
-## $ sims  &lt;list&gt; [&lt;2.525449462, 1.867060329, 1.103035999, 2.200091795, 0.5…
+## $ sims  &lt;list&gt; [&lt;0.689277040, 0.606585150, 0.058270696, 1.436015155, 2.5…
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 ## Visualize simulations 
@@ -968,6 +1175,10 @@ mysims %&gt;% unnest() %&gt;% ggplot(aes(x = sims)) + geom_histogram() +
 ```
 
 &lt;img src="slides_files/figure-html/unnamed-chunk-43-1.png" width="500px" height="400px" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Use `purrr` for modeling 
@@ -995,6 +1206,10 @@ bb_dat_mods[114,] ; bb_dat_mods$lms[[114]]
 ## (Intercept)         week  
 ##     27.4274      -0.4115
 ```
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # `purrr` for modeling 
@@ -1024,6 +1239,9 @@ bb_dat_mods %&gt;% mutate(intercept = map_dbl(lms, ~coef(.)[1]),
 ## # … with 307 more rows
 ```
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # Other `purrr` functions 
@@ -1033,6 +1251,9 @@ bb_dat_mods %&gt;% mutate(intercept = map_dbl(lms, ~coef(.)[1]),
 - `pmap(.l, .f, ...)`: perform function `.f` on 3 or more objects of the same length in a list `.l` 
 - `detect(.x, .f, ...)`: for a function `.f` that returns a logical value, return the first element of `.x` that returns `TRUE` 
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 # More `purrr` resources 
@@ -1043,14 +1264,26 @@ bb_dat_mods %&gt;% mutate(intercept = map_dbl(lms, ~coef(.)[1]),
 
 - [Iteration](https://r4ds.had.co.nz/iteration.html), Chapter 21 in *R for Data Science*
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: inverse, center, middle
 # 4. (if time) `tidymodels` : applying `tidyverse` principles to modeling
 
 &lt;img src="img/tidymodels.png" width="30%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+] 
+
 ---
 # `tidymodels` packages 📦 📦 📦
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 All stored in a [Github organization](https://github.com/tidymodels)
 
@@ -1078,6 +1311,11 @@ From the package [website](https://tidymodels.github.io/rsample/):
 
 &lt;img src="https://raw.githubusercontent.com/tidymodels/rsample/master/rsample_hex_thumb.png" width="25%" style="display: block; margin: auto;" /&gt;
 
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # 📦: `parsnip`
 
@@ -1092,6 +1330,10 @@ From the [website](https://tidymodels.github.io/parsnip/):
 - From the same author as the `caret` package. (Eventually all of `caret` will be in `parsnip`)
 
 &lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/parsnip.png" width="25%" style="display: block; margin: auto;" /&gt;
+
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
 
 ---
 class: primary
@@ -1112,6 +1354,10 @@ sonar_rec &lt;- recipe(Class ~ ., data = Sonar) %&gt;%
 
 &lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/recipes.png" width="30%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: primary
 # 📦: `yardstick`
@@ -1127,6 +1373,10 @@ From the [website](https://tidymodels.github.io/yardstick): "yardstick is a pack
 
 &lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/yardstick.png" width="20%" style="display: block; margin: auto;" /&gt;
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 # `tidymodels` resources
 
@@ -1136,13 +1386,29 @@ From the [website](https://tidymodels.github.io/yardstick): "yardstick is a pack
 
 Max Kuhn's rstudio::conf 2019 [Applied Machine Learning workshop](https://github.com/topepo/rstudio-conf-2019) and [`parsnip` talk](https://resources.rstudio.com/rstudio-conf-2019/parsnip-a-tidy-model-interface)
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 ---
 class: center, middle
 # Thank you! 
 
+.topright[
+Slides available at [bit.ly/sctNIST19](http://bit.ly/sctNIST19)
+]
+
 --
 
+&lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous"&gt;
+
 # Questions?
+
+#### &lt;i class="fas fa-globe"&gt;&lt;/i&gt; sctyner.github.io &lt;i class="fas fa-grip-lines-vertical"&gt;&lt;/i&gt;  &lt;i class="far fa-envelope"&gt;&lt;/i&gt; sctyner90@gmail.com
+
+#### &lt;i class="fab fa-github"&gt;&lt;/i&gt; github.com/sctyner &lt;i class="fas fa-grip-lines-vertical"&gt;&lt;/i&gt; &lt;i class="fab fa-twitter"&gt;&lt;/i&gt; @sctyner
+
+#### &lt;i class="fab fa-linkedin"&gt;&lt;/i&gt; linkedin.com/in/sctyner
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
