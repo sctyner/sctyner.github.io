@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Making your projects more reproducible and efficient</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sam Tyner" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Making your projects more reproducible and efficient
+## with <code>rmarkdown</code>, <code>tidyverse</code>, and related R packages
+### Sam Tyner
+### 2019-06-27 at 1pm EDT<br>NIST Bldg 101, LR B, Gaithersburg, MD
+
+---
+
+
+
+
+# Outline 
+
+Part I: Reproducibility 
+ 
+1. The RStudio IDE 
+2. The .Rmd file, `rmarkdown`, and `knitr` 
+3. `rticles` , `blogdown`, &amp; others: templates galore
+
+Part II: Efficiency 
+
+1. `tidyverse` principles 
+2. Core `tidyverse` for data storage, manipulation, transformation, &amp; visualization
+3. `purrr` : remove `for` loops from your vocabulary
+4. (if time) `tidymodels` : applying `tidyverse` principles to modeling
+
+---
+# Disclaimer 
+
+The tools presented here represent one way of conducting data analysis projects in R.
+
+I make no claims that:
+
+- the views in this talk represent those of my past, current, or future employers;
+- there is one right way to do reproducibile research;
+- the `tidyverse` paradigm is more correct than any other R programming paradigm.
+
+I am presenting these tools because they were taught to me in grad school. I liked them and found them beneficial, so I have continued to use them and expand my understanding of them. 
+
+Final disclaimer: One or more authors and/or maintainers of many of the packages I will present are my academic siblings.
+
+
+
+
+
+---
+class: inverse, center, middle
+# Part I: Reproducibility 
+
+![](http://phdcomics.com/comics/archive/phd031214s.gif)&lt;!-- --&gt;
+---
+class: inverse, center, middle
+# 1. The RStudio IDE
+
+&lt;img src="https://www.rstudio.com/wp-content/uploads/2014/07/RStudio-Logo-Blue-Gray-400x140@2x.png" width="60%" /&gt;
+
+---
+# Why RStudio? 
+
+Project management: 
+
+- Begin with .Rproj file, not .R files: 
+    * Create a unique folder for each project
+    * Ability to share .Rproj file with others to recreate your exact working environment 
+    * Easily incorporate version control with git &amp; GitHub/GitLab 
+- New directory created to house your .Rproj file:
+    * Use folders such as `code/`, `dat/`, and `img/` to keep everything organized
+    * Keeping everything in the RStudio-created directory makes work easier to share and reproduce
+    * This directory should stand alone: your entire project should be reproducible with those files alone. 
+    
+---
+## File ➡️ New Project...
+&lt;img src="img/rproj-1.png" width="45%" /&gt;&lt;img src="img/rproj-2.png" width="45%" /&gt;&lt;img src="img/rproj-3.png" width="45%" /&gt;
+
+---
+class: inverse, center, middle
+# 2. The .Rmd file, `rmarkdown`, and `knitr` 
+
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a802ddc524c3271302893a149/a7003/images/bandthree2.png" width="33%" /&gt;&lt;img src="http://hexb.in/hexagons/rmarkdown.png" width="33%" /&gt;&lt;img src="http://hexb.in/hexagons/knitr.png" width="33%" /&gt;
+
+---
+# .Rmd file 
+
+Rmd = R + **Markdown**
+
+**Markdown** is a lightweight markup language meant to be easily readable and writeable in plain text that can be converted to other formats, namely HTML. 
+
+.pull-left[
+**Markdown**
+
+`**Bold text**`
+
+`*Italic text*`
+
+`1. Numbered`
+
+`2. List`
+
+`3. Items`
+]
+
+.pull-right[
+**HTML**
+````
+&lt;strong&gt;Bold text&lt;/strong&gt;
+&lt;em&gt;Italic text&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Numbered&lt;/li&gt;
+&lt;li&gt;List&lt;/li&gt;
+&lt;li&gt;Items&lt;/li&gt;
+&lt;/ul&gt;
+````
+]
+
+---
+# .Rmd file 
+
+Rmd = R + **Markdown**
+
+**Markdown** is a lightweight markup language meant to be easily readable and writeable in plain text that can be converted to other formats, namely HTML. 
+
+.pull-left[
+**Markdown**
+
+`**Bold text**`
+
+`*Italic text*`
+
+`1. Numbered`
+
+`2. List`
+
+`3. Items`
+]
+
+.pull-right[
+**LaTeX**
+```
+\textbf{Bold Text}
+\textit{Italic text}
+\begin{enumerate}
+  \item Numbered
+  \item List 
+  \item Items
+\end{enumerate}
+```
+]
+
+
+---
+# .Rmd file 
+
+Rmd = **R** + Markdown
+
+.Rmd files allow you to seamlessly place R code and output in documents written in Markdown.
+
+
+```r
+plot(faithful)
+```
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-5-1.png" width="47%" style="display: block; margin: auto;" /&gt;
+
+---
+# .Rmd file 
+
+Use an Rmd file to put R code and results into: 
+
+- PDFs 
+- Webpages (HTML)
+- HTML slides 
+- Word documents
+- Websites 
+- and more! 
+
+Visit [rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/) for example galleries.
+
+---
+# Components of a .Rmd file
+
+a. YAML Header 
+
+b. Markdown 
+
+c. R code chunks
+
+---
+# a. YAML Header
+
+Always start a .Rmd file with the YAML header. 
+
+YAML = **Y**AML **A**in't **M**arkup **L**anguage (formerly **Y**et **A**nother **M**arkup **L**anguage)
+
+.pull-left[
+````
+---
+title: "Your title"
+author: "First Last"
+date: "6/19/2019"
+output: html_document
+---
+````
+] 
+
+.pull-right[
+Start YAML with `---`
+
+Proceed with `field: value` pairs 
+
+Output can be `html_document`, `pdf_document`, `word_document`
+
+End YAML with `---`
+]
+
+More on YAML + .Rmd Documents in Chapter 2 of [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/basics.html)
+
+---
+# b. Markdown 
+
+After the closing `---` of the YAML header, begin writing your document in [Pandoc's](https://pandoc.org/MANUAL.html) markdown. 
+
+.pull-left[
+**Markdown**
+
+`# Header `
+
+`![](img/nist.png)`
+
+]
+
+.pull-right[
+**Rendered as**
+# Header 
+
+![](img/nist.png)
+
+]
+
+----
+
+More on Markdown + .Rmd Documents in Chapter 2.5 of [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) and in the [cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf). Many cheatsheets for the materials presented today live inside RStudio under the help menu. 
+
+---
+# c. R Code chunk
+
+.pull-left[
+````
+```{r chunkname, options}
+x &lt;- "hello world"
+x
+```
+````
+
+
+]
+
+.pull-right[
+Begin a code chunk with three backticks (above tab key), `{r}`, and any options separated by `,`.
+
+Then put R code 
+
+End code chunk with three more backticks on a new line.
+]
+
+----
+
+- The `chunkname` is for your reference. If any figures are produced from that chunk they will have that filename.
+- The options affect the look of the R code and resulting output. 
+    * `echo = TRUE`: code will appear in final document.
+    * `eval = FALSE`: don't execute code when preparing final document
+    * `out.width = '50%'`: plot output will be half the width of the rendered page
+    * `fig.show = 'hold'`: if a chunk makes `\(\geq 2\)` plots, show them after all other code in the chunk has been run
+
+---
+# a + b + c: Simple example 
+
+&lt;img src="img/small-ex-1.png" width="55%" /&gt;&lt;img src="img/small-ex-2.png" width="45%" /&gt;
+
+.pull-left[
+&lt;img src="img/small-ex-3.png" width="75%" /&gt;
+]
+
+.pull-right[
+When `cache = TRUE`, the directories `*_cache/` and `*_files/` are created. The plot is saved as `myplot.png` in `*_files/figure-latex/`
+]
+
+---
+# **Q**: How? **A**: `knitr` &amp; `rmarkdown`
+
+[`knitr`](https://github.com/yihui/knitr) and  [`rmarkdown`](https://github.com/rstudio/rmarkdown) are the R packages doing most of the work to go from plain text markdown and R code to a PDF, MS Word, or HTML document. 
+
+`knitr` came first as an alternative to Sweave for turning .Rnw files into PDFs. 
+
+- `knitr` takes R code in a code chunk, runs it, grabs the output, and writes it in Markdown
+- All chunk options are part of `knitr`. Full list and description of chunk options [here](https://yihui.name/knitr/options/)
+- Fun fact: `knitr::purl("mydoc.Rmd")` will extract all R code out of a .Rmd file and save it (in the same directory) as `mydoc.R`. 
+
+If using RStudio, no code is needed to convert from .Rmd to any format: just click the "🧶 `Knit`" button. If not using RStudio: 
+
+
+```r
+rmarkdown::render("input.Rmd")
+```
+
+---
+# More output
+
+Other packages build on the functionality of `knitr` + `rmarkdown` to create 
+
+- Websites 
+- Books 
+- and more! 
+
+
+---
+class: inverse, center, middle
+# 3. `rticles` , `blogdown`, &amp; others: templates galore
+
+&lt;img src="img/rticles.png" width="33%" /&gt;&lt;img src="https://camo.githubusercontent.com/0cab37d0a0a1237bc1fd97f41ceff51ce42f4444/68747470733a2f2f626f6f6b646f776e2e6f72672f79696875692f626c6f67646f776e2f696d616765732f6c6f676f2e706e67" width="33%" /&gt;&lt;img src="https://camo.githubusercontent.com/3a6eb33909ba8de431b07a0f1fd7cb800f7ba2db/68747470733a2f2f626f6f6b646f776e2e6f72672f79696875692f626f6f6b646f776e2f696d616765732f6c6f676f2e706e67" width="33%" /&gt;
+
+---
+# The [`rticles`](https://github.com/rstudio/rticles) 📦: journal templates
+
+
+```r
+install.packages("rticles")
+```
+
+.Rmd file templates for 
+
+- Sage journals
+- Springer journals
+- Statistics in Medicine journal
+- The R Journal articles
+- Taylor &amp; Francis journals
+- Elsevier journals
+- American Stat. Assoc. journals
+- Many more! 
+
+In RStudio: File ➡️ New File ➡️ R Markdown ➡️ From Template
+
+In R: 
+
+```r
+rmarkdown::draft("MyJSSArticle.Rmd", template = "jss_article", package = "rticles")
+```
+
+---
+# The [`blogdown`](https://bookdown.org/yihui/blogdown/) 📦: websites 
+
+Maintain a personal website using Markdown + R. 
+
+- Write blog posts in .Rmd files to put code + output + analysis together seamlessly
+- Advanced topic! Read the `blogdown` [book](https://bookdown.org/yihui/blogdown/) before proceeding! 
+
+&lt;img src="https://bookdown.org/yihui/blogdown/images/cover.png" width="35%" style="display: block; margin: auto;" /&gt;
+
+---
+# The [`bookdown`](https://bookdown.org/yihui/bookdown/) 📦: write books 
+
+Write a book with R Markdown! 
+
+- Each chapter is a .Rmd file 
+- Online, epub, or PDF output formats 
+
+- Advanced topic! Read the `bookdown` [book](https://bookdown.org/yihui/bookdown/) before proceeding! 
+
+&lt;img src="https://bookdown.org/yihui/bookdown/images/cover.jpg" width="35%" style="display: block; margin: auto;" /&gt;
+
+---
+# The [`pagedown`](https://github.com/rstudio/pagedown) 📦: paged HTML 
+
+Replace PDF output from LaTeX with the more easily machine-read HTML 
+
+- Create HTML versions of your CV, poster, papers, etc. 
+- In development. [Proceed](https://github.com/rstudio/pagedown) with caution! 
+
+&lt;img src="img/pagedown.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+
+---
+# More R Markdown possibilities
+
+- Beamer slides
+
+ `output: beamer_presentation`
+ 
+- Tufte handout 
+    ```
+    output:
+      tufte::tufte_handout: default
+    ```
+- HTML 5 Slides 
+
+  `output: ioslides_presentation`
+  
+- Dashboards 
+
+
+```r
+install.packages("flexdashboard")
+```
+ 
+    In RStudio: File ➡️ New File ➡️ R Markdown ➡️ From Template ➡️ Flex Dashboard
+    
+---
+class: inverse, center, middle
+# Part II: Efficiency 
+
+&lt;img src="https://imgs.xkcd.com/comics/is_it_worth_the_time_2x.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+# 1. `tidyverse` principles 
+
+&lt;img src="https://avatars1.githubusercontent.com/u/22032646?s=200&amp;v=4" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+class: primary
+# Tidy Tools Principles 
+
+From the [Tidy Tools Manifesto](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html)
+
+a. Reuse existing data structures.  
+b. Compose simple functions with the pipe. (`%&gt;%`)  
+c. Embrace functional programming.  
+d. Design for humans.  
+
+See also: 
+- The `tidyverse` principles: [principles.tidyverse.org](https://principles.tidyverse.org/)
+- The `tidyverse` style guide: [style.tidyverse.org](https://style.tidyverse.org/)
+- The tidy evaluation guide: [tidyeval.tidyverse.org](https://tidyeval.tidyverse.org/) 
+
+---
+class: primary
+# a. Reuse existing data structures 
+
+Use things of class `data.frame`, `list`, `tibble` in favor of creating a separate data structure / class. 
+
+The `tibble` class is the `tidyverse` [approach](https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html) to the `data.frame` class. 
+
+A `tibble`
+
+- never changes an input’s type, (no more `stringsAsFactors = FALSE`!)
+- never adjusts the names of variables (e.g. inserting periods for spaces)
+- evaluates its arguments lazily and sequentially, so you can use earlier variables when creating new variables 
+
+```r
+library(tibble)
+my_tbl &lt;- tibble(x = rnorm(100), y = x +5)
+```
+
+- It never uses `row.names()`. (i.e. don't encode information somewhere other than the data table)
+- It only recycles vectors of length 1. (Recycling vectors of greater lengths is a frequent source of bugs.)
+
+---
+# b. Compose functions with `%&gt;%` 
+
+Strings functions together in a human readable way. 👀
+
+.pull-left[
+**No pipes**
+```
+y &lt;- f(x)
+z &lt;- g(y)
+```
+or
+```
+z &lt;- g(f(x))
+```
+]
+
+.pull-right[
+**Pipes**
+```
+x %&gt;% f() %&gt;% g() -&gt; z
+```
+
+Read as "take `x`, do `f`, then do `g`, which creates `z`."
+]
+
+Tidy Tips for writing functions: 
+
+- Strive to keep functions as simple as possible (but no simpler!). 
+- Generally, each function should do one thing well.
+- Function names should be verbs.
+
+Note: Using `%&gt;%` is NOT compulsory in the `tidyverse` and related packages.  
+
+---
+# c. Functional programming
+
+R is a functional programming language. Embrace it, don't fight it! 
+
+Python, C#, others are object-oriented programming languages. [(See more)](https://adv-r.hadley.nz/oo.html)
+
+Most important reason for using FP: 
+
+- Use tools that abstract over for-loops, like the `apply` family of functions or the `map` functions in `purrr`.
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="https://imgs.xkcd.com/comics/functional_2x.png" alt="https://xkcd.com/1270/" width="30%" /&gt;
+&lt;p class="caption"&gt;https://xkcd.com/1270/&lt;/p&gt;
+&lt;/div&gt;
+
+---
+# d. Design for Humans 👩‍💻 👨‍💻 👨‍💻
+
+"Computer efficiency is a secondary concern because the bottleneck in most data analysis is thinking time, not computing time." - [H. Wickham](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html)
+
+- Evocative function names that are easy to remember how to use (e.g. `filter`, `arrange`, etc.)
+    * Note: these are verbs! 
+
+- Favor explicit, lengthy names, over short, implicit, names. (e.g `db_list_tables`) 
+    * Save short names for the most important functions!  
+
+- Function families are identified by a common prefix, not a common suffix. (e.g. `str_sub`, `str_replace`, `str_remove` in `stringr`)
+    * Helps with recall &amp; autocomplete to make writing code faster.
+
+
+---
+class: inverse, center, middle
+# 2. Core `tidyverse` for data storage, manipulation, transformation, &amp; visualization
+
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/f55c43407ae8944b985e2547fe868e5e2b3f9621/720bb/images/hex-tibble.png" width="20%" /&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/66d3133b4a19949d0b9ddb95fc48da074b69fb07/7dfb6/images/hex-readr.png" width="20%" /&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/5f8c22ec53a1ac61684f3e8d59c623d09227d6b9/b15de/images/hex-tidyr.png" width="20%" /&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/071952491ec4a6a532a3f70ecfa2507af4d341f9/c167c/images/hex-dplyr.png" width="20%" /&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/0ab849ed51b0b866ef6895c253d3899f4926d397/dbf0f/images/hex-ggplot2.png" width="20%" /&gt;
+
+---
+# The [`tibble`](https://tibble.tidyverse.org/) 📦
+
+A table structure with classes `"tbl_df", "tbl", "data.frame"`.
+
+- Easy to create: `tbl &lt;- tibble(x = rnorm(100), y= x*5 +2)` 
+- Has nice printing qualities
+
+
+```r
+library(tibble)
+as_tibble(iris)
+```
+
+```
+## # A tibble: 150 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+##  1          5.1         3.5          1.4         0.2 setosa 
+##  2          4.9         3            1.4         0.2 setosa 
+##  3          4.7         3.2          1.3         0.2 setosa 
+##  4          4.6         3.1          1.5         0.2 setosa 
+##  5          5           3.6          1.4         0.2 setosa 
+##  6          5.4         3.9          1.7         0.4 setosa 
+##  7          4.6         3.4          1.4         0.3 setosa 
+##  8          5           3.4          1.5         0.2 setosa 
+##  9          4.4         2.9          1.4         0.2 setosa 
+## 10          4.9         3.1          1.5         0.1 setosa 
+## # … with 140 more rows
+```
+
+
+---
+# The [`readr`](https://readr.tidyverse.org/) 📦
+
+- `read_*()`, `write_*()`: Read in CSVs, tab-delimited, RDS, raw files, etc.  
+- `col_*()`: declare types of columns being read in (character, date, factor, integer, etc.)
+
+
+```r
+library(tidyverse)
+bb_dat &lt;- read_csv("https://raw.githubusercontent.com/tidyverse/tidyr/master/data-raw/billboard.csv")
+```
+
+```
+## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   artist = col_character(),
+##   track = col_character(),
+##   time = col_time(format = ""),
+##   date.entered = col_date(format = ""),
+##   wk66 = col_logical(),
+##   wk67 = col_logical(),
+##   wk68 = col_logical(),
+##   wk69 = col_logical(),
+##   wk70 = col_logical(),
+##   wk71 = col_logical(),
+##   wk72 = col_logical(),
+##   wk73 = col_logical(),
+##   wk74 = col_logical(),
+##   wk75 = col_logical(),
+##   wk76 = col_logical()
+## )
+```
+
+```
+## See spec(...) for full column specifications.
+```
+
+---
+# `readr` (cont.)
+
+
+```r
+head(bb_dat)
+```
+
+```
+## # A tibble: 6 x 81
+##    year artist track time  date.entered   wk1   wk2   wk3   wk4   wk5   wk6
+##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;drt&gt; &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  2000 2 Pac  Baby… 04:22 2000-02-26      87    82    72    77    87    94
+## 2  2000 2Ge+h… The … 03:15 2000-09-02      91    87    92    NA    NA    NA
+## 3  2000 3 Doo… Kryp… 03:53 2000-04-08      81    70    68    67    66    57
+## 4  2000 3 Doo… Loser 04:24 2000-10-21      76    76    72    69    67    65
+## 5  2000 504 B… Wobb… 03:35 2000-04-15      57    34    25    17    17    31
+## 6  2000 98^0   Give… 03:24 2000-08-19      51    39    34    26    26    19
+## # … with 70 more variables: wk7 &lt;dbl&gt;, wk8 &lt;dbl&gt;, wk9 &lt;dbl&gt;, wk10 &lt;dbl&gt;,
+## #   wk11 &lt;dbl&gt;, wk12 &lt;dbl&gt;, wk13 &lt;dbl&gt;, wk14 &lt;dbl&gt;, wk15 &lt;dbl&gt;,
+## #   wk16 &lt;dbl&gt;, wk17 &lt;dbl&gt;, wk18 &lt;dbl&gt;, wk19 &lt;dbl&gt;, wk20 &lt;dbl&gt;,
+## #   wk21 &lt;dbl&gt;, wk22 &lt;dbl&gt;, wk23 &lt;dbl&gt;, wk24 &lt;dbl&gt;, wk25 &lt;dbl&gt;,
+## #   wk26 &lt;dbl&gt;, wk27 &lt;dbl&gt;, wk28 &lt;dbl&gt;, wk29 &lt;dbl&gt;, wk30 &lt;dbl&gt;,
+## #   wk31 &lt;dbl&gt;, wk32 &lt;dbl&gt;, wk33 &lt;dbl&gt;, wk34 &lt;dbl&gt;, wk35 &lt;dbl&gt;,
+## #   wk36 &lt;dbl&gt;, wk37 &lt;dbl&gt;, wk38 &lt;dbl&gt;, wk39 &lt;dbl&gt;, wk40 &lt;dbl&gt;,
+## #   wk41 &lt;dbl&gt;, wk42 &lt;dbl&gt;, wk43 &lt;dbl&gt;, wk44 &lt;dbl&gt;, wk45 &lt;dbl&gt;,
+## #   wk46 &lt;dbl&gt;, wk47 &lt;dbl&gt;, wk48 &lt;dbl&gt;, wk49 &lt;dbl&gt;, wk50 &lt;dbl&gt;,
+## #   wk51 &lt;dbl&gt;, wk52 &lt;dbl&gt;, wk53 &lt;dbl&gt;, wk54 &lt;dbl&gt;, wk55 &lt;dbl&gt;,
+## #   wk56 &lt;dbl&gt;, wk57 &lt;dbl&gt;, wk58 &lt;dbl&gt;, wk59 &lt;dbl&gt;, wk60 &lt;dbl&gt;,
+## #   wk61 &lt;dbl&gt;, wk62 &lt;dbl&gt;, wk63 &lt;dbl&gt;, wk64 &lt;dbl&gt;, wk65 &lt;dbl&gt;,
+## #   wk66 &lt;lgl&gt;, wk67 &lt;lgl&gt;, wk68 &lt;lgl&gt;, wk69 &lt;lgl&gt;, wk70 &lt;lgl&gt;,
+## #   wk71 &lt;lgl&gt;, wk72 &lt;lgl&gt;, wk73 &lt;lgl&gt;, wk74 &lt;lgl&gt;, wk75 &lt;lgl&gt;, wk76 &lt;lgl&gt;
+```
+
+---
+# `readr` (cont.)
+
+- `parse_*()`: change a `character` column/vector to a different type (number, logical, datetime, etc.)
+
+
+```r
+bb_dat$artist %&gt;% head
+```
+
+```
+## [1] "2 Pac"        "2Ge+her"      "3 Doors Down" "3 Doors Down"
+## [5] "504 Boyz"     "98^0"
+```
+
+```r
+parse_number(bb_dat$artist %&gt;% head)
+```
+
+```
+## [1]   2   2   3   3 504  98
+```
+
+---
+# The [`tidyr`](https://tidyr.tidyverse.org/) 📦
+
+- `gather()`: takes multiple columns, and gathers them into variable-value pairs: it makes "wide" data longer.
+- `spread()`: takes two columns (variable &amp; value), and spreads into multiple columns: it makes "long" data wider.
+
+
+```r
+bb_dat &lt;- bb_dat %&gt;% gather(week, position, wk1:wk76) 
+head(bb_dat)
+```
+
+```
+## # A tibble: 6 x 7
+##    year artist       track                time  date.entered week  position
+##   &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;                &lt;drt&gt; &lt;date&gt;       &lt;chr&gt;    &lt;dbl&gt;
+## 1  2000 2 Pac        Baby Don't Cry (Kee… 04:22 2000-02-26   wk1         87
+## 2  2000 2Ge+her      The Hardest Part Of… 03:15 2000-09-02   wk1         91
+## 3  2000 3 Doors Down Kryptonite           03:53 2000-04-08   wk1         81
+## 4  2000 3 Doors Down Loser                04:24 2000-10-21   wk1         76
+## 5  2000 504 Boyz     Wobble Wobble        03:35 2000-04-15   wk1         57
+## 6  2000 98^0         Give Me Just One Ni… 03:24 2000-08-19   wk1         51
+```
+
+---
+# `tidyr` (cont.)
+
+
+```r
+bb_dat %&gt;% spread(week, position) %&gt;% head 
+```
+
+```
+## # A tibble: 6 x 81
+##    year artist track time  date.entered   wk1  wk10  wk11  wk12  wk13  wk14
+##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;drt&gt; &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  2000 2 Pac  Baby… 04:22 2000-02-26      87    NA    NA    NA    NA    NA
+## 2  2000 2Ge+h… The … 03:15 2000-09-02      91    NA    NA    NA    NA    NA
+## 3  2000 3 Doo… Kryp… 03:53 2000-04-08      81    51    51    51    47    44
+## 4  2000 3 Doo… Loser 04:24 2000-10-21      76    61    61    59    61    66
+## 5  2000 504 B… Wobb… 03:35 2000-04-15      57    57    64    70    75    76
+## 6  2000 98^0   Give… 03:24 2000-08-19      51     6     7    22    29    36
+## # … with 70 more variables: wk15 &lt;dbl&gt;, wk16 &lt;dbl&gt;, wk17 &lt;dbl&gt;,
+## #   wk18 &lt;dbl&gt;, wk19 &lt;dbl&gt;, wk2 &lt;dbl&gt;, wk20 &lt;dbl&gt;, wk21 &lt;dbl&gt;, wk22 &lt;dbl&gt;,
+## #   wk23 &lt;dbl&gt;, wk24 &lt;dbl&gt;, wk25 &lt;dbl&gt;, wk26 &lt;dbl&gt;, wk27 &lt;dbl&gt;,
+## #   wk28 &lt;dbl&gt;, wk29 &lt;dbl&gt;, wk3 &lt;dbl&gt;, wk30 &lt;dbl&gt;, wk31 &lt;dbl&gt;, wk32 &lt;dbl&gt;,
+## #   wk33 &lt;dbl&gt;, wk34 &lt;dbl&gt;, wk35 &lt;dbl&gt;, wk36 &lt;dbl&gt;, wk37 &lt;dbl&gt;,
+## #   wk38 &lt;dbl&gt;, wk39 &lt;dbl&gt;, wk4 &lt;dbl&gt;, wk40 &lt;dbl&gt;, wk41 &lt;dbl&gt;, wk42 &lt;dbl&gt;,
+## #   wk43 &lt;dbl&gt;, wk44 &lt;dbl&gt;, wk45 &lt;dbl&gt;, wk46 &lt;dbl&gt;, wk47 &lt;dbl&gt;,
+## #   wk48 &lt;dbl&gt;, wk49 &lt;dbl&gt;, wk5 &lt;dbl&gt;, wk50 &lt;dbl&gt;, wk51 &lt;dbl&gt;, wk52 &lt;dbl&gt;,
+## #   wk53 &lt;dbl&gt;, wk54 &lt;dbl&gt;, wk55 &lt;dbl&gt;, wk56 &lt;dbl&gt;, wk57 &lt;dbl&gt;,
+## #   wk58 &lt;dbl&gt;, wk59 &lt;dbl&gt;, wk6 &lt;dbl&gt;, wk60 &lt;dbl&gt;, wk61 &lt;dbl&gt;, wk62 &lt;dbl&gt;,
+## #   wk63 &lt;dbl&gt;, wk64 &lt;dbl&gt;, wk65 &lt;dbl&gt;, wk66 &lt;dbl&gt;, wk67 &lt;dbl&gt;,
+## #   wk68 &lt;dbl&gt;, wk69 &lt;dbl&gt;, wk7 &lt;dbl&gt;, wk70 &lt;dbl&gt;, wk71 &lt;dbl&gt;, wk72 &lt;dbl&gt;,
+## #   wk73 &lt;dbl&gt;, wk74 &lt;dbl&gt;, wk75 &lt;dbl&gt;, wk76 &lt;dbl&gt;, wk8 &lt;dbl&gt;, wk9 &lt;dbl&gt;
+```
+
+---
+# Wide ↔️ long data 
+
+&lt;img src="https://omnianalytics.io/wp-content/uploads/2018/08/file35535a5445eb.gif" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+# The [`dplyr`](https://dplyr.tidyverse.org/) 📦
+
+`dplyr` has five main verbs for data manipulation:
+
+- `mutate()`: adds new variables that can be functions of existing variables
+- `select()`: picks columns based on their names and/or positions.
+- `filter()`: picks rows based on their values.
+- `summarize()`: reduces multiple values down to a single summary statistic.
+- `arrange()`: changes the ordering of the rows.
+
+
+```r
+bb_dat %&gt;% mutate(week = parse_number(week)) %&gt;% 
+  select(2:4, week, position) -&gt; bb_dat
+head(bb_dat, 3)
+```
+
+```
+## # A tibble: 3 x 5
+##   artist       track                   time    week position
+##   &lt;chr&gt;        &lt;chr&gt;                   &lt;drtn&gt; &lt;dbl&gt;    &lt;dbl&gt;
+## 1 2 Pac        Baby Don't Cry (Keep... 04:22      1       87
+## 2 2Ge+her      The Hardest Part Of ... 03:15      1       91
+## 3 3 Doors Down Kryptonite              03:53      1       81
+```
+
+---
+# `dplyr` (cont.)
+
+`group_by()`: takes an existing `tbl` and converts it into a grouped `tbl` where operations are performed "by group".
+
+
+```r
+bb_dat %&gt;% filter(!is.na(position)) %&gt;% 
+  group_by(artist, track) %&gt;% 
+  summarize(highest = min(position, na.rm = T), 
+  length = max(week, na.rm = T)) %&gt;%
+  arrange(desc(length)) -&gt; bb_dat_summ
+head(bb_dat_summ)
+```
+
+```
+## # A tibble: 6 x 4
+## # Groups:   artist [5]
+##   artist       track               highest length
+##   &lt;chr&gt;        &lt;chr&gt;                 &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Creed        Higher                    7     65
+## 2 Lonestar     Amazed                    1     64
+## 3 3 Doors Down Kryptonite                3     53
+## 4 Hill, Faith  Breathe                   2     53
+## 5 Creed        With Arms Wide Open       1     47
+## 6 Joe          I Wanna Know              4     44
+```
+
+
+---
+# The [`ggplot2`](https://ggplot2.tidyverse.org/) 📦
+
+Implements [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448/ref=as_li_ss_tl?ie=UTF8&amp;qid=1477928463&amp;sr=8-1&amp;keywords=the+grammar+of+graphics&amp;linkCode=sl1&amp;tag=ggplot2-20&amp;linkId=f0130e557161b83fbe97ba0e9175c431) in R.
+
+
+```r
+ggplot(data = bb_dat_summ, aes(x = length, y = highest)) + 
+  geom_point()
+```
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-30-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+# `ggplot2` (cont.)
+
+Add layers: 
+
+
+```r
+ggplot(data = bb_dat_summ, aes(x = length, y = highest)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-31-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+# `ggplot2` (cont.)
+
+
+```r
+ggplot(data = bb_dat_summ, aes(x = length, y = highest)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") + 
+  xlim(0,30)
+```
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-32-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+# More core `tidyverse` resources 
+
+[`ggplot2` tutorial](https://uc-r.github.io/ggplot_intro)
+
+[Tidy Tuesdays](https://github.com/rfordatascience/tidytuesday): practice your Tidyverse skills with others 
+
+[Welcome to the tidyverse](https://speakerdeck.com/hadley/welcome-to-the-tidyverse)
+
+[*R for Data Science* book](https://r4ds.had.co.nz/)
+
+[*R for Data Science* book solutions](https://jrnold.github.io/r4ds-exercise-solutions/)
+
+[Tidy Data Science Workshop](https://tidy-ds.wjakethompson.com/)
+
+---
+class: inverse, center, middle
+# 3. `purrr` : remove `for` loops from your vocabulary
+
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/9221ddead578362bd17bafae5b85935334984429/37a68/images/hex-purrr.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+# What is the [`purrr`](https://purrr.tidyverse.org/) 📦?
+
+- enhances R's functional programming abilities 
+
+- (one of the core tenets of the `tidyverse`) 
+
+- write less &amp; faster code with the `map()` family of functions 
+
+&lt;img src="img/purr_cupcakes.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+# `purrr`
+
+
+```r
+map(.x, .f, ...)
+```
+
+- `.x`: an object to which you want to do the same thing over and over again
+- `.f`: the function that will operate on *each element* of `.x`
+- `...`: a place to put any other named arguments you want to use in `.f`
+
+Example: compute the mean of the two variables we created in the `bb_dat_summ` dataset
+
+
+
+
+```r
+bb_dat_summ %&gt;% select(length, highest) %&gt;% map(mean, na.rm = TRUE)
+```
+
+```
+## $length
+## [1] 16.89274
+## 
+## $highest
+## [1] 44.12303
+```
+
+---
+# Compare to other methods
+
+
+```r
+mean_length &lt;- mean(bb_dat_summ$length, na.rm = TRUE)
+mean_highest &lt;- mean(bb_dat_summ$highest, na.rm = TRUE)
+mean_length; mean_highest
+```
+
+```
+## [1] 16.89274
+```
+
+```
+## [1] 44.12303
+```
+
+--
+
+
+```r
+mymeans &lt;- list()
+for(i in c("length", "highest")){
+  mymeans[[i]] &lt;- mean(bb_dat_summ[[i]], na.rm = TRUE)
+}
+mymeans
+```
+
+```
+## $length
+## [1] 16.89274
+## 
+## $highest
+## [1] 44.12303
+```
+
+---
+# Why use `purrr` instead? 
+
+- `map()` treats the function and the object as equals
+
+- `for` loops and other methods emphasize the object, not what you're doing to it
+
+- It's fast and slick
+
+&lt;img src="img/map_picture.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+# Another example
+
+Simulation: 
+
+- you have a grid of parameters, `mu` and `sigma`
+- you want to simulate from the model with each combination of `mu` and `sigma`
+
+
+```r
+mu &lt;- 1:5
+sigma &lt;- 1:3
+
+mysims &lt;- crossing(mu,sigma) %&gt;% 
+  mutate(sims = map2(mu, sigma, rnorm, n = 100))
+glimpse(mysims)
+```
+
+```
+## Observations: 15
+## Variables: 3
+## $ mu    &lt;int&gt; 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5
+## $ sigma &lt;int&gt; 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3
+## $ sims  &lt;list&gt; [&lt;-0.20589944, 1.53380418, -0.54304907, 2.11368027, 0.604…
+```
+
+---
+## Visualize simulations 
+
+
+```r
+mysims %&gt;% unnest() %&gt;% ggplot(aes(x = sims)) + geom_histogram() + 
+  facet_grid(sigma~mu, labeller = "label_both")
+```
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-42-1.png" width="500px" height="400px" style="display: block; margin: auto;" /&gt;
+
+---
+# Use `purrr` for modeling 
+
+
+```r
+bb_dat_mods &lt;- bb_dat %&gt;% nest(-artist, -track) %&gt;% 
+  mutate(lms = map(data, ~lm(data = ., position ~ week, ))) 
+bb_dat_mods[114,] ; bb_dat_mods$lms[[114]]    
+```
+
+```
+## # A tibble: 1 x 4
+##   artist     track data              lms   
+##   &lt;chr&gt;      &lt;chr&gt; &lt;list&gt;            &lt;list&gt;
+## 1 Gray, Macy I Try &lt;tibble [76 × 3]&gt; &lt;lm&gt;
+```
+
+```
+## 
+## Call:
+## lm(formula = position ~ week, data = .)
+## 
+## Coefficients:
+## (Intercept)         week  
+##     27.4274      -0.4115
+```
+
+---
+# `purrr` for modeling 
+
+
+```r
+bb_dat_mods %&gt;% mutate(intercept = map_dbl(lms, ~coef(.)[1]),
+                       slope = map_dbl(lms, ~coef(.)[2])) %&gt;% 
+  select(artist, track, intercept, slope) %&gt;% 
+  arrange(slope)
+```
+
+```
+## # A tibble: 317 x 4
+##    artist                track                   intercept  slope
+##    &lt;chr&gt;                 &lt;chr&gt;                       &lt;dbl&gt;  &lt;dbl&gt;
+##  1 SheDaisy              Deck The Halls              133.  -36.0 
+##  2 Kenny G               Auld Lang Syne (The ...      89.9 -12.7 
+##  3 Filter                Take A Picture               59.4  -2.40
+##  4 Brooks, Garth         Do What You Gotta Do         84.1  -2.37
+##  5 Westlife              Swear It Again               67.8  -2.33
+##  6 Son By Four           A Puro Dolor (Purest...      80.8  -2.32
+##  7 Blink-182             All The Small Things         60.6  -2.28
+##  8 Red Hot Chili Peppers Otherside                    62.2  -2.27
+##  9 Tritt, Travis         Best Of Intentions           73.9  -2.27
+## 10 Rimes, LeAnn          I Need You                   64.4  -2.22
+## # … with 307 more rows
+```
+
+
+---
+# Other `purrr` functions 
+
+- `flatten()`: similar to `unlist()`
+- `walk(.x, .f, ...)`: perform function `.f` on each element of `.x` for the side effects (e.g. `write_csv()` for saving data to disk)
+- `pmap(.l, .f, ...)`: perform function `.f` on 3 or more objects of the same length in a list `.l` 
+- `detect(.x, .f, ...)`: for a function `.f` that returns a logical value, return the first element of `.x` that returns `TRUE` 
+
+
+---
+# More `purrr` resources 
+
+- "The Joy of Functional Programming" by Hadley Wickham
+    * Slides on [Speakerdeck](https://speakerdeck.com/hadley/the-joy-of-functional-programming)
+    * Example code on [Github](https://github.com/hadley/joy-of-fp)
+
+- [Iteration](https://r4ds.had.co.nz/iteration.html), Chapter 21 in *R for Data Science*
+
+---
+class: inverse, center, middle
+# 4. (if time) `tidymodels` : applying `tidyverse` principles to modeling
+
+&lt;img src="img/tidymodels.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+# `tidymodels` packages 📦 📦 📦
+
+All stored in a [Github organization](https://github.com/tidymodels)
+
+&lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/yardstick.png" width="20%" /&gt;&lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/parsnip.png" width="20%" /&gt;&lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/recipes.png" width="20%" /&gt;&lt;img src="https://raw.githubusercontent.com/tidymodels/rsample/master/rsample_hex_thumb.png" width="20%" /&gt;
+
+Others: `broom`, `tidyposterior`, `dials`, `infer`, `probably`, `textrecipes`, `embed`
+
+--
+
+## ⚠️ Warning ⚠️ 
+
+The `tidymodels` framework is still in development, so proceed with caution.
+
+---
+# 📦: `rsample`
+
+From the package [website](https://tidymodels.github.io/rsample/): 
+
+- "The scope of `rsample` is to provide the basic building blocks for creating and analyzing resamples of a data set but does not include code for modeling or calculating statistics."
+
+- Anything to do with sampling the data: 
+    + splitting into training/testing (`initial_split()`)
+    + sets for cross-validation (`vfold_cv()`)
+    + other bootstrapping needs (e.g. `bootstrap()`)
+
+&lt;img src="https://raw.githubusercontent.com/tidymodels/rsample/master/rsample_hex_thumb.png" width="25%" style="display: block; margin: auto;" /&gt;
+
+---
+# 📦: `parsnip`
+
+From the [website](https://tidymodels.github.io/parsnip/): 
+
+- Goal: Separate the definition of a model from its evaluation.
+
+- Decouple the model specification from the implementation (whether the implementation is in R, spark, or something else). 
+
+- Harmonize the argument names (e.g. `n.trees`, `ntrees`, `trees`) so that users can remember a single name. 
+
+- From the same author as the `caret` package. (Eventually all of `caret` will be in `parsnip`)
+
+&lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/parsnip.png" width="25%" style="display: block; margin: auto;" /&gt;
+
+---
+class: primary
+# 📦: `recipes`
+
+From the [website](https://tidymodels.github.io/recipes/): 
+
+
+"The idea of the recipes package is to define a recipe or blueprint that can be used to sequentially define the encodings and preprocessing of the data (i.e. "feature engineering")."
+
+
+```r
+data("Sonar",package = "mlbench")
+sonar_rec &lt;- recipe(Class ~ ., data = Sonar) %&gt;%
+  step_center(all_predictors()) %&gt;%
+  step_scale(all_predictors())
+```
+
+&lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/recipes.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+class: primary
+# 📦: `yardstick`
+
+From the [website](https://tidymodels.github.io/yardstick): "yardstick is a package to estimate how well models are working using tidy data principles." 
+
+- `conf_mat(truth, estimate)`: confusion matrix
+- `roc_auc(truth, estimate)`: computes area under the ROC curve
+- `spec(truth, estimate)`: computes specificity
+- `sens(truth, estimate)`: computes sensitivity
+- `roc_data(truth, estimate)`: returns a dataframe of values for plotting ROC curves
+- `autoplot()`: plot ROC curve. requires output from `roc_data`.
+
+&lt;img src="https://raw.githubusercontent.com/topepo/rstudio-conf-2019/master/Materials/images/yardstick.png" width="20%" style="display: block; margin: auto;" /&gt;
+
+---
+# `tidymodels` resources
+
+[Book](https://tidymodels.github.io/model-implementation-principles/)
+
+[Github](https://github.com/tidymodels)
+
+Max Kuhn's rstudio::conf 2019 [Applied Machine Learning workshop](https://github.com/topepo/rstudio-conf-2019) and [`parsnip` talk](https://resources.rstudio.com/rstudio-conf-2019/parsnip-a-tidy-model-interface)
+
+---
+class: center, middle
+# Thank you! 
+
+--
+
+# Questions?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
