@@ -358,8 +358,6 @@ install.packages("rticles")
 .Rmd file templates for 
 
 - Sage journals
-- Springer journals
-- Statistics in Medicine journal
 - The R Journal articles
 - Taylor & Francis journals
 - Elsevier journals
