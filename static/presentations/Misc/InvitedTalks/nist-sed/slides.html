@@ -410,7 +410,9 @@ Replace PDF output from LaTeX with the more easily machine-read HTML
 install.packages("flexdashboard")
 ```
  
-    In RStudio: File ➡️ New File ➡️ R Markdown ➡️ From Template ➡️ Flex Dashboard
+    In RStudio: File ➡️ New File ➡️ R Markdown ➡️ 
+    
+    From Template ➡️ Flex Dashboard
     
 ---
 class: inverse, center, middle
@@ -513,7 +515,7 @@ Most important reason for using FP:
 &lt;/div&gt;
 
 ---
-# d. Design for Humans 👩‍💻 👩‍💻 👨‍💻
+# d. Design for Humans 👩‍💻 👨‍💻 👩‍💻
 
 "Computer efficiency is a secondary concern because the bottleneck in most data analysis is thinking time, not computing time." - [H. Wickham](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html)
 
@@ -572,28 +574,10 @@ as_tibble(iris)
 - `col_*()`: declare types of columns being read in (character, date, factor, integer, etc.)
 
 
+
+
 ```r
 library(tidyverse)
-```
-
-```
-## ── Attaching packages ───────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
-```
-
-```
-## ✔ ggplot2 3.1.0     ✔ purrr   0.3.2
-## ✔ tidyr   0.8.3     ✔ dplyr   0.8.1
-## ✔ readr   1.3.1     ✔ stringr 1.4.0
-## ✔ ggplot2 3.1.0     ✔ forcats 0.4.0
-```
-
-```
-## ── Conflicts ──────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-```
-
-```r
 bb_dat &lt;- read_csv("https://raw.githubusercontent.com/tidyverse/tidyr/master/data-raw/billboard.csv")
 ```
 
@@ -810,7 +794,7 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
   geom_point()
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-30-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-31-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 # `ggplot2` (cont.)
@@ -824,7 +808,7 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
   geom_smooth(method = "lm")
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-31-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-32-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 # `ggplot2` (cont.)
@@ -837,7 +821,7 @@ ggplot(data = bb_dat_summ, aes(x = length, y = highest)) +
   xlim(0,30)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-32-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-33-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 # More core `tidyverse` resources 
@@ -971,7 +955,7 @@ glimpse(mysims)
 ## Variables: 3
 ## $ mu    &lt;int&gt; 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5
 ## $ sigma &lt;int&gt; 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3
-## $ sims  &lt;list&gt; [&lt;0.17499533, 0.69008781, 2.37309155, 0.86424653, -0.2129…
+## $ sims  &lt;list&gt; [&lt;2.525449462, 1.867060329, 1.103035999, 2.200091795, 0.5…
 ```
 
 ---
@@ -983,7 +967,7 @@ mysims %&gt;% unnest() %&gt;% ggplot(aes(x = sims)) + geom_histogram() +
   facet_grid(sigma~mu, labeller = "label_both")
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-42-1.png" width="500px" height="400px" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-43-1.png" width="500px" height="400px" style="display: block; margin: auto;" /&gt;
 
 ---
 # Use `purrr` for modeling 

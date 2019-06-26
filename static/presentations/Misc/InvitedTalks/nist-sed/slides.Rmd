@@ -433,7 +433,9 @@ knitr::include_graphics("img/pagedown.png")
 install.packages("flexdashboard")
 ```
  
-    In RStudio: File `r emo::ji("arrow_right")` New File `r emo::ji("arrow_right")` R Markdown `r emo::ji("arrow_right")` From Template `r emo::ji("arrow_right")` Flex Dashboard
+    In RStudio: File `r emo::ji("arrow_right")` New File `r emo::ji("arrow_right")` R Markdown `r emo::ji("arrow_right")` 
+    
+    From Template `r emo::ji("arrow_right")` Flex Dashboard
     
 ---
 class: inverse, center, middle
@@ -582,6 +584,10 @@ as_tibble(iris)
 
 - `read_*()`, `write_*()`: Read in CSVs, tab-delimited, RDS, raw files, etc.  
 - `col_*()`: declare types of columns being read in (character, date, factor, integer, etc.)
+
+```{r, echo=FALSE, warning = FALSE, message = FALSE}
+library(tidyverse)
+```
 
 ```{r}
 library(tidyverse)
