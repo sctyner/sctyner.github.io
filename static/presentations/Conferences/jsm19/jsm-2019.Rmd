@@ -238,7 +238,7 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/tall_infographics.png")
 class: center, middle
 # Thank you! 
 
-Slides available at [bit.ly/TynerJSM19](bit.ly/TynerJSM19)
+Slides available at [bit.ly/TynerJSM19](http://bit.ly/TynerJSM19)
 
 <i class="fas fa-globe"></i> sctyner.github.io <i class="fas fa-grip-lines-vertical"></i>  <i class="far fa-envelope"></i> sctyner90@gmail.com
 
