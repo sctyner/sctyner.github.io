@@ -350,7 +350,7 @@ with Eric Hare, Andee Kaplan, and Heike Hofmann
 Leadership & Service {data-icon=hands-helping}
 --------------------------------------------------------------------------------
 
-### Founder and Co-organizer of the Uncoast Unconference 
+### Founder & Co-organizer of the Uncoast Unconference 
 
 Hackathon-style event for R users and developers living in middle America.
 
