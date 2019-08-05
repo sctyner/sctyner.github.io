@@ -49,7 +49,7 @@ Postdoctoral Research Associate, CSAFE
 
 Ames, Iowa
 
-Present - Dec. 2017
+Aug. 2019 - Dec. 2017
 
 PI: Alicia Carriquiry
 
@@ -76,13 +76,23 @@ Honors: Phi Beta Kappa, Pi Mu Epsilon, Omicron Delta Kappa, Dean's List all term
 Professional Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
+### AAAS Science & Technology Policy Fellow
+
+Bureau of Labor Statistics, Office of Survey Methods Research
+
+Washington, D.C.
+
+Sep. 2019
+
+- [About the program](https://www.aaas.org/programs/science-technology-policy-fellowships/overview)
+
 ### Postdoctoral Research Associate
 
 Center for Statistics & Applications in Forensic Evidence (CSAFE), Iowa State University
 
 Ames, Iowa 
 
-Present - Dec. 2017
+Aug. 2019 - Dec. 2017
 
 ::: concise
 - Author educational materials for legal professionals on the use of statistics in forensic science 
@@ -214,6 +224,16 @@ TA for STAT 104: Introduction to Statistics
 Publications {data-icon=file}
 --------------------------------------------------------------------------------
 
+### Open Forensic Science in R
+
+Published [online](https://sctyner.github.io/OpenForSciR/)
+
+Ames, Iowa
+
+2019
+
+**Tyner, S.**, ed.  
+
 ### Network Visualization with ggplot2
 
 The R Journal. 9(1): 27-59. June 2017
@@ -339,7 +359,7 @@ Des Moines, Iowa
 Apr. 2019
 
 ::: aside
-Please visit http://uuconf.rbind.io/ for more. 
+Please visit [uuconf.rbind.io](http://uuconf.rbind.io/) for more. 
 :::
 
 ### Iowa State University Postdoctoral Association 
@@ -348,7 +368,7 @@ Elected as the postdoctoral representative to the University Committee for the A
 
 Ames, Iowa 
 
-Present - Aug. 2018
+Jul. 2019 - Aug. 2018
 
 ### Webmaster, Iowa Chapter of the ASA 
 
@@ -356,7 +376,7 @@ Maintain the online presence of the Iowa chapter of the American Statistical Ass
 
 Ames, Iowa
 
-Present - Apr. 2018
+Apr. 2019 - Apr. 2018
 
 ### Co-founder and co-organizer, R-Ladies Ames 
 
@@ -364,7 +384,7 @@ Founded the Ames chapter of the global organization R-Ladies, which promotes gen
 
 Ames, Iowa
 
-Present - Dec. 2016
+Aug. 2019 - Dec. 2016
 
 ::: aside
 with Natalia daSilva
