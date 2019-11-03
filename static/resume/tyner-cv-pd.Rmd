@@ -82,9 +82,11 @@ Bureau of Labor Statistics, Office of Survey Methods Research
 
 Washington, D.C.
 
-Sep. 2019
+Sep. 2019 - Present
 
-- [About the program](https://www.aaas.org/programs/science-technology-policy-fellowships/overview)
+- Develop interactive visualization applications using R Shiny 
+- Utilize text as data to assess public perception of the Bureau and influence communications policy
+- [About the AAAS STPF program](https://www.aaas.org/programs/science-technology-policy-fellowships/overview)
 
 ### Postdoctoral Research Associate
 
@@ -221,8 +223,65 @@ Jul. 2013 - Aug. 2012
 TA for STAT 104: Introduction to Statistics
 :::
 
+Honors & Awards {data-icon=trophy}
+--------------------------------------------------------------------------------
+
+### Winner, rOpenSci 2018 Fellowship 
+
+For proposal, "Open Forensic Science in R" 
+
+Ames, Iowa
+
+Feb. 2018 
+
+::: aside
+Please see [ropensci.org](https://ropensci.org/blog/2018/02/14/announcing-2018-ropensci-fellows/) for more
+:::
+
+### Winner, Student Paper Competition 
+
+From the Statistical Graphics Section of the ASA for "Using the geomnet Package" 
+
+Chicago, Illinois
+
+Jul. 2016
+
+::: aside 
+See Publications
+:::
+
+### Runner up, Young Statisticians Writing Competition
+
+From the Young Statisticians Section of the Royal Statistical Society for “The Joy of Clustering”
+
+Exeter, Devon, UK
+
+Sept. 2015
+
+::: aside 
+See Publications
+:::
+
+### Alumni Fellowship
+
+Dept. of Statistics, Iowa State University 
+
+Ames, Iowa
+
+Aug. 2012
+
 Publications {data-icon=file}
 --------------------------------------------------------------------------------
+
+### Evaluation and comparison of methods for forensic glass source conclusions
+
+[Accepted](https://doi.org/10.1016/j.forsciint.2019.110003). *Forensic Science International.* October 2019.
+
+Ames, Iowa
+
+2019
+
+Park, S. and **Tyner, S.**
 
 ### Open Forensic Science in R
 
@@ -283,6 +342,66 @@ Valparaiso, Indiana
 2012
 
 Dairyko, M., **Tyner, S.**, Pudwell, L., and Wynn, C.
+
+
+Leadership & Service {data-icon=hands-helping}
+--------------------------------------------------------------------------------
+
+### Founder & Co-organizer of the Uncoast Unconference 
+
+Hackathon-style event for R users and developers living in middle America.
+
+Des Moines, Iowa 
+
+Apr. 2019
+
+::: aside
+Please visit [uuconf.rbind.io](http://uuconf.rbind.io/) for more. 
+:::
+
+### Iowa State University Postdoctoral Association 
+
+Elected as the postdoctoral representative to the University Committee for the Advancement of Women and Gender Equity to voice the interests of women+-identifying postdocs on campus.
+
+Ames, Iowa 
+
+Jul. 2019 - Aug. 2018
+
+### Webmaster, Iowa Chapter of the ASA 
+
+Maintain the online presence of the Iowa chapter of the American Statistical Association, the country’s top professional association for statisticians.
+
+Ames, Iowa
+
+Apr. 2019 - Apr. 2018
+
+### Co-founder and co-organizer, R-Ladies Ames 
+
+Founded the Ames chapter of the global organization R-Ladies, which promotes gender parity among R users, R package authors, and members of the R foundation and board of directors.
+
+Ames, Iowa
+
+Aug. 2019 - Dec. 2016
+
+::: aside
+with Natalia daSilva
+:::
+
+### Statistics Departmental Committees 
+
+Served alongside faculty and staff as the student member of ISU statistics departmental committees: the Social Committee (2014-15) and the Honors and Awards Committee (2015-16, 2016-17).
+
+Ames, Iowa 
+
+May 2017 - Aug. 2014
+
+### The Iowa STAT-ers Club 
+
+Led this Statistics Department graduate student organization in multiple executive positions: Secretary (2013-14), Social Chair (2014-15), and President (2015-16).
+
+Ames, Iowa 
+
+May 2016 - Aug. 2013
 
 Workshops Taught {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
@@ -346,110 +465,3 @@ May 2016
 ::: aside
 with Eric Hare, Andee Kaplan, and Heike Hofmann
 :::
-
-Leadership & Service {data-icon=hands-helping}
---------------------------------------------------------------------------------
-
-### Founder & Co-organizer of the Uncoast Unconference 
-
-Hackathon-style event for R users and developers living in middle America.
-
-Des Moines, Iowa 
-
-Apr. 2019
-
-::: aside
-Please visit [uuconf.rbind.io](http://uuconf.rbind.io/) for more. 
-:::
-
-### Iowa State University Postdoctoral Association 
-
-Elected as the postdoctoral representative to the University Committee for the Advancement of Women and Gender Equity to voice the interests of women+-identifying postdocs on campus.
-
-Ames, Iowa 
-
-Jul. 2019 - Aug. 2018
-
-### Webmaster, Iowa Chapter of the ASA 
-
-Maintain the online presence of the Iowa chapter of the American Statistical Association, the country’s top professional association for statisticians.
-
-Ames, Iowa
-
-Apr. 2019 - Apr. 2018
-
-### Co-founder and co-organizer, R-Ladies Ames 
-
-Founded the Ames chapter of the global organization R-Ladies, which promotes gender parity among R users, R package authors, and members of the R foundation and board of directors.
-
-Ames, Iowa
-
-Aug. 2019 - Dec. 2016
-
-::: aside
-with Natalia daSilva
-:::
-
-### Statistics Departmental Committees 
-
-Served alongside faculty and staff as the student member of ISU statistics departmental committees: the Social Committee (2014-15) and the Honors and Awards Committee (2015-16, 2016-17).
-
-Ames, Iowa 
-
-May 2017 - Aug. 2014
-
-### The Iowa STAT-ers Club 
-
-Led this Statistics Department graduate student organization in multiple executive positions: Secretary (2013-14), Social Chair (2014-15), and President (2015-16).
-
-Ames, Iowa 
-
-May 2016 - Aug. 2013
-
-
-Honors & Awards {data-icon=trophy}
---------------------------------------------------------------------------------
-
-### Winner, rOpenSci 2018 Fellowship 
-
-For proposal, "Open Forensic Science in R" 
-
-Ames, Iowa
-
-Feb. 2018 
-
-::: aside
-Please see [ropensci.org](https://ropensci.org/blog/2018/02/14/announcing-2018-ropensci-fellows/) for more
-:::
-
-### Winner, Student Paper Competition 
-
-From the Statistical Graphics Section of the ASA for "Using the geomnet Package" 
-
-Chicago, Illinois
-
-Jul. 2016
-
-::: aside 
-See Publications
-:::
-
-### Runner up, Young Statisticians Writing Competition
-
-From the Young Statisticians Section of the Royal Statistical Society for “The Joy of Clustering”
-
-Exeter, Devon, UK
-
-Sept. 2015
-
-::: aside 
-See Publications
-:::
-
-### Alumni Fellowship
-
-Dept. of Statistics, Iowa State University 
-
-Ames, Iowa
-
-Aug. 2012
