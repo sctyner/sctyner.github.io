@@ -2,7 +2,7 @@
 title: "pagedown:"
 subtitle: "In ~~God~~ HTML We Trust"
 author: "Samantha Tyner, Ph.D.<br>@sctyner <p>AAAS Science & Technology Policy Fellow, <br> Bureau of Labor Statistics, <br> Office of Survey Methods Research</p>"
-date: "<a href=https://dc.rstats.ai/>DC R Conference</a> <br> Nov. 8, 2019"
+date: "<a href=https://dc.rstats.ai/>DC R Conference</a> <br> Nov. 8, 2019<br> <a href=http://bit.ly/TynerDCR19>bit.ly/TynerDCR19</a>"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -419,5 +419,5 @@ class: center, middle
 
 <i class="fab fa-linkedin"></i> linkedin.com/in/sctyner
 
-Slides available at bit.ly/TynerDCR19
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
 
