@@ -4,6 +4,7 @@
     <title>pagedown:</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -44,12 +45,20 @@ I chose the title of this talk, "In HTML We Trust" based on a post on [Yihui's b
 
 If you want to learn from the source, watch Yihui's rstudio::conf [talk](https://resources.rstudio.com/rstudio-conf-2019/pagedown-creating-beautiful-pdfs-with-r-markdown-and-css) from January 2019.
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 ???
 Think of me as a disciple; not a creator. 
 
 ---
 # Assumptions
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
 
 
 ???
@@ -84,6 +93,11 @@ And this is why you can trust me when I say it is just about time to leave LaTeX
 ---
 # The Beginning 
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="poster.png" alt="2011 at Valparaiso University" width="55%" /&gt;
 &lt;p class="caption"&gt;2011 at Valparaiso University&lt;/p&gt;
@@ -102,6 +116,11 @@ And After that summer, I spent my whole senior year and most of graduate school 
 class: center, middle
 
 # `\phantom{}`
+
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
 
 ???
 Phantom. Has anyone else used this Crazy thing? 
@@ -124,6 +143,11 @@ I used phantom all the time, until I got something like this: (next)
 ---
 class: center, middle
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 &lt;img src="fine.png" width="748" style="display: block; margin: auto;" /&gt;
 
 ???
@@ -131,6 +155,11 @@ In the poster I showed at the beginning, we used it 16 times, which I feel is ac
 
 ---
 # The Problems with LaTeX
+
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
 
 - [Not built for the web](https://authorea.com/users/3/articles/4675/_show_article) 
 
@@ -144,6 +173,11 @@ Communication has almost fully shifted from printed methods to web-based, electr
 
 ---
 # The Problems with LaTeX 
+
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
 
 - Getting tables out of PDFs 
 
@@ -159,6 +193,11 @@ On the other hand, How do you to get data table out of HTML? Look for the table 
 ---
 # The Problems with LaTeX 
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 - [It's inefficient](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0125830)
 
 &lt;img src="inefficient.png" width="85%" style="display: block; margin: auto;" /&gt;
@@ -170,6 +209,11 @@ That being said, LaTeX has obvious benefits.
 
 ---
 # The Benefits of LaTeX
+
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
 
 - Beautiful typesetting
 - Ubiquitous in journals
@@ -196,11 +240,20 @@ When you learn LaTeX, You can feel like you've entered into this secret club, wh
 class: middle, inverse, center
 # pagedown: LaTeX for the 21st Century? 
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 ???
 Ok, now that we've covered the cons and pros of LaTeX: let's finally switch to talking about pagedown. First, let's talk about why. 
 
 ---
 # Why? 
+
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
 
 
 
@@ -225,6 +278,11 @@ Yihui, Romain, &amp; Brent:
 ---
 # Why? 
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 - Ctrl + P from the web is ugly 
 
 &lt;div class="figure" style="text-align: center"&gt;
@@ -237,6 +295,11 @@ Another motivation for pagedown is that Printing from the web usually results in
 
 ---
 # How? 
+
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
 
 - [paged.js](https://www.pagedmedia.org/paged-js/) + CSS
 
@@ -254,6 +317,11 @@ In an HTML "page" the area and the margins are broken up into different CSS clas
 ---
 # Installing pagedown
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 
 ```r
 # from cran:
@@ -268,6 +336,11 @@ To you can install pagedown from CRAN or from Rstudio's github repository.
 ---
 # Using pagedown
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 In [RStudio](https://rstudio.com/): 
 
 - File ➡️ New File
@@ -280,6 +353,11 @@ The easiest way to create a pagedown document after installation is to use the b
 
 ---
 # Using pagedown
+
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
 
 - YAML    
     
@@ -302,6 +380,11 @@ Like all things R markdown, a pagedown document starts with a YAML header and co
 ---
 # Using pagedown 
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 - Lots of templates
 - [YAML](https://bookdown.org/yihui/rmarkdown/basics.html#) Header
 - [Markdown](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) body 
@@ -315,6 +398,11 @@ In my experience, the templates are very friendly. Just edit the YAML and the Lo
 ---
 # Rendering pagedown 
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 ⚠️Needs a web server to view⚠️: 
 
 - In RStudio: run `xaringan::inf_mr()` then open in browser. 
@@ -327,6 +415,11 @@ To render pagedown, you need an active web server. Can't just compile the HTML a
 ---
 # pagedown examples 
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 My CV: 
 
 &lt;iframe src="https://sctyner.github.io/static/resume/tyner-cv-pd.html" width="110%" height="400px"&gt;&lt;/iframe&gt;
@@ -337,6 +430,11 @@ Here is my web CV. I like it so much more than my other CV. Plus I really like t
 ---
 # pagedown examples
 
+.topright[
+Slides available at [bit.ly/TynerDCR19](http://bit.ly/TynerDCR19)
+]
+
+
 An e-business card
 
 &lt;iframe src="matt-bc.html" width="40%" height="350px"&gt;&lt;/iframe&gt;
@@ -346,6 +444,9 @@ Here's a business card I made for my partner.
 
 ---
 # Disadvantages of pagedown 
+
+
+
 
 - Immature 
 
@@ -360,6 +461,9 @@ It's brand new, it's not well developed yet, and LaTeX has about 40 years on it.
 ---
 # Disadvantages of pagedown
 
+
+
+
 - Very strict
 
 &lt;div class="figure" style="text-align: center"&gt;
@@ -373,6 +477,7 @@ It's very dependent on precise CSS classes and it can be fiddly with the zoom le
 ---
 # Disadvantages of pagedown
 
+
 - [Change is hard](https://www.howtogeek.com/189270/alternative-keyboard-layouts-explained-dvorak-colemak-and-whether-you-should-care/)
 
 &lt;div class="figure" style="text-align: center"&gt;
@@ -385,6 +490,9 @@ People love LaTeX. Researchers have been using it for years and it does the job.
 
 ---
 # Conclusion 
+
+
+
 
 LaTeX is
 
