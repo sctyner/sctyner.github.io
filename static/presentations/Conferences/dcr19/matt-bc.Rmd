@@ -1,0 +1,26 @@
+---
+name: Matthew W. Monroe, Esq.
+title: Seeking an attorney position in DMV
+phone: "+1 202-365-1515"
+email: "jssmatt@gmail.com"
+url: linkedin.com/in/monroe1
+logo: "matt.png"
+googlefonts: "Asul" # feel free to try other fonts at https://fonts.google.com
+paperheight: 4in
+output: pagedown::business_card
+---
+
+<!-- if you prefer you can create cards in markdown instead of YAML declaration -->
+
+<!-- if you prefer black text on white background, set eval=TRUE on the chunk below -->
+
+```{css, eval=TRUE}
+.wrapper {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+.coordinates {
+  color: #333;
+}
+```
