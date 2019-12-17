@@ -9,9 +9,14 @@ categories: rstats, help
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+> "Ever tried. Ever failed. No matter. Try again. Fail again. Fail better." - Samuel Beckett 
+> "Try not. Do. Or do not. " - [Yoda](https://youtu.be/BQ4yd2W50No)
+
 ## Why?
 
 As [promised on Twitter](https://twitter.com/sctyner/status/1195425981781151745?s=20), this is my list of tips for getting help in R. My Twitter thread of tips was inspired by something I witnessed at the end of a webinar. The webinar presenter is the author of many popular R packages, and so the webinar drew a very large audience (hundreds of people). The webinar was great, and the host was effusive afterwards. Unfortunately, the praise went a bit off the rails, and included the host telling attendees that the presenter is "always on GitHub" and if they have additional questions to "post issues on the [*****] package repo" or email the presenter to get them answered. The host, who identified themselves as a student, obviously did not know any better, but as an experienced R user, code breaker,[^1] and question asker, the host's comments set off alarm bells in my head. 
+
+### `r emo::ji("bell")` `r emo::ji("bell")` `r emo::ji("bell")`
 
 Why did this comment cause this reaction? Well, in my experience, when getting help in R, your *absolute last resort* should be to directly interact with the package author. Maintaining an R package takes a lot of work, and most R package writers maintain their package(s) in their spare time. They do not have time to answer every question.[^2] Save yourself and R package authors time by using these tips to answer your own questions.
 
@@ -30,7 +35,9 @@ I know how I feel when I sense that my time is being wasted, and I am often temp
 In addition, electronic communication can be read in different ways by different people, and the meaning is not always clear.^[My initial tweet about this was very snarky, and I came off a lot angrier than I was. As I said above, the well-intentioned host's comments set off alarm bells for me. The anger that came across was more directed at myself than the webinar host, leftover from previous incidents where I was "called out" for asking bad questions online.] Maybe the author didn't intend to be snarky, or maybe they did but it came off harsher than necessary. Either way, you can't know what they were thinking. Avoid this negativity and ambiguity entirely, and save yourself and R package authors time by using these tips to answer your own questions.  
 -->
 
-These tips are also important for becoming a more self-sufficient. Many people asking R questions are students of some kind. When I was a student, I was surrounded by people who were way better than me at this stuff, and I often went to them for help. Now that I'm not sharing office space with them, I have to fend more or less for myself. In my office, I'm now the expert in a lot of R things, so I can't look to anyone else for help. If I have an error, I can't just bring my computer to [Eric](https://erichare.me/) and say "WTF" like I could when we were in school. By becoming self-sufficient, you are making an investment in your future. It's harder than just asking [insert your favorite R package author here] what the answer is, but it's better for you.[^3]
+### DIY
+
+These tips are also important for becoming a more self-sufficient R user. Many people asking R questions are students of some kind. When I was a student, I was surrounded by people who were way better than me at this stuff, and I often went to them for help. Now that I'm not sharing office space with them, I have to fend more or less for myself. In my office, I'm now the expert in a lot of R things, so I can't look to anyone else for help. If I have an error, I can't just bring my computer to [Eric](https://erichare.me/) and say "WTF" like I could when we were in school. By becoming self-sufficient, you are making an investment in your future. It's harder than just asking [insert your favorite R package author here] what the answer is, but it's better for you.[^3]
 
 ## The Tips
 
@@ -38,17 +45,17 @@ These tips are presented in a different order than in my Twitter thread, being o
 
 ### 1. Read the documentation `r emo::ji("book")`
 
-Did you forget an argument? Does something have to be a character that is a factor? If a function is giving you a weird error, read the documentation! If you don't have the patience, run the examples in the documentation line-by-line first, then try to apply it to your context. R folks get famously testy online when you ask a question that is answered in the help files or vignettes. 
+Did you forget an argument? Does something have to be a character that is a factor? If a function is giving you a weird error, read the documentation! If you don't have the patience, run the examples in the documentation line-by-line first, then try to apply it to your context. R folks get famously testy online when you ask a question that is answered in the help files or vignettes.[^4] 
 
 ### 2. Google the error `r emo::ji("magnifying_glass_tilted_left")`
 
 After reading the documentation, you should Google the error message. In your search, make sure you remove any object or function names that are unique to your environment. By using only the relevant words from the error message, you're more likely to get a result on StackOverflow or GitHub where your problem has already been solved. 
 
-[Here](https://twitter.com/JennyBryan/status/1199128468622999553?s=20) is a common example: `Error in my_df$my_col: object of type closure is not subsettable`. Remove the reference to your data and google away. This will often lead to a StackOverflow question or GitHub issue where the problem is already solved.   
+[Here](https://twitter.com/JennyBryan/status/1199128468622999553?s=20) is a common example: `Error in my_df$my_col: object of type closure is not subsettable`. Remove the reference to your data and google away. 
 
 ### 3. Search smarter, not harder `r emo::ji("brain")`
 
-Make your search smarter. Use [boolean searches](https://www.mcgill.ca/caps/files/caps/gcs2014_linkedinbooleansearchtips.pdf) on Google, GitHub, and/or StackOverflow with a few keywords. For example, say you have a question about plot margins and ggplot2. You might try typing `ggplot2 AND margins` into Google, or `[ggplot2] margin` in StackOverflow. For GitHub, go to the ggplot2 [issues](https://github.com/tidyverse/ggplot2/issues) and search for `is:issue margin` (no quotation marks). 
+Make your search smarter. Use [boolean searches](https://www.mcgill.ca/caps/files/caps/gcs2014_linkedinbooleansearchtips.pdf) on Google, GitHub, and/or StackOverflow with a few keywords. For example, say you have a question about plot margins and ggplot2. You might try typing `ggplot2 AND margins` into Google, or `[ggplot2] margin` in StackOverflow. For GitHub, go to the ggplot2 [issues](https://github.com/tidyverse/ggplot2/issues) and search for `is:issue margin`. 
 
 ### 4. Burn it all down `r emo::ji("fire")`
 
@@ -58,7 +65,7 @@ In the original thread, this was lower on the list at #8. That's probably becaus
 ### 5. Make a "reprex" `r emo::ji("repeat")`
 
 This step involves making the problem as small as possible,  which is known as making a "minimally reproducible example" or a "reprex."  In making a reprex, you should isolate what is happening, using as little information as possible. So if it’s a ggplot question, for example, make a toy data frame with the minimum number of rows and columns to reproduce the behavior. For more complete information on making a reprex, watch [Jenny Bryan's webinar](https://resources.rstudio.com/webinars/help-me-help-you-creating-reproducible-examples-jenny-bryan) on the [`reprex`](https://reprex.tidyverse.org/) package. 
-In my experience, if I've reached the point of making a reprex, creating will help me figure out what's going on and solve the problem without going elsewhere at least 75% of the time. 
+In my experience, if I've reached the point of making a reprex, creating one will help me figure out what's going on and solve the problem without going elsewhere at least 75% of the time. 
 
 ### 6. Ask Twitter with #rstats `r emo::ji("bird")`
 
@@ -74,7 +81,7 @@ Sleep on it. This is especially helpful when you've been battling with an error 
 
 ### 9. Ask your question on an online community `r emo::ji("speech_balloon")`
 
-Ask a question on StackOverflow or in RStudio community. Don't forget to use the reprex package to help others help you. If others can make the weird behavior/error happen on their systems, then they can actually help you!  While you wait for an answer, repeat some previous steps in the meantime to see if you can answer your own question.  **Wait at least 24 hours before going to the next step.**
+Ask a question on StackOverflow or in RStudio community. Don't forget to use the reprex package to help others help you. If others can make the weird behavior/error happen on their systems, then they can actually help you!  While you wait for an answer, repeat some previous steps in the meantime to see if you can answer your own question. (If you can answer, make sure to post the solution for others in the future!) **Wait at least 24 hours before going to the next step.**
 
 ### 10. File an issue on GitHub `r emo::ji("raising_hand")`
 
@@ -86,15 +93,15 @@ The vast majority of the time, when I follow these steps in this order, I will g
 
 At this point, you're on your own again. But luckily, you've developed some self-sufficiency and can begin hacking away if it's an interesting and/or important enough problem to you. If not, just move on.  
 
-"Ever tried. Ever failed. No matter. Try again. Fail again. Fail better." - Samuel Beckett 
-
-"Try not. Do. Or do not. " - [Yoda](https://youtu.be/BQ4yd2W50No)
+---
 
 [^1]: Code breaker in the "OMG why doesn't this code work" sense, not the [kick-ass WWII female codebreakers](https://www.smithsonianmag.com/history/how-women-codebreakers-wwii-helped-win-war-180965058/) way.
 
 [^2]: I have one R package on CRAN and it's very hard to motivate myself to work on it, since it has nothing to do with my work anymore and good alternatives exist.
 
 [^3]: I suspect my belief in self-sufficiency is also one of the reasons an intro stat student of mine once said I was "the worst professor ever of any class in high school or college." (Hey, at least they gave me a degree & a promotion.) My students did not like it when I answered their questions with questions, [Ron Swanson style](https://vimeo.com/53975076).
+
+[^4]: Writing documentation is coding, too! If you don't read it, you're ignoring the authors' hard work.
 
 <!--
 Tweet text: 
