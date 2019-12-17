@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting help in R: do as I say, not as I've done"
-date: "2019-12-17 12:00:00 EST"
+date: "2019-12-17 10:00:00 EST"
 categories: rstats, help
 ---
 
@@ -11,9 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Why?
 
-As [promised on Twitter](https://twitter.com/sctyner/status/1195425981781151745?s=20), this is my list of tips for getting help in R. My Twitter thread of tips was inspired by something I witnessed at the end of a webinar. The webinar presenter is the author of many popular R packages, and so the webinar drew a very large audience (hundreds of people). The webinar was great, and the host was effusive afterwards. Unfortunately, the praise went a bit off the rails, and included the host telling attendees that the presenter is "always on GitHub" and if they have additional questions to "post issues on the [*****] package repo" or email the presenter to get them answered. The host, who identified themselves as a student, obviously did not know any better, but as an experienced R user, code breaker^[Code breaker in the "OMG why doesn't this code work" sense, not the [kick-ass WWII female codebreakers](https://www.smithsonianmag.com/history/how-women-codebreakers-wwii-helped-win-war-180965058/) way.], and question asker, the host's comments set off alarm bells in my head. 
+As [promised on Twitter](https://twitter.com/sctyner/status/1195425981781151745?s=20), this is my list of tips for getting help in R. My Twitter thread of tips was inspired by something I witnessed at the end of a webinar. The webinar presenter is the author of many popular R packages, and so the webinar drew a very large audience (hundreds of people). The webinar was great, and the host was effusive afterwards. Unfortunately, the praise went a bit off the rails, and included the host telling attendees that the presenter is "always on GitHub" and if they have additional questions to "post issues on the [*****] package repo" or email the presenter to get them answered. The host, who identified themselves as a student, obviously did not know any better, but as an experienced R user, code breaker,[^1] and question asker, the host's comments set off alarm bells in my head. 
 
-Why did this comment cause this reaction? Well, in my experience, when getting help in R, your *absolute last resort* should be to directly interact with the package author. Maintaining an R package takes a lot of work, and most R package writers maintain their package(s) in their spare time. They do not have time to answer every question.^[I have one R package on CRAN and it's very hard to motivate myself to work on it, since it has nothing to do with my work anymore and good alternatives exist.] Save yourself and R package authors time by using these tips to answer your own questions.
+Why did this comment cause this reaction? Well, in my experience, when getting help in R, your *absolute last resort* should be to directly interact with the package author. Maintaining an R package takes a lot of work, and most R package writers maintain their package(s) in their spare time. They do not have time to answer every question.[^2] Save yourself and R package authors time by using these tips to answer your own questions.
 
 <!--
 Also in my experience, if you go right for the package author, there are two likely outcomes:  
@@ -30,7 +30,7 @@ I know how I feel when I sense that my time is being wasted, and I am often temp
 In addition, electronic communication can be read in different ways by different people, and the meaning is not always clear.^[My initial tweet about this was very snarky, and I came off a lot angrier than I was. As I said above, the well-intentioned host's comments set off alarm bells for me. The anger that came across was more directed at myself than the webinar host, leftover from previous incidents where I was "called out" for asking bad questions online.] Maybe the author didn't intend to be snarky, or maybe they did but it came off harsher than necessary. Either way, you can't know what they were thinking. Avoid this negativity and ambiguity entirely, and save yourself and R package authors time by using these tips to answer your own questions.  
 -->
 
-These tips are also important for becoming a more self-sufficient. Many people asking R questions are students of some kind. When I was a student, I was surrounded by people who were way better than me at this stuff, and I often went to them for help. Now that I'm not sharing office space with them, I have to fend more or less for myself. In my office, I'm now the expert in a lot of R things, so I can't look to anyone else for help. If I have an error, I can't just bring my computer to [Eric](https://erichare.me/) and say "WTF" like I could when we were in school. By becoming self-sufficient, you are making an investment in your future. It's harder than just asking [insert your favorite R package author here] what the answer is, but it's better for you.^[I suspect my belief in self-sufficiency is also one of the reasons an intro stat student of mine said I was "the worst professor ever of any class in high school or college." (Hey, at least they gave me a degree & a promotion.) My students did not like it when I answered their questions with  questions, [Ron Swanson style](https://vimeo.com/53975076).] 
+These tips are also important for becoming a more self-sufficient. Many people asking R questions are students of some kind. When I was a student, I was surrounded by people who were way better than me at this stuff, and I often went to them for help. Now that I'm not sharing office space with them, I have to fend more or less for myself. In my office, I'm now the expert in a lot of R things, so I can't look to anyone else for help. If I have an error, I can't just bring my computer to [Eric](https://erichare.me/) and say "WTF" like I could when we were in school. By becoming self-sufficient, you are making an investment in your future. It's harder than just asking [insert your favorite R package author here] what the answer is, but it's better for you.[^3]
 
 ## The Tips
 
@@ -82,13 +82,19 @@ If you still haven't figured it out, this is when you file a GitHub issue, and i
 
 ## The End? 
 
-The vast majority of the time, when I follow these steps in this order, I will get an answer to my question. I would say that since I've started thinking about getting R help in this way, 90% of my questions are answered after step 5, and 98% are answered after step 8.  **If you've made it all the way through #10, be prepared for the solution to be, "This cannot be done."** When this is the case, the more generous package maintainers will give you a reason why it is not possible, and may even invite you to implement the fix yourself and submit a pull request. 
+The vast majority of the time, when I follow these steps in this order, I will get an answer to my question. I would say that since I've started thinking about getting R help in this way, 90% of my questions are answered after I've done step 5, and 98% are answered after I've done step 8.  **If you've made it all the way through #10, be prepared for the solution to be, "This cannot be done."** When this is the case, the more generous package maintainers will give you a reason why it is not possible, and may even invite you to implement the fix yourself and submit a pull request. 
 
 At this point, you're on your own again. But luckily, you've developed some self-sufficiency and can begin hacking away if it's an interesting and/or important enough problem to you. If not, just move on.  
 
 "Ever tried. Ever failed. No matter. Try again. Fail again. Fail better." - Samuel Beckett 
 
 "Try not. Do. Or do not. " - [Yoda](https://youtu.be/BQ4yd2W50No)
+
+[^1]: Code breaker in the "OMG why doesn't this code work" sense, not the [kick-ass WWII female codebreakers](https://www.smithsonianmag.com/history/how-women-codebreakers-wwii-helped-win-war-180965058/) way.
+
+[^2]: I have one R package on CRAN and it's very hard to motivate myself to work on it, since it has nothing to do with my work anymore and good alternatives exist.
+
+[^3]: I suspect my belief in self-sufficiency is also one of the reasons an intro stat student of mine once said I was "the worst professor ever of any class in high school or college." (Hey, at least they gave me a degree & a promotion.) My students did not like it when I answered their questions with questions, [Ron Swanson style](https://vimeo.com/53975076).
 
 <!--
 Tweet text: 
