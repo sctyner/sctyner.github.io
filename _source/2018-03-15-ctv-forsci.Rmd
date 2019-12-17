@@ -24,7 +24,7 @@ This CRAN task view contains a list of packages, grouped by discipline, that can
 
 Unless otherwise mentioned, all packages presented with hyperlinks are available from CRAN, the Comprehensive R Archive Network.
 
-Several of the areas discussed in this Task View are undergoing rapid change. Please send suggestions for additions and extensions for this task view to the [task view maintainer](mailto:sctyner@iastate.edu).
+Several of the areas discussed in this Task View are undergoing rapid change. Please send suggestions for additions and extensions for this task view to the [task view maintainer](mailto:sctyner90@gmail.com).
 
 Contributions are always welcome, and encouraged. The source file for this particular task view file are also in a GitHub repository (see below) so that pull requests are also possible.
 

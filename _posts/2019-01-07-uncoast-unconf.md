@@ -17,7 +17,7 @@ In 2017 and 2018, I was lucky enough to attend the [ROpenSci](http://unconf18.ro
 
 ## Building a Midwest R community
 
-Another thing I noticed at these events was that most of the other attendees were from places very far away from me in Iowa. This is great for broadening horizons and for learning about the many ways that people use R all over the country and world. However, it's less great for fostering continuing collaboration and interaction within a community that is spread out across the world's timezones. I also felt a distinctly coastal bent in the events, because that's where they were held, where most of the attendees were from, and where much focus in the larger R and tech communities seems to be. But because I am at Iowa State University, I know that there are many amazing R users in "flyover country." (And yes, I am reclaiming this usually pejorative term on behalf of all midwesterners, especially those lifelong ones like myself!) 
+Another thing I noticed at theses events was that most of the other attendees were from places very far away from me in Iowa. This is great for broadening horizons and for learning about the many ways that people use R all over the country and world. However, it's less great for fostering continuing collaboration and interaction within a community that is spread out across the world's timezones. I also felt a distinctly coastal bent in the events, because that's where they were held, where most of the attendees were from, and where much focus in the larger R and tech communities seems to be. But because I am at Iowa State University, I know that there are many amazing R users in "flyover country." (And yes, I am reclaiming this usually pejorative term on behalf of all midwesterners, especially those lifelong ones like myself!) 
 
 ## A space for YOU!
 
@@ -45,4 +45,4 @@ This would not have happened without support, organization, and encouragement fr
 - Alicia Carriquiry, for her support and encouragement, as well as the account infrastructure for taking in and spending funds. 
 - [Yihui Xie](https://yihui.name/en/), for his enthusiastic "Yes!" when we asked him to attend.
 
-### If you or your employer are interested in sponsoring this event, please [reach out](mailto:sctyner@iastate.edu)! 
+### If you or your employer are interested in sponsoring this event, please [reach out](mailto:sctyner90@gmail.com)! 

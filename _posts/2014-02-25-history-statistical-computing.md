@@ -1,8 +1,16 @@
 ---
-layout: post
 title:  "A Brief History of Statistical Computing (as told through a series of corny historical references)"
-date:   2014-02-25 21:57:30 -0600
-categories: blog, stat585x
+date:   2014-02-2T21:57:30-06:00
+categories: ["stat585x"]
+tags: ["coursework"]
+---
+
+---
+title: "A Custom ggplot2 Theme for Facebook"
+author: "Sam Tyner"
+date: 2016-12-30T13:40:27-05:00
+categories: ["R", "ggplot2"]
+tags: ["plot", "fun", "facebook"]
 ---
 
 *Written for Stat 585X after reading [From S to R](http://www.research.att.com/articles/featured_stories/2013_09/201309_SandR.html?fbid=qg6od6BDX3T) from AT&T Labs, Inc.*
