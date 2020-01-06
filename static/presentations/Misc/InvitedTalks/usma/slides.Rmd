@@ -1,0 +1,41 @@
+---
+title: "Placeholder"
+subtitle: "TBD"
+author: "Samantha Tyner, Ph.D."
+institute: "Bureau of Labor Statistics"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [xaringan-themer.css, custom.css]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = FALSE, out.width = "80%", message = FALSE, warning = FALSE, fig.align = 'center')
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+mono_light(
+  base_color = "#b41f24",
+  text_font_google = google_font("Source Sans Pro"),
+  text_font_size = "24px",
+  header_font_google = google_font("Source Sans Pro"),
+  code_inline_color = "#2a3683",
+  code_inline_font_size = ".8em",
+  code_font_size = ".75em",
+  code_font_family = "Fira Code",
+  code_font_url    = "https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css",
+  link_color = lighten_color("#2a3683", strength = .4)
+)
+```
+
+# Outline
+
+Placeholder for talk @ USMA on Feb. 20th
