@@ -9,6 +9,35 @@ categories: rstats, help
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Today, the useR! 2020 committee announced the July 7th tutorials on [twitter](https://twitter.com/useR2020stl/status/1220451345360179200). I am so honored and grateful to be one of the selected tutorial leaders! What an amazing group to be a part of! 
+
+I will be giving the tutorial, "Creating Beautiful Data Visualizations in R: a `ggplot2` Crash course." The other tutorials are: 
+
+- Morning session:  
+    * First steps in spatial data handling and visualization by [S. Rochette](https://github.com/statnmap), D. Scott, and [J. Nowosad](https://nowosad.github.io/)
+    * Predictive modeling with text using tidy data principles b [J. Silge](https://juliasilge.com/) and E. Hansen 
+    * So, you want to learn Python? An introduction to Python for the R lover [S. Ellis](http://www.shanellis.com/)
+    * Application of Gaussian graphical models to metabolomics [D. Scholtens](https://www.feinberg.northwestern.edu/faculty-profiles/az/profile.html?xid=16163) and [R. Balasubramanian](https://www.umass.edu/sphhs/person/faculty/raji-balasubramanian)
+    * Periscope and CanvasXpress 0 Creating and enterprise-grade big-data visualization application in a day by [C. Brett](https://github.com/cb4ds)
+    * Seamless R and C++ integration with Rcpp by [D. Eddelbuettel](http://dirk.eddelbuettel.com/)
+    * Create and share reproducible code with R Markdown and workflowr by [J. Blischak](https://jdblischak.com/)
+    * Causal inference in R by [L. D'Agostino McGowan](https://www.lucymcgowan.com/)
+    * Reproducible computation at scale with drake: hands-on practice with a machine learning project by [W. Landau](https://wlandau.github.io/) 
+- Afternoon session:  
+    * How green was my valley - Spatial analytics with PostgreSQL, PostGIS, R, and PL/R by [J. Conway](https://joeconway.com/)
+    * Building interactive web application with Dash for R by [R. Kyle](https://github.com/rpkyle)
+    * Easy Larger-than-Ram data manipulation with disk.frame by [ZJ Dai](https://github.com/xiaodaigh)
+    * R Markdown recipes by [Y. Xie](https://yihui.org/en/)
+    * Getting the most out of Git by [C. Gillespie](https://github.com/csgillespie) and [R. Davies](https://trianglegirl.rbind.io/)
+    * End-to-end maching learning with Metaflow: Going from protoype to production with Netflix's open source project for reproducible data science by [S. Goyal](https://github.com/savingoyal)
+    * Package development by [J. Hester](https://github.com/jimhester) and [H. Wickham](http://hadley.nz/)
+    * What they forgot to teach you about teaching R by [M. Cetinkaya-Rundel](http://www2.stat.duke.edu/~mc301/)
+
+Hopefully I made the right guess at the tutorial leaders, and I apologize to those I could not find easily! 
+
+
+The rest of this post is my tutorial proposal that I submitted to the committee. I hope you'll attend!  
+
 ## Title: <!--10-20 words, describing succinctly the topic of the tutorial.--> 
 
 ### Creating Beautiful Data Visualizations in R: a `ggplot2` Crash Course
