@@ -1,0 +1,121 @@
+---
+layout: post
+title: "My useR!2020 tutorial on ggplot2"
+date: "2020-01-24 11:00:00 EST"
+categories: rstats, help
+---
+
+
+
+## Title: <!--10-20 words, describing succinctly the topic of the tutorial.--> 
+
+### Creating Beautiful Data Visualizations in R: a `ggplot2` Crash Course
+
+## Audience: <!--50-100 words, describing the expected background (subject matter and R experience) that an attendee should have in order to have a meaningful learning experience.--> 
+
+Users of any subject matter background who are interested in data visualization with R are welcome. New R users (less than 1 year of continual experience) will get the most out of this course. Some basic knowledge, such as understanding of different R data types & structures (character, data frame, etc.) and authoring simple functions & loops, is required. The course, however, is not just for beginners. More advanced R users who have little to no experience with `ggplot2` and other packages in the `tidyverse` will learn many new tools for data visualization in R.  
+
+## Instructor background: <!--~100 words, describing the instructor’s domains of expertise, experience teaching courses/workshops/tutorials using R, and how the instructor’s background has prepared them to teach the proposed tutorial. Provide the URL to your LinkedIn, Github, or any other site where details of your academic/professional background that are relevant to the proposed tutorial are available.-->
+
+Dr. Tyner has been using `ggplot2` since version 0.9.2 (2012). She co-authored and maintains the `ggplot2` extension package `geomnet`, and has taught `ggplot2` to undergraduate students, graduate students, and professionals. Her material for undergraduate students can be found at [csafe-isu.github.io/reu18/slides](https://csafe-isu.github.io/reu18/slides/), and a list of all workshops taught is available in her [CV](https://sctyner.github.io/static/resume/tyner-cv-pd.html). Dr. Tyner also has expertise in the theory of data visualization, acquired through her dissertation research and as a part of the statistical graphics working group at Iowa State University. She has written about her `ggplot2` work in [The R Journal](https://journal.r-project.org/archive/2017/RJ-2017-023/index.html) and on her [blog](https://sctyner.github.io/blog.html).
+
+## Domain: <!--10-20 words, describing the subject areas (e.g. Social Sciences, Neuroscience, Geo-spatial statistics, etc.) to which the concepts and examples presented belong. This description will allow potential attendees determine whether the tutorial would be of interest to them.-->
+Most examples will use publicly available data from the U.S. Bureau of Labor Statistics, including time series and map data, but no economics knowledge is required.
+
+## Points of appeal: <!--~75 words, describing what makes the proposed tutorial appealing to either audience from a broad range of backgrounds. If the tutorial content draws on examples from multiple fields/disciplines, the fields are identified and the tutorial is described in a way that is appealing to audience from those and related disciplines.-->
+
+Learning `ggplot2` brings joy and ["aha moments"](https://twitter.com/JennyBryan/status/1176918920491675648?s=20) to new R users, keeping them more engaged and eager to grow their R skills. Newer R users will be and feel more empowered with data visualization skills. In addition to experiencing joy in creating beautiful graphics, advanced R users will learn to take advantage of `ggplot2`'s [elegant defaults](https://ggplot2-book.org/introduction.html#welcome-to-ggplot2), saving time on manual plotting tasks like drawing legends. Thus, time and energy can be spent on advanced analyses, not fights with plotting commands.
+
+## Learning objectives: <!--100 – 200 words, describing the specific concepts and skills the audience can expect to have learned by attending the tutorial. Be sure to specify each learning objective succinctly. A well-drafted proposal would probably have 3-5 well-stated learning objectives.-->
+
+Upon completion of this tutorial, the participants will be able to: 
+
+1. identify the appropriate plot types and corresponding `ggplot2` `geom`s to consider when visualizing their data;
+    + Participants will match variable types (categorical, continuous, etc.) to the best visualizations (boxplots, scatterplots, etc.).
+
+2. implement the `ggplot2` grammar of graphics by using `ggplot()` and building up plots with the `+` operator;
+    + Participants will add `geom`s, `stat`s, `facet_*`s, and `theme` objects together to create beautiful graphics.
+
+3. iterate through multiple visualizations of their data by changing the aesthetic mappings, geometries, and other graph properties;  
+    + Participants will practice interchanging geometries and aesthetic mappings to communicate the data in different ways to find effective visualizations. 
+
+4. incorporate custom elements (colors, fonts, etc.) into their visualizations by adjusting `ggplot2` theme elements; 
+    + Participants will be able to customize their graphs for appearance in journals, corporate reports, etc. with specific requirements. 
+
+5. investigate the world of `ggplot2` independently to expand upon the skills learned in the course.
+    + Participants will acquire "prosthetic knowledge," or the ability to learn more about `ggplot2` and data visualization in R using the Internet.  
+
+
+## Computing requirements: <!--~50 words, describing the minimum hardware configuration and software attendees should bring to the tutorial to benefit from the hands-on exercises given during the tutorial.-->
+
+Participants should have a laptop with access to the internet. Having RStudio on the laptop is recommended, but if this is not possible the student may use the RStudio Cloud workspace. Students not using the RStudio Cloud should have the `tidyverse` suite of packages and the `plotly` package installed. Or, for the minimalist student, `ggplot2`, `dplyr`, `tidyr`, and `plotly` will be sufficient for the bulk of the material. 
+
+## Teaching assistant: <!--will you be able to identify one-two individuals who can serve as teaching assistants? Will you need the conference committee to identify volunteers who can serve as teaching assistants? What subject matter expertise should such an individual have to help with any difficulties that the attendees might face in running the code examples being demonstrated?--> 
+
+I have a great network of possible TAs for this course in current and former Iowa State University statistics Ph.D. students. I am confident I will be able to recruit two people to participate as TAs. 
+
+## Lesson plan: <!-- ~150 words, describing via a bulleted list, a sketch of the sequence of activities (theory/domain explanation, demonstration of code, hands-on work time, formal/informal Q+A, etc.) that the instructor expects to follow for delivering the learning experience to attendees.--> 
+
+Session 1: `ggplot2` basics (90 minutes)
+
+- Introduction to `ggplot2`'s grammar of graphics (20 minutes)
+    + Theory: grammar of graphics
+    + Optimal data format
+    + The basics of `geom_*`s,`stat_*`s, & `aes()`
+- One-variable visualization (10 minutes)
+    + Bar charts
+    + Histograms, density estimates
+- Hands-on (5 minutes)
+- Two-variable visualization (20 minutes)
+    + Two categorical variables: `geom_count`, etc. 
+    + Two numeric variables: scatterplots, etc.
+    + One categorical, one numeric: boxplots, etc. 
+- Hands-on (5 minutes)
+- Three or more variable visualization (20 minutes)
+    + Augmenting one- and two-variable visualisation with color, and other aesthetic mappings
+    + Grouping
+    + Faceting 
+    + Maps
+- Hands-on (10 minutes)
+
+Break (30 minutes)
+
+Session 2: Advanced customization (90 minutes)
+
+- Combining layers (20 minutes)
+    + Using the same data object
+    + Different data objects 
+- Hands-on (10 minutes)
+- Graph appearance (15 minutes)
+    + Themes & Scales
+    + Titles, legends, etc. 
+- Hands-on (5 minutes)
+- ggplot2 extensions (15 minutes)
+    + Animation
+    + Domain-specific (e.g. network analysis, time series data)
+    + Appearance customization (custom themes, scales, etc.)
+- Hands-on (10 minutes)
+- Interactivity with plotly (10 minutes)
+    + `ggplotly()`
+    + Tooltips
+- Hands-on (5 minutes)
+
+## Expected level of audience’s R background: <!-- ~50 words, a designation of beginner, intermediate, or advanced, and a short description of expected R-related skills.-->
+I anticipate two audiences for this tutorial: beginning R users, defined as having less than one year of continual experience, and advanced R users interested in data visualization and new to the `tidyverse`. I expect the following skills: 
+
+- Basic understanding of R data types and structures
+- Ability to write simple functions and loops
+- Willingness to learn new ways of doing things in R
+
+## Other considerations: <!-- ~ 100 words, describing any other constraints/needs the instructor might have that are relevant in delivering the learning experience to the attendees. If there are additional resources (available online) that the instructor things can help the audience to continue their learning beyond the tutorial, they can be included here, too.-->
+
+For the tutorial I will alternate between lecturing and hands-on time. For the lecture portion, I use slides, and will need a projector and a way to connect my personal laptop, as well as a place to put notes, a water bottle, etc. For the hands-on time, participants will require Internet access and a comfortable work setting with enough space to accomodate everyone's laptops, notebooks, etc. In additon, I would ask that the organizers please consider body diversity when choosing a space. This includes having tables that can accomodate wheelchairs, chairs without arms for folks in larger bodies, and tables available at standing height for those unable to sit for long periods. 
+
+Additional ggplot2 resources: 
+
+- Documentation, [ggplot2.tidyverse.org](https://ggplot2.tidyverse.org/index.html)
+- Book, [ggplot2-book.org](https://ggplot2-book.org)
+- [Data Visualization with ggplot2](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf) cheatsheet from RStudio (within RStudio, Help $\rightarrow$ Cheatsheets $\rightarrow$ Data Visualization with ggplot2) 
+- StackOverflow has [30,000+](https://stackoverflow.com/questions/tagged/ggplot2) questions tagged  "[ggplot2]"
+- ggplot2 [Github repository](https://github.com/tidyverse/ggplot2/issues) has thousands of closed issues, representing problems that users at all levels have encounterd. 
+
