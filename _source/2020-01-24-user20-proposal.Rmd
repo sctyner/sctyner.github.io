@@ -14,7 +14,7 @@ Today, the [useR! 2020](https://user2020.r-project.org/) committee announced the
 I will be giving the tutorial, *Creating Beautiful Data Visualizations in R: a `ggplot2` Crash course.* The other tutorials are: 
 
 - Morning session:  
-    * *First steps in spatial data handling and visualization* by [S. Rochette](https://github.com/statnmap), D. Scott, and [J. Nowosad](https://nowosad.github.io/)
+    * *First steps in spatial data handling and visualization* by [S. Rochette](https://github.com/statnmap), [D. Scott](https://dscott.netlify.com/), and [J. Nowosad](https://nowosad.github.io/)
     * *Predictive modeling with text using tidy data principles* by [J. Silge](https://juliasilge.com/) and E. Hansen 
     * *So, you want to learn Python? An introduction to Python for the R lover* by [S. Ellis](http://www.shanellis.com/)
     * *Application of Gaussian graphical models to metabolomics* by [D. Scholtens](https://www.feinberg.northwestern.edu/faculty-profiles/az/profile.html?xid=16163) and [R. Balasubramanian](https://www.umass.edu/sphhs/person/faculty/raji-balasubramanian)
