@@ -516,7 +516,7 @@ class: inverse, center, middle
 # Part II: Efficiency 
 
 ```{r echo = FALSE, fig.align="center", out.width = "50%", fig.cap='Source: "Is it worth the time?" by <a href="https://xkcd.com/1205/">xkcd</a>'}
-knitr::include_graphics("https://imgs.xkcd.com/comics/is_it_worth_the_time_2x.png")
+knitr::include_graphics("img/is_it_worth_the_time.png")
 ```
 
 ???
@@ -629,10 +629,8 @@ class: inverse, center, middle
 # 2. Core `tidyverse` for data storage, manipulation, transformation, & visualization
 
 ```{r, echo=FALSE, out.width="20%", fig.show="hold", fig.cap='Source: <a href="https://www.tidyverse.org/">tidyverse.org</a>'}
-knitr::include_graphics(c(                         "https://d33wubrfki0l68.cloudfront.net/f55c43407ae8944b985e2547fe868e5e2b3f9621/720bb/images/hex-tibble.png", "https://d33wubrfki0l68.cloudfront.net/66d3133b4a19949d0b9ddb95fc48da074b69fb07/7dfb6/images/hex-readr.png",
-"https://d33wubrfki0l68.cloudfront.net/5f8c22ec53a1ac61684f3e8d59c623d09227d6b9/b15de/images/hex-tidyr.png",
-"https://d33wubrfki0l68.cloudfront.net/071952491ec4a6a532a3f70ecfa2507af4d341f9/c167c/images/hex-dplyr.png",
-  "https://d33wubrfki0l68.cloudfront.net/0ab849ed51b0b866ef6895c253d3899f4926d397/dbf0f/images/hex-ggplot2.png"))
+knitr::include_graphics(c("img/hex-tibble.png", "img/hex-readr.png", "img/hex-tidyr.png", "img/hex-dplyr.png",
+  "img/hex-ggplot2.png"))
 ```
 
 ???
@@ -845,7 +843,7 @@ class: inverse, center, middle
 # 3. `purrr` : remove `for` loops from your vocabulary
 
 ```{r, echo=FALSE, fig.align="center", out.width="30%"}
-knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/9221ddead578362bd17bafae5b85935334984429/37a68/images/hex-purrr.png")
+knitr::include_graphics("img/hex-purrr.png")
 ```
 
 
@@ -1057,7 +1055,7 @@ knitr::include_graphics("img/tidymodels.png")
 - [`fable`](https://fable.tidyverts.org/): tidy forecasting with common time series models  
 
 ```{r echo=FALSE, out.width="45%",fig.align="default", fig.show='hold'}
-knitr::include_graphics(c("https://raw.githubusercontent.com/tidyverts/tsibble/master/man/figures/logo.png", "https://raw.githubusercontent.com/tidyverts/fable/master/man/figures/logo.png"))
+knitr::include_graphics(c("img/hex-tsibble.png", "img/hex-fable.png"))
 ```
 ]
 

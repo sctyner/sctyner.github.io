@@ -1,0 +1,11 @@
+.topright {
+  position: absolute;
+  top: 0em;
+  padding-left:35em;
+  font-size: 80%;
+  color: #7e7e7f;
+}
+
+.topright a{
+  color: #7e7e7f;
+}
