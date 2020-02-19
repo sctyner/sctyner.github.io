@@ -57,7 +57,7 @@ Part II: Efficiency
 1. `tidyverse` principles 
 2. Core `tidyverse` for data storage, manipulation, transformation, & visualization
 3. `purrr` : remove `for` loops from your vocabulary
-4. The expansion of the `tidyverse`
+4. The expansion of the `tidyverse` (if time)
 
 
 ---
@@ -745,7 +745,7 @@ sigacts %>% select(1:4, starts_with("MGRS"))
   arrange(desc(n)))
 ```
 
-??
+???
 The group_by function groups the data and any operations after grouping are performed on the group. So here, we group by area and event, then count the number of occurrences in the data
 
 ---
@@ -964,6 +964,8 @@ mysims <- crossing(mu,sigma) %>%
 glimpse(mysims)
 ```
 
+???
+(Note to self: only do if time!)
 
 ---
 ## Visualize simulations 
