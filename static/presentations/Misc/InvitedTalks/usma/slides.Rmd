@@ -965,7 +965,7 @@ glimpse(mysims)
 ```
 
 ???
-(Note: skip if no time.)
+(Note to self: only do if time!)
 
 
 ---
